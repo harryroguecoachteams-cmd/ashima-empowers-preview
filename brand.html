@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ashima Empowers Brand Guidelines</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/brand/mark-gold-deep.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css?v=6">
+  <style>
+    body { background: var(--ivory); color: var(--text); }
+    .bg-top { padding: 90px 0 80px; text-align: center; }
+    .bg-top .logo { transform: scale(1.6); margin-bottom: 40px; }
+    .bg-top .h2 { font-size: clamp(42px, 5vw, 64px); }
+    .bg-top p { margin: 16px auto 0; max-width: 640px; color: var(--on-dark-muted); }
+    .chap { padding: 80px 0; border-top: 1px solid rgba(130, 96, 31, .18); }
+    .chap > .wrap > .eyebrow + .h2 { margin-top: 12px; }
+    .chap .intro-p { margin-top: 14px; max-width: 680px; color: var(--muted); }
+    .grid { margin-top: 36px; display: grid; gap: 18px; }
+    .g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 860px) { .g2, .g3, .g4 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .g2, .g3, .g4 { grid-template-columns: 1fr; } }
+    .tile { border-radius: var(--r-card); padding: 34px; min-height: 220px; display: grid; place-items: center; text-align: center; box-shadow: 0 0 0 1px rgba(130, 96, 31, .16); }
+    .tile.d { background: var(--onyx); color: var(--on-dark); }
+    .tile.l { background: var(--white); }
+    .tile.s { background: var(--sand); }
+    .cap { margin-top: 10px; font-size: 13.5px; color: var(--muted); }
+    .tile .cap { color: inherit; opacity: .7; }
+    .stack { display: flex; flex-direction: column; align-items: center; }
+    .stack svg { width: 64px; height: 64px; margin-bottom: 14px; }
+    .stack b { font: 600 40px/1 var(--serif); letter-spacing: .3em; margin-right: -.3em; }
+    .stack i { font: 500 10.5px/1 var(--sans); font-style: normal; letter-spacing: .62em; margin-right: -.62em; margin-top: 10px; }
+    .d .stack svg, .d .stack i { color: var(--gold); } .l .stack svg, .l .stack i { color: var(--gold-deep); }
+    .seal { width: 120px; height: 120px; border-radius: 50%; }
+    .dont { position: relative; }
+    .dont::after { content: "✕ Don't"; position: absolute; top: 12px; left: 14px; font: 600 11px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #a3341f; }
+    .sw { border-radius: var(--r-card); overflow: hidden; box-shadow: 0 0 0 1px rgba(130, 96, 31, .16); background: var(--white); }
+    .sw .chip { height: 120px; }
+    .sw div.t { padding: 16px 18px 18px; }
+    .sw b { display: block; font: 600 22px/1.1 var(--serif); }
+    .sw code { display: block; margin-top: 4px; font: 600 13px/1.3 var(--sans); color: var(--gold-deep); }
+    .sw p { margin-top: 8px; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+    .ratio { margin-top: 28px; display: flex; height: 54px; border-radius: 14px; overflow: hidden; font: 600 12.5px/54px var(--sans); text-align: center; letter-spacing: .06em; }
+    .type-row { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding: 28px 0; border-bottom: 1px solid rgba(130, 96, 31, .16); align-items: baseline; }
+    .type-row:last-child { border-bottom: 0; }
+    .type-row small { display: block; font: 600 11px/1.5 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); }
+    .type-row span { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
+    @media (max-width: 700px) { .type-row { grid-template-columns: 1fr; gap: 8px; } }
+    .btn-demo { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; }
+    .rhythm { margin-top: 30px; display: grid; gap: 4px; border-radius: var(--r-card); overflow: hidden; box-shadow: 0 0 0 1px rgba(130, 96, 31, .16); }
+    .rhythm div { padding: 14px 20px; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; }
+    .rhythm .rd { background: var(--onyx); color: var(--on-dark); } .rhythm .rl { background: var(--ivory); } .rhythm .rs { background: var(--sand); }
+    .rhythm em { font-style: normal; opacity: .65; }
+    .thumbs img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--r-card); }
+    .rules { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 700px) { .rules { grid-template-columns: 1fr; } }
+    .rules ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .rules li { margin-top: 6px; }
+    .rules h3 { font: 600 24px/1.1 var(--serif); }
+    .dl a { color: var(--gold-deep); font-weight: 600; }
+  </style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
+</svg>
+
+<header class="bg-top dark">
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg aria-hidden="true"><use href="#mark"/></svg><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
+    <div class="eyebrow">Brand guidelines · v1 · November 2026</div>
+    <h1 class="h2" style="margin-top:14px">Black, ivory and <em>gold.</em></h1>
+    <p>One look everywhere: the website, Instagram, Google, the course and every PDF. If something isn't on this page, it isn't part of the brand.</p>
+  </div>
+</header>
+
+<section class="chap">
+  <div class="wrap">
+    <div class="eyebrow">01 · Logo</div>
+    <h2 class="h2">The lotus and the <em>guiding star.</em></h2>
+    <p class="intro-p">A fine-line lotus (growth from difficult ground) under a four-point star (the chart, and the light that guides). Drawn in one gold line so it feels calm, not loud. The name is set in Cormorant Garamond with wide spacing; "EMPOWERS" sits underneath in small Inter capitals.</p>
+    <div class="grid g2">
+      <div class="tile d"><div><div class="stack"><svg aria-hidden="true"><use href="#mark"/></svg><b>ASHIMA</b><i>EMPOWERS</i></div><p class="cap">Stacked, on onyx: the main version</p></div></div>
+      <div class="tile l"><div><div class="stack"><svg aria-hidden="true"><use href="#mark"/></svg><b>ASHIMA</b><i>EMPOWERS</i></div><p class="cap">Stacked, on ivory</p></div></div>
+      <div class="tile d"><div><a class="logo" href="#" style="transform:scale(1.3)"><svg aria-hidden="true"><use href="#mark"/></svg><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a><p class="cap" style="margin-top:26px">Horizontal: website header, email signature</p></div></div>
+      <div class="tile l"><div style="display:flex;gap:26px;align-items:center;justify-content:center"><img class="seal" src="assets/brand/profile-seal-1080.png" alt="Round profile logo"><svg style="width:70px;height:70px;color:var(--gold-deep)" aria-hidden="true"><use href="#mark"/></svg></div><p class="cap">Profile seal (Google, Instagram, YouTube) and mark alone (favicon, stamps)</p></div>
+    </div>
+    <div class="rules">
+      <div><h3>Use it like this</h3><ul><li>Gold mark + ivory name on onyx, or gold-deep mark + onyx name on ivory.</li><li>Keep clear space around it equal to the height of the star.</li><li>Smallest size: mark 24 px tall on screen, 10 mm in print.</li><li>On photos, only over a calm dark area, never over a face or pattern.</li></ul></div>
+      <div><h3>Never</h3><ul><li>Stretch, rotate, outline or add shadows or glows.</li><li>Recolour it (no purple, blue, pink or rainbow gradients).</li><li>Swap the font or set "Ashima" in script.</li><li>Put the old sunburst or "AE" monogram next to it. Retire them.</li></ul></div>
+    </div>
+    <p class="cap dl" style="margin-top:24px">Files in <code>website/assets/brand/</code>: <a href="assets/brand/logo-stacked-for-dark.png">stacked (dark)</a> · <a href="assets/brand/logo-stacked-for-light.png">stacked (light)</a> · <a href="assets/brand/logo-horizontal-for-dark.png">horizontal (dark)</a> · <a href="assets/brand/logo-horizontal-for-light.png">horizontal (light)</a> · <a href="assets/brand/profile-seal-1080.png">profile seal 1080 px</a> · mark SVGs in gold, gold-deep, onyx and ivory.</p>
+  </div>
+</section>
+
+<section class="chap sand">
+  <div class="wrap">
+    <div class="eyebrow">02 · Colour</div>
+    <h2 class="h2">Three colours, <em>used with restraint.</em></h2>
+    <p class="intro-p">Onyx and ivory are the grounds. Gold is the only accent: buttons, the key phrase in a heading, lines and icons. No purple, navy, lavender, pink or blue anywhere.</p>
+    <div class="grid g4">
+      <div class="sw"><div class="chip" style="background:#0f0d0b"></div><div class="t"><b>Onyx</b><code>#0F0D0B</code><p>Dark sections, nav, footer card, text on gold buttons.</p></div></div>
+      <div class="sw"><div class="chip" style="background:#faf6ef"></div><div class="t"><b>Ivory</b><code>#FAF6EF</code><p>Main light background.</p></div></div>
+      <div class="sw"><div class="chip" style="background:#f1e9dc"></div><div class="t"><b>Sand</b><code>#F1E9DC</code><p>Alternate light background, so two light sections never merge.</p></div></div>
+      <div class="sw"><div class="chip" style="background:var(--gold-grad)"></div><div class="t"><b>Gold</b><code>#D4AF61 · gradient</code><p>Buttons (gradient), accents on dark. 9.3 : 1 on onyx.</p></div></div>
+      <div class="sw"><div class="chip" style="background:#82601f"></div><div class="t"><b>Gold deep</b><code>#82601F</code><p>Gold text, lines and icons on light backgrounds (passes AA).</p></div></div>
+      <div class="sw"><div class="chip" style="background:#1f1a15"></div><div class="t"><b>Ink</b><code>#1F1A15</code><p>Headings and body text on light. 16 : 1 on ivory.</p></div></div>
+      <div class="sw"><div class="chip" style="background:#6b6257"></div><div class="t"><b>Stone</b><code>#6B6257</code><p>Secondary text on light.</p></div></div>
+      <div class="sw"><div class="chip" style="background:#f4efe6"></div><div class="t"><b>Pearl</b><code>#F4EFE6 · #B9AF9F</code><p>Text and muted text on onyx.</p></div></div>
+    </div>
+    <div class="ratio"><div style="flex:6;background:var(--onyx);color:var(--gold)">60% onyx + ivory grounds</div><div style="flex:3;background:#fffdf9;color:var(--text)">30% sand, cards</div><div style="flex:1;background:var(--gold-grad);color:#1c1305">10% gold</div></div>
+  </div>
+</section>
+
+<section class="chap">
+  <div class="wrap">
+    <div class="eyebrow">03 · Typography</div>
+    <h2 class="h2">One serif, one sans, <em>one signature.</em></h2>
+    <div style="margin-top:20px">
+      <div class="type-row"><div><small>Display</small><span>Cormorant Garamond 500/600. Every heading, offer name, FAQ question.</span></div><div style="font:500 clamp(36px,4.6vw,58px)/1.05 var(--serif)">Release the fear. Return to <em class="gold-em">yourself.</em></div></div>
+      <div class="type-row"><div><small>Accent rule</small><span>Italic gold on one key phrase per heading. Never a whole heading.</span></div><div style="font:500 32px/1.1 var(--serif)">Five ways to <em class="gold-em">work with me.</em></div></div>
+      <div class="type-row"><div><small>Body &amp; UI</small><span>Inter 400 for text, 600 for buttons and labels. 16 px minimum on the web.</span></div><div style="font:400 17px/1.7 var(--sans);color:var(--muted);max-width:620px">This is about understanding the pattern your chart reveals, and gently rewiring the beliefs that keep you stuck, so peace stops being something you chase.</div></div>
+      <div class="type-row"><div><small>Eyebrow</small><span>Inter 600, 11.5 px, all caps, wide spacing, gold.</span></div><div class="eyebrow">What I offer</div></div>
+      <div class="type-row"><div><small>Signature</small><span>Mrs Saint Delafield. Only for her name, once per page.</span></div><div style="font:400 64px/1 var(--script);color:var(--gold-deep)">Ashima Gautam</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="chap dark">
+  <div class="wrap">
+    <div class="eyebrow">04 · Buttons</div>
+    <h2 class="h2">Gold means <em>"book".</em></h2>
+    <p class="intro-p" style="color:var(--on-dark-muted)">The gold button is for the one action that matters in that spot (book, join, subscribe). Everything else is an outline button or a text link. Always pill-shaped.</p>
+    <div class="btn-demo" style="margin-top:34px"><a class="btn-gold btn-arrow" href="#">Book a 1-Hour Session <span class="circ">→</span></a><a class="btn-ghost" href="#">Join the VIP Circle</a></div>
+  </div>
+</section>
+<section class="chap light" style="border:0;padding-top:40px">
+  <div class="wrap"><div class="btn-demo"><a class="btn-gold" href="#">Subscribe Now</a><a class="btn-ghost" href="#">Join the VIP Circle</a><a class="pill-link" style="margin:0" href="#">Read all reviews →</a></div><p class="cap" style="text-align:center;margin-top:14px">On light backgrounds the outline switches to gold-deep with ink text.</p></div>
+</section>
+
+<section class="chap sand">
+  <div class="wrap">
+    <div class="eyebrow">05 · Layout rhythm</div>
+    <h2 class="h2">Dark and light, <em>in turn.</em></h2>
+    <p class="intro-p">Sections alternate so the page breathes. Radius 18 px on cards and images, pills on buttons and tags, thin gold lines for borders.</p>
+    <div class="rhythm">
+      <div class="rd">Hero: name, promise, video, gold CTA <em>onyx</em></div>
+      <div class="rl">About: headline, portrait, signature <em>ivory</em></div>
+      <div class="rd">Start here: illustrated topics <em>onyx</em></div>
+      <div class="rl">Offers with gold price tags <em>ivory</em></div>
+      <div class="rd">Three steps <em>onyx</em></div>
+      <div class="rs">Google reviews <em>sand</em></div>
+      <div class="rl">Instagram reels <em>ivory</em></div>
+      <div class="rs">FAQ <em>sand</em></div>
+      <div class="rl">Footer: onyx community card on ivory <em>ivory + onyx</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="chap">
+  <div class="wrap">
+    <div class="eyebrow">06 · Imagery</div>
+    <h2 class="h2">Warm light, <em>gold-foil art.</em></h2>
+    <p class="intro-p">Photos: Ashima in natural warm light, real rooms, brass and marigold details, never cold blue studio light. Illustrations: always the gold-foil style below (onyx to gold to ivory), so they sit with the photos.</p>
+    <div class="grid g4 thumbs">
+      <img src="assets/art/anxiety.jpg" alt="Gold illustration: woman with tangled thoughts">
+      <img src="assets/art/overthinking.jpg" alt="Gold illustration: lotus on water">
+      <img src="assets/art/step-meet.jpg" alt="Gold illustration: woman meditating with headphones">
+      <img src="assets/offers/hour.jpg" alt="Ashima in a warm-lit consultation room">
+    </div>
+    <div class="rules">
+      <div><h3>Voice</h3><ul><li>Calm, honest, warm. Speak to one person.</li><li>Name the feeling (anxiety, low days), then the way through.</li><li>"No fear, no gemstone selling" is a promise. Keep it everywhere.</li></ul></div>
+      <div><h3>Avoid</h3><ul><li>Zodiac emoji, neon, purple galaxies, crystal-ball clichés.</li><li>Fear words: "doshas will ruin", "urgent remedy".</li><li>More than one gold button side by side.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot light" style="padding:40px 0 60px"><div class="wrap"><p class="legal" style="padding-bottom:0">Ashima Empowers brand guidelines v1, 22 Nov 2026. Website tokens live in <code>home.css</code> (<code>:root</code>).</p></div></footer>
+</body>
+</html>
