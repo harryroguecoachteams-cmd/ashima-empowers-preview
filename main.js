@@ -104,33 +104,43 @@ async function sendForm(form, summaryTitle) {
   return "whatsapp";
 }
 
-// Free gift form (home page): signs up to Brevo, which emails the Calm Mind Reset and starts the nurture emails.
-const giftForm = document.getElementById("gift-form");
-if (giftForm) {
-  giftForm.addEventListener("submit", async (e) => {
+// Calm Mind Reset sign-up. Used by the footer form and the pop-up. The Brevo form adds the contact to
+// list #3, which sends the welcome email and starts the "Freebie nurture" automation (day 2 and day 5 emails).
+const SUB_KEY = "ae_subscribed", POP_KEY = "ae_popup_closed";
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+};
+async function brevoSignup(name, email) {
+  const fd = new FormData();
+  fd.append("EMAIL", email);
+  fd.append("FIRSTNAME", name);
+  fd.append("email_address_check", ""); // Brevo honeypot, must stay empty
+  fd.append("locale", "en");
+  const res = await fetch(`${CONFIG.brevoFreebieForm}?isAjax=1`, { method: "POST", body: fd });
+  const out = await res.json().catch(() => ({}));
+  if (!res.ok || out.success === false) throw new Error(out.message || res.status);
+  store.set(SUB_KEY, String(Date.now()));
+}
+function wireGiftForm(form, onDone) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const msg = giftForm.querySelector(".form-msg");
-    const btn = giftForm.querySelector("button[type=submit]");
-    const name = giftForm.elements.name.value.trim();
-    const email = giftForm.elements.email.value.trim();
+    const msg = form.querySelector(".form-msg");
+    const btn = form.querySelector("button[type=submit]");
+    const name = form.elements.name.value.trim();
+    const email = form.elements.email.value.trim();
     if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       msg.textContent = "Please enter a valid email address.";
-      giftForm.elements.email.focus();
+      form.elements.email.focus();
       return;
     }
     btn.disabled = true;
     msg.textContent = "Sending…";
-    const fd = new FormData();
-    fd.append("EMAIL", email);
-    fd.append("FIRSTNAME", name);
-    fd.append("email_address_check", ""); // Brevo honeypot, must stay empty
-    fd.append("locale", "en");
     try {
-      const res = await fetch(`${CONFIG.brevoFreebieForm}?isAjax=1`, { method: "POST", body: fd });
-      const out = await res.json().catch(() => ({}));
-      if (!res.ok || out.success === false) throw new Error(out.message || res.status);
+      await brevoSignup(name, email);
       msg.textContent = "Thank you! Your Calm Mind Reset is on its way. Check your inbox (and Promotions or Spam) in a few minutes.";
-      giftForm.reset();
+      form.reset();
+      if (onDone) onDone();
     } catch (err) {
       msg.innerHTML = `Sorry, that didn't go through. Please try again, or <a href="${wa("Hi Ashima, please send me the free Calm Mind Reset.")}" target="_blank" rel="noopener">message Ashima on WhatsApp</a>.`;
     } finally {
@@ -138,6 +148,80 @@ if (giftForm) {
     }
   });
 }
+const giftForm = document.getElementById("gift-form");
+if (giftForm) wireGiftForm(giftForm);
+
+// Pop-up: offers the free Calm Mind Reset once a visitor has shown interest (45% scroll, 30 s on the page,
+// or moving to leave on desktop). Never for people who already signed up; after a close it rests for 7 days.
+// Any link with data-popup="open" opens it on demand.
+(function popup() {
+  const wrap = document.createElement("div");
+  wrap.className = "pop";
+  wrap.hidden = true;
+  wrap.innerHTML = `
+    <div class="pop-card" role="dialog" aria-modal="true" aria-labelledby="pop-title">
+      <button class="pop-x" type="button" aria-label="Close">×</button>
+      <div class="pop-art"><img src="assets/ashima-headshot.jpg" alt="" width="900" height="1200" loading="lazy"><span class="pop-tag">Free · 5 minutes</span></div>
+      <div class="pop-body">
+        <div class="eyebrow">A gift from Ashima</div>
+        <h2 id="pop-title">Quiet your mind <em>in 5 minutes.</em></h2>
+        <p>Get my free 5-Minute Calm Mind Reset, the same practice I give my clients when overthinking takes over. Plus gentle guidance in your inbox.</p>
+        <form class="pop-form" novalidate>
+          <input name="name" placeholder="First name" aria-label="First name" autocomplete="given-name">
+          <input name="email" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+          <button class="btn-gold" type="submit">Send me the reset →</button>
+          <p class="form-msg" role="status"></p>
+        </form>
+        <p class="pop-fine">No spam. Unsubscribe anytime. <a href="privacy.html">Privacy</a></p>
+      </div>
+    </div>`;
+  document.body.appendChild(wrap);
+  const card = wrap.querySelector(".pop-card"), form = wrap.querySelector(".pop-form");
+  let lastFocus = null, shown = false;
+  const open = (manual) => {
+    if (!manual && (shown || store.get(SUB_KEY))) return;
+    const closed = Number(store.get(POP_KEY) || 0);
+    if (!manual && Date.now() - closed < 7 * 864e5) return;
+    if (!manual && document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+    shown = true;
+    lastFocus = document.activeElement;
+    wrap.hidden = false;
+    requestAnimationFrame(() => wrap.classList.add("on"));
+    document.documentElement.classList.add("pop-lock");
+    setTimeout(() => form.elements.name.focus(), 60);
+  };
+  const close = () => {
+    wrap.classList.remove("on");
+    document.documentElement.classList.remove("pop-lock");
+    store.set(POP_KEY, String(Date.now()));
+    setTimeout(() => { wrap.hidden = true; }, 250);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+  wrap.querySelector(".pop-x").addEventListener("click", close);
+  wrap.addEventListener("click", (e) => { if (e.target === wrap) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (wrap.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "Tab") { // keep focus inside the dialog
+      const f = card.querySelectorAll("button, input, a[href]");
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  wireGiftForm(form, () => { setTimeout(close, 4000); });
+  document.querySelectorAll('[data-popup="open"]').forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); open(true); }));
+  if (store.get(SUB_KEY)) return;
+  const armAt = Date.now() + 6000; // never in the first 6 seconds
+  const ready = () => Date.now() > armAt;
+  setTimeout(() => open(false), 30000);
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (h > 0 && scrollY / h > 0.45 && ready()) { open(false); removeEventListener("scroll", onScroll); }
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  document.addEventListener("mouseout", (e) => { if (!e.relatedTarget && e.clientY <= 0 && ready()) open(false); });
+})();
 
 // Coaching application (coaching.html): step 1 form → step 2 choose the paid discovery call
 const appForm = document.getElementById("apply-form");
