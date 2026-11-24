@@ -8,6 +8,9 @@ const CONFIG = {
   whatsapp: "16044454743",           // [CONFIRM] Ashima's WhatsApp number, digits only with country code
   email: "hello@ashimaempowers.com", // [CONFIRM]
   formEndpoint: "",                  // optional: URL that accepts a JSON POST (Apps Script, Formspree, Zapier hook)
+  // Brevo form "Website freebie - Calm Mind Reset": adds the contact to list #3 "Freebie sign-ups",
+  // sends the Calm Mind Reset email, and starts the day-2 / day-5 nurture automation.
+  brevoFreebieForm: "https://00a0b09d.sibforms.com/serve/MUIFANl0JWzgHP8mmylHxeoVYR3TFE0B9nAeZR_9L-dBfDbpZyFLvvTZlb22ygreM0vT7loYJIELcxFqBBXWvkT5Ahhf8Ln1BQ_yZ6wLjXa-8B_cRLaR6W5yhLtmfwvIA3FM55Pkh2v6kQ24mqOb1h7tdgJEd-v2Hsgr7GeC4BL2lTVkRLuVGqxBx85GLJgED5Kkae49wwcB08ZNFg==",
   links: {
     // Stripe Payment Links (live, USD), created 23 Nov 2026. After paying, buyers are told to book on WhatsApp.
     "consult-60": "https://buy.stripe.com/8x2bJ2bjHgzkbIa4VZgEg0l",   // 1-hour consultation, $199 USD
@@ -17,7 +20,7 @@ const CONFIG = {
     "vip-monthly": "https://buy.stripe.com/aFabJ29bz2Iu27AdsvgEg0o",  // VIP Circle, $299 USD / month
     "inner-world": "https://buy.stripe.com/14A9AUcnL2IufYqgEHgEg0p",  // Empower Your Inner World, $29 USD / month
     "manage": "https://billing.stripe.com/p/login/eVqfZigE13MycMecorgEg00", // Stripe customer portal: members cancel or update their card
-    "community": "https://www.skool.com/ashima-empowers" // [DEMO LINK] replace with the real Skool community URL
+    "community": "https://www.skool.com/empower-your-inner-world-7218/about" // Skool: Empower Your Inner World (free, private)
   },
   labels: {
     "consult-60": "the 1-Hour Private Consultation ($199 USD)",
@@ -26,7 +29,7 @@ const CONFIG = {
     "discovery-20": "a 20-minute coaching discovery call ($20 USD)",
     "vip-monthly": "the VIP Circle membership ($299 USD / month)",
     "inner-world": "Empower Your Inner World ($29 USD / month)",
-    "community": "the Ashima Empowers community on Skool",
+    "community": "the Empower Your Inner World community on Skool",
     "manage": "help with my membership"
   }
 };
@@ -101,15 +104,38 @@ async function sendForm(form, summaryTitle) {
   return "whatsapp";
 }
 
-// Free gift form (home page)
+// Free gift form (home page): signs up to Brevo, which emails the Calm Mind Reset and starts the nurture emails.
 const giftForm = document.getElementById("gift-form");
 if (giftForm) {
   giftForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const msg = giftForm.querySelector(".form-msg");
-    await sendForm(giftForm, "Free Calm Mind Reset request");
-    msg.textContent = "Thank you. Your Calm Mind Reset is on its way.";
-    giftForm.reset();
+    const btn = giftForm.querySelector("button[type=submit]");
+    const name = giftForm.elements.name.value.trim();
+    const email = giftForm.elements.email.value.trim();
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      msg.textContent = "Please enter a valid email address.";
+      giftForm.elements.email.focus();
+      return;
+    }
+    btn.disabled = true;
+    msg.textContent = "Sending…";
+    const fd = new FormData();
+    fd.append("EMAIL", email);
+    fd.append("FIRSTNAME", name);
+    fd.append("email_address_check", ""); // Brevo honeypot, must stay empty
+    fd.append("locale", "en");
+    try {
+      const res = await fetch(`${CONFIG.brevoFreebieForm}?isAjax=1`, { method: "POST", body: fd });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || out.success === false) throw new Error(out.message || res.status);
+      msg.textContent = "Thank you! Your Calm Mind Reset is on its way. Check your inbox (and Promotions or Spam) in a few minutes.";
+      giftForm.reset();
+    } catch (err) {
+      msg.innerHTML = `Sorry, that didn't go through. Please try again, or <a href="${wa("Hi Ashima, please send me the free Calm Mind Reset.")}" target="_blank" rel="noopener">message Ashima on WhatsApp</a>.`;
+    } finally {
+      btn.disabled = false;
+    }
   });
 }
 

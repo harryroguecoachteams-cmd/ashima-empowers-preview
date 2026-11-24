@@ -67,3 +67,13 @@ const REVIEWS = [
   box.addEventListener("click", (e) => { if (e.target === box || e.target.classList.contains("x")) close(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && box.classList.contains("open")) close(); });
 })();
+
+// Header stays on screen; past the hero it slims to logo + Join VIP + Book a Session.
+(() => {
+  const shell = document.querySelector(".nav-shell");
+  if (!shell) return;
+  let last = null;
+  const update = () => { const slim = window.scrollY > 120; if (slim !== last) { shell.classList.toggle("slim", slim); last = slim; } };
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+})();
