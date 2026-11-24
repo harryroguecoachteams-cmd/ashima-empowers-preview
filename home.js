@@ -1,21 +1,29 @@
 /* Homepage interactions: hero video, Google reviews carousel, Instagram reel lightbox. */
 
-// Hero "Watch This First": the muted preview loops behind the play button; clicking plays from the start with sound.
+// Hero "Watch This First": a short silent loop plays behind the play button. Clicking plays the full intro
+// from the start with sound: data-full (Ashima's recorded intro, see VIDEO-SCRIPT.md) if set, else the loop itself.
 (() => {
   const box = document.getElementById("hero-video");
   if (!box) return;
   const v = box.querySelector("video");
+  const loopSrc = v.currentSrc || v.querySelector("source")?.src;
+  const full = box.dataset.full;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) v.pause();
   box.addEventListener("click", () => {
     if (box.classList.contains("playing")) return;
     box.classList.add("playing");
+    if (full) { v.src = full; v.load(); }
     v.loop = false;
     v.muted = false;
     v.currentTime = 0;
     v.controls = true;
     v.play();
   });
-  v.addEventListener("ended", () => { box.classList.remove("playing"); v.controls = false; v.muted = true; v.loop = true; v.play(); });
+  v.addEventListener("ended", () => {
+    box.classList.remove("playing"); v.controls = false; v.muted = true; v.loop = true;
+    if (full) { v.src = loopSrc; v.load(); }
+    v.play();
+  });
 })();
 
 // Google reviews, copied word for word from Ashima's Google Business Profile on 22 Nov 2026.

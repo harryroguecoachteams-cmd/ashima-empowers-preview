@@ -11,6 +11,7 @@ const CONFIG = {
   // Brevo form "Website freebie - Calm Mind Reset": adds the contact to list #3 "Freebie sign-ups",
   // sends the Calm Mind Reset email, and starts the day-2 / day-5 nurture automation.
   brevoFreebieForm: "https://00a0b09d.sibforms.com/serve/MUIFANl0JWzgHP8mmylHxeoVYR3TFE0B9nAeZR_9L-dBfDbpZyFLvvTZlb22ygreM0vT7loYJIELcxFqBBXWvkT5Ahhf8Ln1BQ_yZ6wLjXa-8B_cRLaR6W5yhLtmfwvIA3FM55Pkh2v6kQ24mqOb1h7tdgJEd-v2Hsgr7GeC4BL2lTVkRLuVGqxBx85GLJgED5Kkae49wwcB08ZNFg==",
+  brevoApplyForm: "https://00a0b09d.sibforms.com/serve/MUIFAMGTVBw61w8cTzR_PKAlxoH3D6B1VDPl5F76Wqz4Q0Yk2HN9H1vtnicSRufzzWmqq0at55yRhJObPaU9iszsdZmRON0fm2dmF9YR3k23sgcYA5vYiaWnKyeANBCKPs4_0DlVV6tBfU4Dj5bZVPotHuizJn6_dogl0gttOpWtqrEhecXdKHxi0JGMmbfvA7e1DBnzmxmB5OhBSw==", // coaching applicants → list #9, sends "I've received your application"
   links: {
     // Stripe Payment Links (live, USD), created 23 Nov 2026. After paying, buyers are told to book on WhatsApp.
     "consult-60": "https://buy.stripe.com/8x2bJ2bjHgzkbIa4VZgEg0l",   // 1-hour consultation, $199 USD
@@ -20,7 +21,7 @@ const CONFIG = {
     "vip-monthly": "https://buy.stripe.com/aFabJ29bz2Iu27AdsvgEg0o",  // VIP Circle, $299 USD / month
     "inner-world": "https://buy.stripe.com/14A9AUcnL2IufYqgEHgEg0p",  // Empower Your Inner World, $29 USD / month
     "manage": "https://billing.stripe.com/p/login/eVqfZigE13MycMecorgEg00", // Stripe customer portal: members cancel or update their card
-    "community": "https://www.skool.com/empower-your-inner-world-7218/about" // Skool: Empower Your Inner World (free, private)
+    "community": "https://www.skool.com/empower-your-inner-world-7218/about" // Skool: Empower Your Inner World (private community; never call it free in copy)
   },
   labels: {
     "consult-60": "the 1-Hour Private Consultation ($199 USD)",
@@ -224,11 +225,24 @@ if (giftForm) wireGiftForm(giftForm);
 })();
 
 // Coaching application (coaching.html): step 1 form → step 2 choose the paid discovery call
+// The applicant also goes to Brevo (list #9), which emails them the discovery-call links. Ashima still gets
+// the full application on WhatsApp.
+function brevoApply(form) {
+  const f = form.elements, fd = new FormData();
+  fd.append("EMAIL", f.email.value.trim());
+  fd.append("FIRSTNAME", f.name.value.trim().split(/\s+/)[0] || "");
+  fd.append("PHONE_TEXT", f.phone.value.trim());
+  fd.append("COACHING_FOCUS", f.focus.value);
+  fd.append("email_address_check", "");
+  fd.append("locale", "en");
+  return fetch(`${CONFIG.brevoApplyForm}?isAjax=1`, { method: "POST", body: fd, keepalive: true }).catch(() => {});
+}
 const appForm = document.getElementById("apply-form");
 if (appForm) {
   appForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!appForm.reportValidity()) return;
+    brevoApply(appForm); // runs alongside; the WhatsApp hand-off below must open straight from the click
     await sendForm(appForm, "Coaching application");
     document.getElementById("step-1").classList.add("hidden");
     document.getElementById("step-2").classList.remove("hidden");
