@@ -17,10 +17,10 @@ const CONFIG = {
   links: {
     // Stripe Payment Links (live, USD). After paying, Stripe sends buyers to details.html (the birth-details form).
     "question-10": "https://buy.stripe.com/fZueVegE1cj4dQi4VZgEg0k",  // One-Question Consultation, 10 min, $27 USD
-    "consult-30": "",                                                // 30-Minute Private Consultation, $99 USD (NEW 25 Nov 2026)
-    "consult-60": "",                                                // 1-Hour Private Consultation, $149 USD (was $199, NEW link 25 Nov 2026)
-    "vip-monthly": "",                                               // VIP Circle, $199 USD / month (was $299, NEW link 25 Nov 2026)
-    "inner-world": "",                                               // Empower Your Inner World, $21 USD / month (was $29, NEW link 25 Nov 2026)
+    "consult-30": "https://buy.stripe.com/6oUcN673r82O8vY1JNgEg0q",   // 30-Minute Private Consultation, $99 USD (created 25 Nov 2026)
+    "consult-60": "https://buy.stripe.com/14A9AU5Znerc3bE3RVgEg0r",   // 1-Hour Private Consultation, $149 USD (created 25 Nov 2026)
+    "vip-monthly": "https://buy.stripe.com/6oUdRa9bz96Sh2u747gEg0s",  // VIP Circle, $199 USD / month (created 25 Nov 2026)
+    "inner-world": "https://buy.stripe.com/bJecN6evT2Iuh2ugEHgEg0t",  // Empower Your Inner World, $21 USD / month (created 25 Nov 2026)
     "manage": "https://billing.stripe.com/p/login/eVqfZigE13MycMecorgEg00", // Stripe customer portal: members cancel or update their card
     "community": "https://www.skool.com/empower-your-inner-world-7218/about", // Skool: Empower Your Inner World (members only; never call it free)
     // WhatsApp communities. The FREE one is public. The PRIVATE one is for paying members only, so it never
