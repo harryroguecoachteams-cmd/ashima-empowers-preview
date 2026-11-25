@@ -8,28 +8,31 @@ const CONFIG = {
   whatsapp: "16044454743",           // [CONFIRM] Ashima's WhatsApp number, digits only with country code
   email: "hello@ashimaempowers.com", // [CONFIRM]
   formEndpoint: "",                  // optional: URL that accepts a JSON POST (Apps Script, Formspree, Zapier hook)
+  // details.html posts here: Cloudflare Worker "ashima-client-details" (Rogue Coach Teams account), stored in KV.
+  detailsEndpoint: "https://ashima-client-details.roguecoachteams.workers.dev/submit",
   // Brevo form "Website freebie - Calm Mind Reset": adds the contact to list #3 "Freebie sign-ups",
   // sends the Calm Mind Reset email, and starts the day-2 / day-5 nurture automation.
   brevoFreebieForm: "https://00a0b09d.sibforms.com/serve/MUIFANl0JWzgHP8mmylHxeoVYR3TFE0B9nAeZR_9L-dBfDbpZyFLvvTZlb22ygreM0vT7loYJIELcxFqBBXWvkT5Ahhf8Ln1BQ_yZ6wLjXa-8B_cRLaR6W5yhLtmfwvIA3FM55Pkh2v6kQ24mqOb1h7tdgJEd-v2Hsgr7GeC4BL2lTVkRLuVGqxBx85GLJgED5Kkae49wwcB08ZNFg==",
   brevoApplyForm: "https://00a0b09d.sibforms.com/serve/MUIFAMGTVBw61w8cTzR_PKAlxoH3D6B1VDPl5F76Wqz4Q0Yk2HN9H1vtnicSRufzzWmqq0at55yRhJObPaU9iszsdZmRON0fm2dmF9YR3k23sgcYA5vYiaWnKyeANBCKPs4_0DlVV6tBfU4Dj5bZVPotHuizJn6_dogl0gttOpWtqrEhecXdKHxi0JGMmbfvA7e1DBnzmxmB5OhBSw==", // coaching applicants → list #9, sends "I've received your application"
   links: {
-    // Stripe Payment Links (live, USD), created 23 Nov 2026. After paying, buyers are told to book on WhatsApp.
-    "consult-60": "https://buy.stripe.com/8x2bJ2bjHgzkbIa4VZgEg0l",   // 1-hour consultation, $199 USD
-    "question-10": "https://buy.stripe.com/fZueVegE1cj4dQi4VZgEg0k",  // 1-question consultation, 10 min, $27 USD
-    "discovery-10": "https://buy.stripe.com/bJefZi2Nb96S3bEbkngEg0m", // coaching discovery call, 10 min, $10 USD
-    "discovery-20": "https://buy.stripe.com/dRm00kbjH4QCh2u0FJgEg0n", // coaching discovery call, 20 min, $20 USD
-    "vip-monthly": "https://buy.stripe.com/aFabJ29bz2Iu27AdsvgEg0o",  // VIP Circle, $299 USD / month
-    "inner-world": "https://buy.stripe.com/14A9AUcnL2IufYqgEHgEg0p",  // Empower Your Inner World, $29 USD / month
+    // Stripe Payment Links (live, USD). After paying, Stripe sends buyers to details.html (the birth-details form).
+    "question-10": "https://buy.stripe.com/fZueVegE1cj4dQi4VZgEg0k",  // One-Question Consultation, 10 min, $27 USD
+    "consult-30": "",                                                // 30-Minute Private Consultation, $99 USD (NEW 25 Nov 2026)
+    "consult-60": "",                                                // 1-Hour Private Consultation, $149 USD (was $199, NEW link 25 Nov 2026)
+    "vip-monthly": "",                                               // VIP Circle, $199 USD / month (was $299, NEW link 25 Nov 2026)
+    "inner-world": "",                                               // Empower Your Inner World, $21 USD / month (was $29, NEW link 25 Nov 2026)
     "manage": "https://billing.stripe.com/p/login/eVqfZigE13MycMecorgEg00", // Stripe customer portal: members cancel or update their card
-    "community": "https://www.skool.com/empower-your-inner-world-7218/about" // Skool: Empower Your Inner World (private community; never call it free in copy)
+    "community": "https://www.skool.com/empower-your-inner-world-7218/about", // Skool: Empower Your Inner World (members only; never call it free)
+    // WhatsApp communities. The FREE one is public. The PRIVATE one is for paying members only, so it never
+    // appears on a public page: it goes out in the buyer email and on the details form's thank-you for members.
+    "wa-free": "https://chat.whatsapp.com/G9WLwUiDfK6DKEwlAcjtLo"
   },
   labels: {
-    "consult-60": "the 1-Hour Private Consultation ($199 USD)",
     "question-10": "the 10-Minute One-Question Consultation ($27 USD)",
-    "discovery-10": "a 10-minute coaching discovery call ($10 USD)",
-    "discovery-20": "a 20-minute coaching discovery call ($20 USD)",
-    "vip-monthly": "the VIP Circle membership ($299 USD / month)",
-    "inner-world": "Empower Your Inner World ($29 USD / month)",
+    "consult-30": "the 30-Minute Private Consultation ($99 USD)",
+    "consult-60": "the 1-Hour Private Consultation ($149 USD)",
+    "vip-monthly": "the VIP Circle membership ($199 USD / month)",
+    "inner-world": "Empower Your Inner World ($21 USD / month)",
     "community": "the Empower Your Inner World community on Skool",
     "manage": "help with my membership"
   }
@@ -44,6 +47,10 @@ document.querySelectorAll("[data-offer]").forEach((el) => {
   el.href = url || wa(`Hi Ashima, I'd like to book ${CONFIG.labels[key] || "a session"}.`);
   if (!url) el.target = "_blank";
   el.rel = "noopener";
+});
+document.querySelectorAll("[data-link]").forEach((el) => {
+  const url = CONFIG.links[el.dataset.link];
+  if (url) { el.href = url; el.target = "_blank"; el.rel = "noopener"; }
 });
 document.querySelectorAll("[data-whatsapp]").forEach((el) => {
   el.href = wa(el.dataset.whatsapp || "Hi Ashima, I have a question.");
@@ -112,10 +119,12 @@ const store = {
   get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
   set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
 };
-async function brevoSignup(name, email) {
+async function brevoSignup(name, email, extra = {}) {
   const fd = new FormData();
   fd.append("EMAIL", email);
   fd.append("FIRSTNAME", name);
+  if (extra.last) fd.append("LASTNAME", extra.last);
+  if (extra.phone) fd.append("PHONE_TEXT", extra.phone);
   fd.append("email_address_check", ""); // Brevo honeypot, must stay empty
   fd.append("locale", "en");
   const res = await fetch(`${CONFIG.brevoFreebieForm}?isAjax=1`, { method: "POST", body: fd });
@@ -138,7 +147,8 @@ function wireGiftForm(form, onDone) {
     btn.disabled = true;
     msg.textContent = "Sending…";
     try {
-      await brevoSignup(name, email);
+      const f = form.elements;
+      await brevoSignup(name, email, { last: f.last ? f.last.value.trim() : "", phone: f.phone ? f.phone.value.trim() : "" });
       msg.textContent = "Thank you! Your Calm Mind Reset is on its way. Check your inbox (and Promotions or Spam) in a few minutes.";
       form.reset();
       if (onDone) onDone();
@@ -224,9 +234,9 @@ if (giftForm) wireGiftForm(giftForm);
   document.addEventListener("mouseout", (e) => { if (!e.relatedTarget && e.clientY <= 0 && ready()) open(false); });
 })();
 
-// Coaching application (coaching.html): step 1 form → step 2 choose the paid discovery call
-// The applicant also goes to Brevo (list #9), which emails them the discovery-call links. Ashima still gets
-// the full application on WhatsApp.
+// Coaching application (coaching.html). No discovery call any more (Ashima, 25 Nov 2026): the applicant goes
+// to Brevo list #9 (which emails "I've received your application"), Ashima gets the full answers on WhatsApp,
+// and the page says her team will reply within 24-48 hours to schedule a call.
 function brevoApply(form) {
   const f = form.elements, fd = new FormData();
   fd.append("EMAIL", f.email.value.trim());
@@ -249,13 +259,59 @@ if (appForm) {
     document.querySelectorAll(".stepper span").forEach((s, i) => s.classList.toggle("on", i === 1));
     document.getElementById("apply").scrollIntoView({ behavior: "smooth", block: "start" });
   });
-  const callBtn = document.getElementById("book-call");
-  document.querySelectorAll("input[name=call]").forEach((r) => r.addEventListener("change", () => {
-    callBtn.dataset.offer = r.value;
-    const url = CONFIG.links[r.value];
-    callBtn.href = url || wa(`Hi Ashima, I've just sent my coaching application. I'd like to book ${CONFIG.labels[r.value]}.`);
+}
+
+
+// Post-purchase details form (details.html). Photos are shrunk in the browser (max 2400 px, JPEG) so they upload
+// fast on phones, then everything goes to the details Worker. Stripe sends buyers here with ?offer=<key>.
+async function shrink(file) {
+  if (!file.type.startsWith("image/") || file.size < 1.5e6) return file;
+  try {
+    const bmp = await createImageBitmap(file);
+    const k = Math.min(1, 2400 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise((r) => c.toBlob(r, "image/jpeg", 0.88));
+    return blob ? new File([blob], file.name.replace(/\.\w+$/, "") + ".jpg", { type: "image/jpeg" }) : file;
+  } catch (e) { return file; }
+}
+const detailsForm = document.getElementById("details-form");
+if (detailsForm) {
+  const q = new URLSearchParams(location.search);
+  if (q.get("offer")) detailsForm.elements.offer.value = q.get("offer");
+  if (q.get("email")) detailsForm.elements.email.value = q.get("email");
+  detailsForm.querySelectorAll(".upload input").forEach((inp) => inp.addEventListener("change", () => {
+    const box = inp.closest(".upload"), img = box.querySelector("img"), files = [...inp.files].slice(0, inp.multiple ? 4 : 1);
+    box.classList.toggle("has", files.length > 0);
+    box.dataset.count = files.length > 1 ? `${files.length} photos` : "✓ added";
+    if (files[0]) img.src = URL.createObjectURL(files[0]);
   }));
-  document.querySelector("input[name=call]:checked")?.dispatchEvent(new Event("change"));
+  detailsForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const msg = detailsForm.querySelector(".form-msg"), btn = detailsForm.querySelector("button[type=submit]");
+    if (!detailsForm.reportValidity()) return;
+    btn.disabled = true; msg.textContent = "Sending your details and photos…";
+    try {
+      const fd = new FormData();
+      for (const el of detailsForm.elements) {
+        if (!el.name || el.type === "file") continue;
+        fd.append(el.name, el.value);
+      }
+      for (const inp of detailsForm.querySelectorAll("input[type=file]")) {
+        for (const f of [...inp.files].slice(0, inp.multiple ? 4 : 1)) fd.append(inp.name, await shrink(f));
+      }
+      const res = await fetch(CONFIG.detailsEndpoint, { method: "POST", body: fd });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || !out.ok) throw new Error(out.error || res.status);
+      if (out.wa) { document.getElementById("d-private-link").href = out.wa; document.getElementById("d-private").classList.remove("hidden"); }
+      document.getElementById("d-step-1").classList.add("hidden");
+      document.getElementById("d-step-2").classList.remove("hidden");
+      document.getElementById("details").scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (err) {
+      msg.innerHTML = `Sorry, that didn't go through${err.message && isNaN(err.message) ? ": " + err.message : ""}. Please try again, or <a href="${wa("Hi Ashima, I've paid and I'd like to send my birth details and palm photos.")}" target="_blank" rel="noopener">send them on WhatsApp</a>.`;
+    } finally { btn.disabled = false; }
+  });
 }
 
 // Footer year
