@@ -14,18 +14,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css?v=22">
-  <link rel="stylesheet" href="pages.css?v=6">
+  <link rel="stylesheet" href="pages.css?v=7">
   <link rel="stylesheet" href="v7.css?v=2">
+  <link rel="stylesheet" href="v9.css?v=1">
   <script>document.documentElement.classList.add("js")</script>
+  <!-- Links, prices, contact details and Google Analytics: edit site-settings.js -->
+  <script src="site-settings.js?v=1"></script>
+  <script src="analytics.js?v=1"></script>
 </head>
 <body>
-<!-- Built by _build/make_pages.py. Edit that file, not this one. -->
+<!-- EDITING THIS PAGE: it is plain HTML. Change the words between the tags and save.
+     Each part of the page starts with a SECTION comment like the ones below.
+     Menu, footer and mobile bar are SHARED: see README.md. Links, prices, GA4: site-settings.js -->
 <a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
   <symbol id="wa-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></symbol>
 </svg>
 
+<!-- SHARED:menu START · same on every page, edit _shared/menu.html (see README.md) -->
 <div class="nav-shell"><div class="wrap nav-bar">
   <a class="logo" href="index.html" aria-label="Ashima Empowers home"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
   <nav class="nav-links" id="nav" aria-label="Main">
@@ -43,9 +50,11 @@
   </div>
   <button class="burger menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
 </div></div>
+<!-- SHARED:menu END -->
 
 <main id="main">
 
+<!-- ===== SECTION: "One last step: your details." ===== -->
 <section class="dark legal-hero">
   <div class="wrap">
     <div class="eyebrow">Thank you for booking</div>
@@ -53,6 +62,7 @@
     <p>Ashima prepares your reading before you meet, so she needs a few details and clear photos of your hands. It takes about 3 minutes.</p>
   </div>
 </section>
+<!-- ===== SECTION: DETAILS · "Your details for Ashima" ===== -->
 <section class="sand sec" id="details">
   <div class="wrap">
     <div class="form-card">
@@ -93,14 +103,14 @@
             <p class="hint">Tip for fingertips: hold your phone in one hand and photograph the tips of your other hand's fingers close up, then swap.</p>
           </div>
           <div class="field"><label for="d-q">Your questions for Ashima</label><textarea id="d-q" name="questions" placeholder="What would you most like to ask?"></textarea></div>
-          <button class="btn-gold cta-pop" type="submit">Send my details →</button>
+          <button class="btn-gold cta-pop" type="submit">Send my details</button>
           <p class="form-msg note" role="status"></p>
           <p class="note">Your photos and details go privately to Ashima's team. See the <a href="privacy.html">privacy policy</a>.</p>
         </form>
       </div>
       <div id="d-step-2" class="hidden">
         <h2>Thank you. Ashima has your details.</h2>
-        <p class="sub">Ashima's team will message you on WhatsApp within 24 hours to set your time. </p>
+        <p class="sub">Ashima's team will message you on WhatsApp within 24 to 48 hours to set your time.</p>
         <div class="upsell hidden" id="d-private" style="margin-top:24px"><div><b>Your private members' WhatsApp community</b><span>As a VIP Circle / Empower Your Inner World member, join here for session links, replays and reminders.</span></div><a class="btn-gold" id="d-private-link" href="#" target="_blank" rel="noopener">Join the private community</a></div>
         <div class="upsell" style="margin-top:24px"><div><b>While you wait</b><span>Join Ashima's free WhatsApp community for daily guidance.</span></div><a class="btn-ghost" data-link="wa-free" href="#" target="_blank" rel="noopener">Join free on WhatsApp</a></div>
       </div>
@@ -110,6 +120,7 @@
 
 </main>
 
+<!-- SHARED:footer START · same on every page, edit _shared/footer.html (see README.md) -->
 <footer class="foot light lite">
   <div class="wrap">
     <div class="foot-links">
@@ -124,12 +135,15 @@
     <p class="legal">© <span data-year></span> Ashima Empowers. Astrology, numerology, palmistry and mind reprogramming are offered for guidance and personal growth, not as medical, psychological, legal or financial advice. All payments are non-refundable. If you are in crisis, call 988 (Canada &amp; US) or your local emergency number. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a></p>
   </div>
 </footer>
+<!-- SHARED:footer END -->
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player"><button class="x" type="button" aria-label="Close">×</button><iframe title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen hidden></iframe><video controls playsinline hidden></video></div>
 
+<!-- SHARED:mobile-bar START · same on every page, edit _shared/mobile-bar.html (see README.md) -->
 <div class="mbar"><a class="btn-gold" href="sessions.html">Book a Session</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question." href="#">WhatsApp</a></div>
+<!-- SHARED:mobile-bar END -->
 
-<script src="main.js?v=12"></script>
-<script src="home.js?v=13"></script>
+<script src="main.js?v=14"></script>
+<script src="home.js?v=14"></script>
 </body>
 </html>

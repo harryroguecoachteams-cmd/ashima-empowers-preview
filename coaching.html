@@ -14,18 +14,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css?v=22">
-  <link rel="stylesheet" href="pages.css?v=6">
+  <link rel="stylesheet" href="pages.css?v=7">
   <link rel="stylesheet" href="v7.css?v=2">
+  <link rel="stylesheet" href="v9.css?v=1">
   <script>document.documentElement.classList.add("js")</script>
+  <!-- Links, prices, contact details and Google Analytics: edit site-settings.js -->
+  <script src="site-settings.js?v=1"></script>
+  <script src="analytics.js?v=1"></script>
 </head>
 <body>
-<!-- Built by _build/make_pages.py. Edit that file, not this one. -->
+<!-- EDITING THIS PAGE: it is plain HTML. Change the words between the tags and save.
+     Each part of the page starts with a SECTION comment like the ones below.
+     Menu, footer and mobile bar are SHARED: see README.md. Links, prices, GA4: site-settings.js -->
 <a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
   <symbol id="wa-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></symbol>
 </svg>
 
+<!-- SHARED:menu START · same on every page, edit _shared/menu.html (see README.md) -->
 <div class="nav-shell"><div class="wrap nav-bar">
   <a class="logo" href="index.html" aria-label="Ashima Empowers home"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
   <nav class="nav-links" id="nav" aria-label="Main">
@@ -43,9 +50,11 @@
   </div>
   <button class="burger menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
 </div></div>
+<!-- SHARED:menu END -->
 
 <main id="main">
 
+<!-- ===== SECTION: "Understanding the pattern was step one. This is step two." ===== -->
 <section class="page-hero dark">
   <div class="waves" aria-hidden="true">
     <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
@@ -58,39 +67,42 @@
   <div class="wrap">
     <div>
       <div class="eyebrow">1:1 coaching · by application</div>
-      <h1>Coaching for the mind <em>behind the pattern.</em></h1>
-      <p class="lead">Personal coaching with Ashima for anxiety, depression, overthinking, confidence, relationships and breakups, guided by your chart's timing and built on mind reprogramming. A customised plan, made only for you.</p>
+      <h1>Understanding the pattern was step one. <em>This is step two.</em></h1>
+      <p class="lead">One-to-one coaching with Ashima for anxiety, depression, overthinking, confidence, relationships and heartbreak. She plans around your chart's timing, works on the beliefs underneath with mind reprogramming, and stays with you while you practise. Your plan is written for you and nobody else.</p>
       
-      <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="#apply">Start my application <span class="circ">→</span></a><a class="btn-ghost" href="#how">How it works</a></div>
-      <ul class="ticks"><li>3-minute application</li><li>Reply within 24–48 hours</li><li>Online or in Surrey, BC</li></ul>
+      <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="#apply">Start my application</a><a class="btn-ghost" href="#how">How it works</a></div>
+      <ul class="ticks"><li>About 3 minutes to apply</li><li>A reply within 24 to 48 hours</li><li>Online or in Surrey, BC</li></ul>
     </div>
     <div class="p-portrait">
       <svg class="geo" viewBox="0 0 600 600" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><g class="spin"><circle cx="300" cy="300" r="252"/><circle cx="300" cy="300" r="262" stroke-width="1" stroke-dasharray="2 10"/><polygon points="300,48 352,110 248,110"/><polygon points="300,552 352,490 248,490"/><rect x="125" y="125" width="350" height="350"/><rect x="125" y="125" width="350" height="350" transform="rotate(45 300 300)"/></g><g class="spin-rev"><circle cx="300.0" cy="178.0" r="122"/><circle cx="405.7" cy="239.0" r="122"/><circle cx="405.7" cy="361.0" r="122"/><circle cx="300.0" cy="422.0" r="122"/><circle cx="194.3" cy="361.0" r="122"/><circle cx="194.3" cy="239.0" r="122"/></g><g class="pulse"><circle cx="300" cy="300" r="178" stroke-dasharray="7 7"/></g></svg>
       <div class="arch"><img src="assets/ashima-navy.jpg" alt="Ashima Gautam smiling, wearing navy" width="900" height="1200"></div>
-      <div class="p-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span><b>A plan made for you</b><small>Not a one-size-fits-all program</small></span></div>
+      <div class="p-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span><b>Written for you</b><small>Built on your chart and your goals</small></span></div>
     </div>
   </div>
 </section>
+<!-- ===== SECTION: "Coaching is for you if you're done living the same year again." ===== -->
 <section class="light sec">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Who it's for</div><h2 class="h2">Coaching is for you <em>when…</em></h2><p class="lead">1:1 coaching is Ashima's most personal work. It's for people who are ready to change, not just to understand.</p></div>
-    <div class="cards"><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><h3>You've tried every remedy</h3><p>Readings helped you understand, but the pattern keeps coming back. Now you want it to change.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.2 5 2.6 5 5.8"/></svg></span><h3>Something keeps repeating</h3><p>The same anxiety, the same kind of relationship, the same money fear, year after year.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>You're ready to do the work</h3><p>You'll show up, practise and be honest. Change comes from within, and you know it.</p></div></div>
+    <div class="head"><div class="eyebrow">Who it's for</div><h2 class="h2">Coaching is for you if you're done living the same year again.</h2><p class="lead">This is Ashima's most personal work. It suits you if you already understand your pattern and are ready to do something about it.</p></div>
+    <div class="cards"><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><h3>You've tried every remedy</h3><p>The thread on your wrist, the Thursday fasts, the reading that finally made sense. Each one helped for a while. Then the same feeling walked back in.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.2 5 2.6 5 5.8"/></svg></span><h3>Something keeps repeating</h3><p>Different job, different relationship, different city, and somehow the same anxiety and the same money worry underneath.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>You're ready to show up</h3><p>You'll do the practice on the tired days too, and you'll tell Ashima the truth. Deep down you know the change has to start inside you.</p></div></div>
   </div>
 </section>
+<!-- ===== SECTION: HOW · "What coaching with Ashima includes" ===== -->
 <section class="dark sec" id="how">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">What you get</div><h2 class="h2">Your coaching <em>plan.</em></h2></div>
-    <div class="cards"><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><h3>A customised plan</h3><p>Built around your goals, your chart's timing and what's really holding you back.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></svg></span><h3>Regular private sessions</h3><p>One-to-one time with Ashima, by video or in person, at a rhythm that suits your plan.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5c3-1.5 6-1.5 9 1 3-2.5 6-2.5 9-1v14c-3-1.5-6-1.5-9 1-3-2.5-6-2.5-9-1z"/><path d="M12 6v14"/></svg></span><h3>Mind reprogramming</h3><p>Rewire the fear, the self-doubt and the beliefs underneath, one at a time.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><h3>Rituals and upay</h3><p>Simple practices that support the work between sessions.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><h3>Support between sessions</h3><p>Questions answered as you go, so you're never stuck.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8.5c-2 0-3.5 1.6-3.5 3.5S5 15.5 7 15.5c3.5 0 6.5-7 10-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-6.5-7-10-7z"/></svg></span><h3>Change that lasts</h3><p>Calm in place of anxiety, clarity in place of confusion, and the confidence to act.</p></div></div>
+    <div class="head"><div class="eyebrow">What you get</div><h2 class="h2">What coaching with Ashima includes</h2></div>
+    <div class="cards"><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><h3>A customised plan</h3><p>Built from your goals, your chart's timing and whatever is really holding you back. No two people get the same plan.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></svg></span><h3>Regular private sessions</h3><p>Just you and Ashima, on video from wherever you are or at her Surrey office, at a rhythm that fits your plan.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5c3-1.5 6-1.5 9 1 3-2.5 6-2.5 9-1v14c-3-1.5-6-1.5-9 1-3-2.5-6-2.5-9-1z"/><path d="M12 6v14"/></svg></span><h3>Mind reprogramming</h3><p>The fear, the self-doubt, the old voice that says you're too much or not enough. You find them with Ashima and rewire them, one at a time.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><h3>Rituals and upay</h3><p>Small practices for between sessions, done at home in your pooja corner or at the kitchen window. Nothing costly to buy.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><h3>Support between sessions</h3><p>Questions answered as they come up, so one hard Wednesday doesn't undo a good Monday.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8.5c-2 0-3.5 1.6-3.5 3.5S5 15.5 7 15.5c3.5 0 6.5-7 10-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-6.5-7-10-7z"/></svg></span><h3>What you're working towards</h3><p>Calm where the anxiety used to sit, clear thinking where there was confusion, and the confidence to make your own decisions.</p></div></div>
   </div>
 </section>
+<!-- ===== SECTION: APPLY · "Your coaching application" ===== -->
 <section class="sand sec" id="apply">
   <div class="wrap">
     <div class="form-card">
-      <div class="stepper"><span class="on">1 · Your application</span><span>2 · Ashima's team replies in 24–48 hours</span></div>
+      <div class="stepper"><span class="on">1 · Your application</span><span>2 · A reply within 24 to 48 hours</span></div>
 
       <div id="step-1">
-        <h2>Coaching application</h2>
-        <p class="sub">Answer honestly. Everything you share stays private between you and Ashima's team.</p>
+        <h2>Your coaching application</h2>
+        <p class="sub">Write it the way you'd say it to a friend over chai. There are no wrong answers, and everything you share stays private between you and Ashima's team.</p>
         <form id="apply-form">
           <div class="row">
             <div class="field"><label for="a-name">Full name</label><input id="a-name" name="name" autocomplete="name" required></div>
@@ -130,7 +142,7 @@
           <div class="field"><label for="a-how">If yes: how did it go, and why didn't it work for you?</label><textarea id="a-how" name="before_how" placeholder="What helped, what didn't, and what was missing"></textarea></div>
           <div class="field"><label for="a-why">Why do you want to start coaching now?</label><textarea id="a-why" name="why_now" required></textarea></div>
           <div class="field"><label for="a-goal">What would be different in 3 months if coaching worked?</label><textarea id="a-goal" name="goal"></textarea></div>
-          <div class="field"><label>Change comes from within. How would you rate yourself today, from 1 (stuck) to 10 (ready to change)?</label>
+          <div class="field" role="radiogroup" aria-labelledby="a-rating-l" aria-required="true"><label id="a-rating-l">Change comes from within. How would you rate yourself today, from 1 (stuck) to 10 (ready to change)?</label>
             <div class="scale"><label><input type="radio" name="self_rating" value="1" required><span>1</span></label><label><input type="radio" name="self_rating" value="2" required><span>2</span></label><label><input type="radio" name="self_rating" value="3" required><span>3</span></label><label><input type="radio" name="self_rating" value="4" required><span>4</span></label><label><input type="radio" name="self_rating" value="5" required><span>5</span></label><label><input type="radio" name="self_rating" value="6" required><span>6</span></label><label><input type="radio" name="self_rating" value="7" required><span>7</span></label><label><input type="radio" name="self_rating" value="8" required><span>8</span></label><label><input type="radio" name="self_rating" value="9" required><span>9</span></label><label><input type="radio" name="self_rating" value="10" required><span>10</span></label></div>
           </div>
           <div class="row">
@@ -151,41 +163,44 @@
               </select>
             </div>
           </div>
-          <button class="btn-gold cta-pop" type="submit">Send my application →</button>
+          <button class="btn-gold cta-pop" type="submit">Send my application</button>
           <p class="note">By applying you agree to the <a href="privacy.html">privacy policy</a>. Coaching supports personal growth and is not medical or psychological treatment. If you are in crisis, call 988 (Canada &amp; US) or your local emergency number.</p>
         </form>
       </div>
 
       <div id="step-2" class="hidden">
         <h2>Thank you. Your application is in.</h2>
-        <p class="sub">Ashima's team will go through your application and get back to you within <b>24–48 hours</b> to schedule a call with you. On that call you'll hear the plan that fits you and its investment.</p>
+        <p class="sub">Ashima's team will read your application and get back to you within <b>24 to 48 hours</b> to set up a call. On that call you'll hear the plan that fits you, and what it costs.</p>
         <div class="upsell" style="margin-top:24px"><div><b>While you wait</b><span>Join Ashima's free WhatsApp community for daily guidance.</span></div><a class="btn-ghost" data-link="wa-free" href="#" target="_blank" rel="noopener">Join free on WhatsApp</a></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===== SECTION: FAQ · "Before you apply" ===== -->
 <section class="light sec" id="faq">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Questions</div><h2 class="h2">Coaching <em>FAQ.</em></h2></div>
+    <div class="head"><div class="eyebrow">Questions</div><h2 class="h2">Before you apply</h2></div>
     <div class="faq">
-      <details><summary>Is there a discovery call?</summary><p>No. Fill in the application and Ashima's team reviews it personally. If coaching is a good fit, they get back to you within 24–48 hours to schedule a call.</p></details>
-      <details><summary>How much does coaching cost?</summary><p>Every plan is customised, so the investment depends on what you need and how long. You'll hear it on your call, with no pressure to say yes. Payments are non-refundable.</p></details>
-      <details><summary>Is coaching online?</summary><p>Yes, by video from anywhere in the world, or in person at 5550 152 St #201, Surrey, BC.</p></details>
-      <details><summary>What if coaching isn't the right fit?</summary><p>Ashima's team will tell you honestly and point you to what suits you best: a private consultation, the VIP Circle, Empower Your Inner World, or a licensed professional.</p></details>
-      <details><summary>Is this medical or psychological treatment?</summary><p>No. Readings and mind reprogramming are guidance for personal growth. They support your wellbeing but don't replace a doctor or licensed therapist. If you are in crisis, call or text 988 (Canada &amp; US) or your local emergency number.</p></details>
+      <details><summary>What happens after I apply?</summary><p>Ashima's team reads your application personally. They get back to you within 24 to 48 hours to set up a call, where you hear the plan made for you and what it costs.</p></details>
+      <details><summary>How much does coaching cost?</summary><p>Every plan is written for one person, so the cost depends on what you need and for how long. You'll hear it on your call, with no pressure to say yes. All payments are non-refundable, so use that call to ask everything before you decide.</p></details>
+      <details><summary>Is coaching online?</summary><p>Yes, by video from anywhere in the world. Or in person at 5550 152 St #201, Surrey, BC.</p></details>
+      <details><summary>What if coaching isn't right for me?</summary><p>Ashima's team will tell you honestly and point you to what suits you better: a private consultation, the VIP Circle, Empower Your Inner World, or a licensed professional.</p></details>
+      <details><summary>Is this medical or psychological treatment?</summary><p>No. Readings and mind reprogramming are guidance for personal growth. They can sit alongside your doctor or therapist, never in place of them. If you are in crisis, call or text 988 (Canada &amp; US) or your local emergency number.</p></details>
     </div>
   </div>
 </section>
+<!-- ===== SECTION: "You know the pattern by heart. Now let's start changing it." ===== -->
 <section class="dark sec final">
   <div class="wrap">
     <div class="eyebrow">Ready when you are</div>
-    <h2 class="h2">Change comes <em>from within.</em></h2>
-    <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="#apply">Start my application <span class="circ">→</span></a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question about coaching." href="#">Ask on WhatsApp</a></div>
+    <h2 class="h2">You know the pattern by heart. <em>Now let's start changing it.</em></h2>
+    <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="#apply">Start my application</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question about coaching." href="#">Ask on WhatsApp</a></div>
   </div>
 </section>
 </main>
 
+<!-- SHARED:footer START · same on every page, edit _shared/footer.html (see README.md) -->
 <footer class="foot light lite">
   <div class="wrap">
     <div class="foot-links">
@@ -200,12 +215,15 @@
     <p class="legal">© <span data-year></span> Ashima Empowers. Astrology, numerology, palmistry and mind reprogramming are offered for guidance and personal growth, not as medical, psychological, legal or financial advice. All payments are non-refundable. If you are in crisis, call 988 (Canada &amp; US) or your local emergency number. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a></p>
   </div>
 </footer>
+<!-- SHARED:footer END -->
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player"><button class="x" type="button" aria-label="Close">×</button><iframe title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen hidden></iframe><video controls playsinline hidden></video></div>
 
+<!-- SHARED:mobile-bar START · same on every page, edit _shared/mobile-bar.html (see README.md) -->
 <div class="mbar"><a class="btn-gold" href="sessions.html">Book a Session</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question." href="#">WhatsApp</a></div>
+<!-- SHARED:mobile-bar END -->
 
-<script src="main.js?v=12"></script>
-<script src="home.js?v=13"></script>
+<script src="main.js?v=14"></script>
+<script src="home.js?v=14"></script>
 </body>
 </html>

@@ -1,42 +1,24 @@
-/* Ashima Empowers — site behaviour
-   ------------------------------------------------------------------
-   SET-UP: paste each payment / booking link below (Stripe Payment Link,
-   Cal.com or Calendly URL). While a link is empty, the button opens
-   WhatsApp with a pre-written message for that offer, so nothing breaks.
+/* Ashima Empowers · site behaviour (menu, buttons, forms, pop-up).
+   To change links, prices, contact details or Google Analytics, edit site-settings.js, not this file.
+   While a buy link is empty there, its button opens WhatsApp with a ready-made message, so nothing breaks.
 */
-const CONFIG = {
-  whatsapp: "16044454743",           // [CONFIRM] Ashima's WhatsApp number, digits only with country code
-  email: "hello@ashimaempowers.com", // [CONFIRM]
-  formEndpoint: "",                  // optional: URL that accepts a JSON POST (Apps Script, Formspree, Zapier hook)
-  // details.html posts here: Cloudflare Worker "ashima-client-details" (Rogue Coach Teams account), stored in KV.
-  detailsEndpoint: "https://ashima-client-details.roguecoachteams.workers.dev/submit",
-  // Brevo form "Website freebie - Calm Mind Reset": adds the contact to list #3 "Freebie sign-ups",
-  // sends the Calm Mind Reset email, and starts the day-2 / day-5 nurture automation.
-  brevoFreebieForm: "https://00a0b09d.sibforms.com/serve/MUIFANl0JWzgHP8mmylHxeoVYR3TFE0B9nAeZR_9L-dBfDbpZyFLvvTZlb22ygreM0vT7loYJIELcxFqBBXWvkT5Ahhf8Ln1BQ_yZ6wLjXa-8B_cRLaR6W5yhLtmfwvIA3FM55Pkh2v6kQ24mqOb1h7tdgJEd-v2Hsgr7GeC4BL2lTVkRLuVGqxBx85GLJgED5Kkae49wwcB08ZNFg==",
-  brevoApplyForm: "https://00a0b09d.sibforms.com/serve/MUIFAMGTVBw61w8cTzR_PKAlxoH3D6B1VDPl5F76Wqz4Q0Yk2HN9H1vtnicSRufzzWmqq0at55yRhJObPaU9iszsdZmRON0fm2dmF9YR3k23sgcYA5vYiaWnKyeANBCKPs4_0DlVV6tBfU4Dj5bZVPotHuizJn6_dogl0gttOpWtqrEhecXdKHxi0JGMmbfvA7e1DBnzmxmB5OhBSw==", // coaching applicants → list #9, sends "I've received your application"
-  links: {
-    // Stripe Payment Links (live, USD). After paying, Stripe sends buyers to details.html (the birth-details form).
-    "question-10": "https://buy.stripe.com/fZueVegE1cj4dQi4VZgEg0k",  // One-Question Consultation, 10 min, $27 USD
-    "consult-30": "https://buy.stripe.com/6oUcN673r82O8vY1JNgEg0q",   // 30-Minute Private Consultation, $99 USD (created 25 Nov 2026)
-    "consult-60": "https://buy.stripe.com/14A9AU5Znerc3bE3RVgEg0r",   // 1-Hour Private Consultation, $149 USD (created 25 Nov 2026)
-    "vip-monthly": "https://buy.stripe.com/6oUdRa9bz96Sh2u747gEg0s",  // VIP Circle, $199 USD / month (created 25 Nov 2026)
-    "inner-world": "https://buy.stripe.com/bJecN6evT2Iuh2ugEHgEg0t",  // Empower Your Inner World, $21 USD / month (created 25 Nov 2026)
-    "manage": "https://billing.stripe.com/p/login/eVqfZigE13MycMecorgEg00", // Stripe customer portal: members cancel or update their card
-    "community": "https://www.skool.com/empower-your-inner-world-7218/about", // Skool: Empower Your Inner World (members only; never call it free)
-    // WhatsApp communities. The FREE one is public. The PRIVATE one is for paying members only, so it never
-    // appears on a public page: it goes out in the buyer email and on the details form's thank-you for members.
-    "wa-free": "https://chat.whatsapp.com/G9WLwUiDfK6DKEwlAcjtLo"
-  },
-  labels: {
-    "question-10": "the 10-Minute One-Question Consultation ($27 USD)",
-    "consult-30": "the 30-Minute Private Consultation ($99 USD)",
-    "consult-60": "the 1-Hour Private Consultation ($149 USD)",
-    "vip-monthly": "the VIP Circle membership ($199 USD / month)",
-    "inner-world": "Empower Your Inner World ($21 USD / month)",
-    "community": "the Empower Your Inner World community on Skool",
-    "manage": "help with my membership"
-  }
-};
+// All links, prices, contact details and the GA4 ID live in site-settings.js (loaded first on every page).
+const CONFIG = window.SITE || { links: {}, labels: {}, prices: {} };
+const track = (name, params) => { try { window.track && window.track(name, params); } catch (e) {} };
+const priceNum = (key) => Number(String((CONFIG.prices || {})[key] || "").replace(/[^0-9.]/g, "")) || undefined;
+
+// Prices on the page come from site-settings.js, so one change there updates every page.
+document.querySelectorAll("[data-price]").forEach((el) => {
+  const p = (CONFIG.prices || {})[el.dataset.price];
+  if (p) el.textContent = p;
+});
+
+// Leads log: a copy of every sign-up and application goes to the team's Google Sheet (see site-settings.js).
+function logLead(type, data) {
+  if (!CONFIG.leadsLog) return Promise.resolve();
+  const body = JSON.stringify({ type, page: location.pathname.replace(/^.*\//, "") || "index.html", ...data });
+  return fetch(CONFIG.leadsLog, { method: "POST", headers: { "Content-Type": "text/plain;charset=UTF-8" }, body, keepalive: true }).catch(() => {});
+}
 
 const wa = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
 
@@ -44,13 +26,21 @@ const wa = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent
 document.querySelectorAll("[data-offer]").forEach((el) => {
   const key = el.dataset.offer;
   const url = CONFIG.links[key];
-  el.href = url || wa(`Hi Ashima, I'd like to book ${CONFIG.labels[key] || "a session"}.`);
+  const price = (CONFIG.prices || {})[key];
+  el.href = url || wa(`Hi Ashima, I'd like to book ${CONFIG.labels[key] || "a session"}${price ? ` (${price} USD)` : ""}.`);
   if (!url) el.target = "_blank";
   el.rel = "noopener";
+  if (price) el.addEventListener("click", () => track("begin_checkout", { currency: "USD", value: priceNum(key),
+    items: [{ item_id: key, item_name: (CONFIG.labels[key] || key).replace(/^the /, ""), price: priceNum(key), quantity: 1 }] }));
 });
 document.querySelectorAll("[data-link]").forEach((el) => {
   const url = CONFIG.links[el.dataset.link];
   if (url) { el.href = url; el.target = "_blank"; el.rel = "noopener"; }
+  if (["wa-free", "community"].includes(el.dataset.link)) el.addEventListener("click", () => track("join_group", { group_id: el.dataset.link }));
+});
+document.addEventListener("click", (e) => {
+  const a = e.target.closest && e.target.closest('a[href^="https://wa.me/"]');
+  if (a) track("contact", { method: "WhatsApp", link_text: (a.textContent || "").trim().slice(0, 60) });
 });
 document.querySelectorAll("[data-whatsapp]").forEach((el) => {
   el.href = wa(el.dataset.whatsapp || "Hi Ashima, I have a question.");
@@ -72,6 +62,11 @@ if (menuBtn && nav) {
     menuBtn.setAttribute("aria-expanded", "false");
     menuBtn.textContent = "☰";
   }));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("open")) {
+      nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); menuBtn.textContent = "☰"; menuBtn.focus();
+    }
+  });
 }
 
 // Hero video: autoplays muted; one button pauses/plays, one toggles sound.
@@ -148,7 +143,11 @@ function wireGiftForm(form, onDone) {
     msg.textContent = "Sending…";
     try {
       const f = form.elements;
-      await brevoSignup(name, email, { last: f.last ? f.last.value.trim() : "", phone: f.phone ? f.phone.value.trim() : "" });
+      const last = f.last ? f.last.value.trim() : "", phone = f.phone ? f.phone.value.trim() : "";
+      await brevoSignup(name, email, { last, phone });
+      const where = form.classList.contains("pop-form") ? "popup" : "freebie";
+      logLead(where, { name: [name, last].filter(Boolean).join(" "), email, phone, offer: "Calm Mind Reset" });
+      track("sign_up", { method: where === "popup" ? "Pop-up" : "Footer form" });
       msg.textContent = "Thank you! Your Calm Mind Reset is on its way. Check your inbox (and Promotions or Spam) in a few minutes.";
       form.reset();
       if (onDone) onDone();
@@ -180,7 +179,7 @@ if (giftForm) wireGiftForm(giftForm);
         <form class="pop-form" novalidate>
           <input name="name" placeholder="First name" aria-label="First name" autocomplete="given-name">
           <input name="email" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
-          <button class="btn-gold" type="submit">Send me the reset →</button>
+          <button class="btn-gold" type="submit">Send me the reset</button>
           <p class="form-msg" role="status"></p>
         </form>
         <p class="pop-fine">No spam. Unsubscribe anytime. <a href="privacy.html">Privacy</a></p>
@@ -253,6 +252,15 @@ if (appForm) {
     e.preventDefault();
     if (!appForm.reportValidity()) return;
     brevoApply(appForm); // runs alongside; the WhatsApp hand-off below must open straight from the click
+    const f = appForm.elements, answers = {};
+    appForm.querySelectorAll(".field").forEach((fld) => {
+      const label = (fld.querySelector("label") || {}).textContent || "";
+      const els = [...fld.querySelectorAll("input, select, textarea")].filter((el) => el.name && !["name", "email", "phone", "website"].includes(el.name));
+      const vals = els.filter((el) => !["radio", "checkbox"].includes(el.type) || el.checked).map((el) => el.value.trim()).filter(Boolean);
+      if (vals.length) answers[label.replace(/\s+/g, " ").trim().slice(0, 140) || els[0].name] = vals.join(", ");
+    });
+    logLead("application", { name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(), offer: "1:1 Coaching", answers });
+    track("generate_lead", { lead_source: "Coaching application" });
     await sendForm(appForm, "Coaching application");
     document.getElementById("step-1").classList.add("hidden");
     document.getElementById("step-2").classList.remove("hidden");
@@ -280,6 +288,13 @@ const detailsForm = document.getElementById("details-form");
 if (detailsForm) {
   const q = new URLSearchParams(location.search);
   if (q.get("offer")) detailsForm.elements.offer.value = q.get("offer");
+  // Stripe sends buyers here straight after paying: count the sale in GA4 once per payment.
+  const offer = q.get("offer"), paidKey = "ae_paid_" + (q.get("session_id") || offer + "_" + new Date().toISOString().slice(0, 10));
+  if (offer && priceNum(offer) && !store.get(paidKey)) {
+    store.set(paidKey, "1");
+    track("purchase", { transaction_id: q.get("session_id") || undefined, currency: "USD", value: priceNum(offer),
+      items: [{ item_id: offer, item_name: (CONFIG.labels[offer] || offer).replace(/^the /, ""), price: priceNum(offer), quantity: 1 }] });
+  }
   if (q.get("email")) detailsForm.elements.email.value = q.get("email");
   detailsForm.querySelectorAll(".upload input").forEach((inp) => inp.addEventListener("change", () => {
     const box = inp.closest(".upload"), img = box.querySelector("img"), files = [...inp.files].slice(0, inp.multiple ? 4 : 1);
@@ -304,6 +319,7 @@ if (detailsForm) {
       const res = await fetch(CONFIG.detailsEndpoint, { method: "POST", body: fd });
       const out = await res.json().catch(() => ({}));
       if (!res.ok || !out.ok) throw new Error(out.error || res.status);
+      track("details_submitted", { offer: detailsForm.elements.offer.value });
       if (out.wa) { document.getElementById("d-private-link").href = out.wa; document.getElementById("d-private").classList.remove("hidden"); }
       document.getElementById("d-step-1").classList.add("hidden");
       document.getElementById("d-step-2").classList.remove("hidden");

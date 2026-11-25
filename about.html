@@ -14,18 +14,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css?v=22">
-  <link rel="stylesheet" href="pages.css?v=6">
+  <link rel="stylesheet" href="pages.css?v=7">
   <link rel="stylesheet" href="v7.css?v=2">
+  <link rel="stylesheet" href="v9.css?v=1">
   <script>document.documentElement.classList.add("js")</script>
+  <!-- Links, prices, contact details and Google Analytics: edit site-settings.js -->
+  <script src="site-settings.js?v=1"></script>
+  <script src="analytics.js?v=1"></script>
 </head>
 <body>
-<!-- Built by _build/make_pages.py. Edit that file, not this one. -->
+<!-- EDITING THIS PAGE: it is plain HTML. Change the words between the tags and save.
+     Each part of the page starts with a SECTION comment like the ones below.
+     Menu, footer and mobile bar are SHARED: see README.md. Links, prices, GA4: site-settings.js -->
 <a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
   <symbol id="wa-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></symbol>
 </svg>
 
+<!-- SHARED:menu START · same on every page, edit _shared/menu.html (see README.md) -->
 <div class="nav-shell"><div class="wrap nav-bar">
   <a class="logo" href="index.html" aria-label="Ashima Empowers home"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
   <nav class="nav-links" id="nav" aria-label="Main">
@@ -43,9 +50,11 @@
   </div>
   <button class="burger menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
 </div></div>
+<!-- SHARED:menu END -->
 
 <main id="main">
 
+<!-- ===== SECTION: "Hi, I'm Ashima. I help you see the pattern, then change it." ===== -->
 <section class="page-hero dark about-hero">
   <div class="waves" aria-hidden="true">
     <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
@@ -60,7 +69,7 @@
       <div class="eyebrow">About Ashima · in my own words</div>
       <h1>Hi, I'm Ashima. <em>I help you see the pattern, then change it.</em></h1>
       <p class="lead">I'm an astrologer, numerologist and palm reader, and a certified mind reprogramming trainer and hypnotherapist. I work from my practice in Surrey, BC, and online with people all over the world.</p>
-      <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="sessions.html">Book a session with me <span class="circ">→</span></a><a class="btn-ghost" href="#story">Read my story</a></div>
+      <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="sessions.html">Book a session with me</a><a class="btn-ghost" href="#story">Read my story</a></div>
       <ul class="ticks"><li>No fear tactics</li><li>No expensive remedies</li><li>Every reading done by me, by hand</li></ul>
     </div>
     <div class="p-portrait">
@@ -71,6 +80,7 @@
   </div>
 </section>
 
+<!-- ===== SECTION: section ===== -->
 <section class="light about-stats" aria-label="Ashima in numbers">
   <div class="wrap stats">
     <div><b>24K+</b><span>people in my Instagram community</span></div>
@@ -80,6 +90,7 @@
   </div>
 </section>
 
+<!-- ===== SECTION: STORY · "I started with numbers. I stayed for people." ===== -->
 <section class="light sec" id="story">
   <div class="wrap story">
     <div class="story-photo">
@@ -99,16 +110,18 @@
   </div>
 </section>
 
+<!-- ===== SECTION: TRAINING · "What I've trained in, and why it matters to you." ===== -->
 <section class="sand sec" id="training">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Training &amp; credentials</div><h2 class="h2">What I've trained in, <em>and why it matters to you.</em></h2>
       <p class="lead">Ancient systems for understanding you, and modern tools for changing what holds you back.</p></div>
     <div class="creds">
-      <div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Certified Mind Reprogramming Trainer</h3><small>Neuro-linguistic methods</small><p>The tools I use to help you change the inner program, not just understand it.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Hypnotherapist</h3><small>Guided relaxation and suggestion work</small><p>Gentle, guided work with the part of the mind where old fears and habits live.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Vedic Astrology</h3><small>Kundli, timing and life themes</small><p>Your birth chart shows the seasons of your life and when to act.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Numerology</h3><small>Name and birth-date patterns</small><p>Your life path and destiny numbers, read with a mathematician's eye.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Palmistry</h3><small>Lines, mounts and hand shape</small><p>The service my clients mention most in their reviews.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Reiki Master</h3><small>Energy healing</small><p>Calm, grounding energy work to support the inner shift.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Lama Fera Healing</h3><small>Master Teacher</small><p>A Buddhist-rooted healing practice I now teach as well as offer.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>M.Sc Mathematics · B.Ed</h3><small>University of Jammu</small><p>Why my readings are logical and practical, never vague or fear-based.</p></div>
+      <div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Certified Mind Reprogramming Trainer</h3><small>Mind reprogramming methods</small><p>The tools I use to help you change the inner program, not just understand it.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Hypnotherapist</h3><small>Guided relaxation and suggestion work</small><p>Gentle, guided work with the part of the mind where old fears and habits live.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Vedic Astrology</h3><small>Kundli, timing and life themes</small><p>Your birth chart shows the seasons of your life and when to act.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Numerology</h3><small>Name and birth-date patterns</small><p>Your life path and destiny numbers, read with a mathematician's eye.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Palmistry</h3><small>Lines, mounts and hand shape</small><p>The service my clients mention most in their reviews.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Reiki Master</h3><small>Energy healing</small><p>Calm, grounding energy work to support the inner shift.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>Lama Fera Healing</h3><small>Master Teacher</small><p>A Buddhist-rooted healing practice I now teach as well as offer.</p></div><div class="cred"><span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.5 4.5 2.5L15 14.5"/><path d="M12 6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.2l2.1-.3z"/></svg></span><h3>M.Sc Mathematics · B.Ed</h3><small>University of Jammu</small><p>Why my readings are logical and practical, never vague or fear-based.</p></div>
     </div>
   </div>
 </section>
 
+<!-- ===== SECTION: "The promises I keep." ===== -->
 <section class="dark sec">
   <div class="wrap">
     <div class="head"><div class="eyebrow">How I work</div><h2 class="h2">The promises <em>I keep.</em></h2></div>
@@ -120,6 +133,7 @@
   </div>
 </section>
 
+<!-- ===== SECTION: FEATURED · "Where you may know me from." ===== -->
 <section class="light sec" id="featured">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Seen &amp; heard</div><h2 class="h2">Where you may <em>know me from.</em></h2></div>
@@ -137,13 +151,14 @@
   </div>
 </section>
 
+<!-- ===== SECTION: "I'd love to meet you." ===== -->
 <section class="dark sec final">
   <div class="wrap">
     <div class="eyebrow">Let's begin</div>
     <h2 class="h2">I'd love to <em>meet you.</em></h2>
     <p class="lead" style="margin:18px auto 0;max-width:560px">Start with one clear question, a full session, or my free 5-Minute Calm Mind Reset.</p>
     <div class="btns">
-      <a class="btn-gold btn-arrow cta-pop" href="sessions.html">See my sessions <span class="circ">→</span></a>
+      <a class="btn-gold btn-arrow cta-pop" href="sessions.html">See my sessions</a>
       <a class="btn-ghost" href="#" data-popup="open">Get the free Calm Mind Reset</a>
     </div>
   </div>
@@ -151,6 +166,7 @@
 
 </main>
 
+<!-- SHARED:footer START · same on every page, edit _shared/footer.html (see README.md) -->
 <footer class="foot light lite">
   <div class="wrap">
     <div class="foot-links">
@@ -165,12 +181,15 @@
     <p class="legal">© <span data-year></span> Ashima Empowers. Astrology, numerology, palmistry and mind reprogramming are offered for guidance and personal growth, not as medical, psychological, legal or financial advice. All payments are non-refundable. If you are in crisis, call 988 (Canada &amp; US) or your local emergency number. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a></p>
   </div>
 </footer>
+<!-- SHARED:footer END -->
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player"><button class="x" type="button" aria-label="Close">×</button><iframe title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen hidden></iframe><video controls playsinline hidden></video></div>
 
+<!-- SHARED:mobile-bar START · same on every page, edit _shared/mobile-bar.html (see README.md) -->
 <div class="mbar"><a class="btn-gold" href="sessions.html">Book a Session</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question." href="#">WhatsApp</a></div>
+<!-- SHARED:mobile-bar END -->
 
-<script src="main.js?v=12"></script>
-<script src="home.js?v=13"></script>
+<script src="main.js?v=14"></script>
+<script src="home.js?v=14"></script>
 </body>
 </html>

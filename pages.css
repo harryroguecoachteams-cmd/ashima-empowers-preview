@@ -256,7 +256,6 @@
 .guide a:hover { transform: translateX(4px); box-shadow: 0 0 0 1px rgba(197, 152, 68, .55); }
 .guide span { font: 500 19px/1.3 var(--serif); }
 .guide b { flex: none; font: 600 14px/1 var(--sans); color: var(--gold-deep); }
-.guide b::after { content: "  \2192"; }
 @media (max-width: 600px) { .guide a { flex-direction: column; align-items: flex-start; gap: 6px; } }
 
 .mind-band { padding: 70px 0; border-top: 1px solid rgba(134, 98, 31, .1); }

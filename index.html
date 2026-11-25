@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="home.css?v=22">
   <link rel="stylesheet" href="v7.css?v=2">
   <link rel="stylesheet" href="v8.css?v=1">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="v9.css?v=1">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"ProfessionalService","@id":"https://www.ashimaempowers.com/#business","name":"Ashima Empowers - Astrology & Holistic Centre","url":"https://www.ashimaempowers.com/","image":"https://www.ashimaempowers.com/assets/ashima-seated.jpg","priceRange":"$$",
@@ -31,8 +31,14 @@
     {"@type":"Person","@id":"https://www.ashimaempowers.com/#ashima-gautam","name":"Ashima Gautam","jobTitle":"Astrologer, Numerologist, Palm Reader and Mind Reprogramming Coach","knowsAbout":["Vedic astrology","Numerology","Palmistry","Mind reprogramming"]}
   ]}
   </script>
+  <!-- Links, prices, contact details and Google Analytics: edit site-settings.js -->
+  <script src="site-settings.js?v=1"></script>
+  <script src="analytics.js?v=1"></script>
 </head>
 <body>
+<!-- EDITING THIS PAGE: it is plain HTML. Change the words between the tags and save.
+     Each part of the page starts with a SECTION comment like the ones below.
+     Menu, footer and mobile bar are SHARED: see README.md. Links, prices, GA4: site-settings.js -->
 <a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
@@ -43,6 +49,7 @@
 </svg>
 
 <!-- Floating nav -->
+<!-- SHARED:menu START · same on every page, edit _shared/menu.html (see README.md) -->
 <div class="nav-shell"><div class="wrap nav-bar">
   <a class="logo" href="index.html" aria-label="Ashima Empowers home"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
   <nav class="nav-links" id="nav" aria-label="Main">
@@ -60,10 +67,12 @@
   </div>
   <button class="burger menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
 </div></div>
+<!-- SHARED:menu END -->
 
 <main id="main">
 
 <!-- 1 · HERO (pill + headline + video kept from the call). Main button: the coaching application. -->
+<!-- ===== SECTION: "Discover how to calm anxiety, lift the weight of depression and finall…" ===== -->
 <section class="hero dark">
   <div class="waves" aria-hidden="true">
     <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
@@ -85,18 +94,19 @@
         <source src="assets/hero.mp4" type="video/mp4">
       </video>
       <div class="shade"></div>
-      <button class="play" type="button" aria-label="Play the introduction video"><i></i><span>Watch This First</span></button>
+      <button class="play" type="button" aria-label="Play the introduction video"><i></i><span>Watch this first</span></button>
     </div>
 
-    <div class="cta"><a class="btn-gold cta-pop" href="coaching.html#apply">✦ Apply for 1:1 Coaching</a><a class="cta-soft" href="#you">Not sure yet? See if this is you ↓</a></div>
-    <div class="proof"><span>5.0 ★ from 80 Google reviews</span><span>Online worldwide</span><span>In person in Surrey, BC</span></div>
+    <div class="cta"><a class="btn-gold cta-pop" href="coaching.html#apply">Apply for 1:1 coaching</a><a class="cta-soft" href="#you">Not sure yet? Keep reading</a></div>
+    <div class="proof"><span>5.0 stars from 80 Google reviews</span><span>Online worldwide</span><span>In person in Surrey, BC</span></div>
   </div>
 </section>
 
 <!-- Trusted by: audience and reviews (checked 25 Nov 2026) -->
+<!-- ===== SECTION: section ===== -->
 <section class="seen dark" aria-label="Trusted by">
   <div class="wrap seen-row">
-    <span class="seen-label">Trusted by thousands</span>
+    <span class="seen-label">Already listening to Ashima</span>
     <span class="seen-div" aria-hidden="true"></span>
     <a class="seen-stat" href="https://www.instagram.com/ashima_empowers/" target="_blank" rel="noopener"><b>24.6K</b><small>on Instagram</small></a>
     <a class="seen-stat" href="https://www.tiktok.com/@ashima_empowers" target="_blank" rel="noopener"><b>9.5K</b><small>on TikTok</small></a>
@@ -106,28 +116,29 @@
 </section>
 
 <!-- 2 · PAIN: does this sound like you? (stock photos of models + clip art, collage style) -->
+<!-- ===== SECTION: YOU · "You smile through every family function. Nobody sees the night that co…" ===== -->
 <section class="you7 sec" id="you">
   <div class="wrap you-grid">
     <div class="you-copy rise">
-      <div class="eyebrow">Maybe this is you</div>
-      <h2 class="h2">You've done everything right. <em>So why does it still hurt?</em></h2>
-      <p class="lead">You pray. You try the remedies. You tell everyone you're fine. And still, the same heaviness comes back.</p>
+      <div class="eyebrow">You don't have to say it out loud</div>
+      <h2 class="h2">You smile through every family function. <em>Nobody sees the night that comes after.</em></h2>
+      <p class="lead">You light the diya in the pooja room every evening. When mom asks on WhatsApp how you are, you type "all good" and send a heart. Then you put the phone down, and the heaviness is still sitting on your chest.</p>
       <ul class="you-list">
-        <li><b>"My chest is tight and I don't even know why."</b><span>Anxiety that shows up out of nowhere.</span></li>
-        <li><b>"I can't switch my mind off at night."</b><span>The same thoughts at 3 a.m., on a loop.</span></li>
-        <li><b>"My heart is broken and it won't heal."</b><span>A breakup or a loss you can't move past.</span></li>
-        <li><b>"I feel heavy. I don't feel like myself any more."</b><span>Low days that turn into low months.</span></li>
-        <li><b>"I've tried every remedy. Nothing lasts."</b><span>Stones, pujas, advice. Same story.</span></li>
+        <li><b>"My chest goes tight in the grocery line, and I can't tell you why."</b><span>It comes in the car, at work, halfway through dinner.</span></li>
+        <li><b>"My mind starts talking the moment I lie down."</b><span>The same conversation, replayed at 3 a.m., with a better answer every time.</span></li>
+        <li><b>"He's gone, and I still check when he was last online."</b><span>A breakup or a loss your heart hasn't caught up with.</span></li>
+        <li><b>"I don't recognise myself any more."</b><span>Low days that quietly became low months, and nobody at home has noticed.</span></li>
+        <li><b>"I've done the pujas, the stones, the fasts. Nothing stays."</b><span>Advice from every auntie too. A few calm weeks, then the same story again.</span></li>
       </ul>
-      <p class="you-turn">You're not broken. <em>You're living a pattern,</em> and a pattern can be changed.
+      <p class="you-turn">Nothing is wrong with you. <em>You've been living a pattern,</em> and a pattern is something you can learn to change.
         <svg class="arrow" viewBox="0 0 120 80" aria-hidden="true"><path pathLength="1" d="M6 10c30 2 58 14 70 34 6 10 7 20 4 28M64 58l16 16 14-20"/></svg></p>
     </div>
     <div class="collage rise" aria-hidden="true">
       <img class="cut c-moon" src="assets/art7/moon.webp" alt="" width="396" height="396" loading="lazy">
-      <figure class="pol p1"><img src="assets/story/overthinking.jpg" alt="" loading="lazy"><figcaption>can't switch off</figcaption></figure>
-      <figure class="pol p2"><img src="assets/story/heartbreak.jpg" alt="" loading="lazy"><figcaption>a heart that won't heal</figcaption></figure>
-      <figure class="pol p3"><img src="assets/story/low-days.jpg" alt="" loading="lazy"><figcaption>heavy. not me.</figcaption></figure>
-      <figure class="pol p4"><img src="assets/story/night.jpg" alt="" loading="lazy"><figcaption>3 a.m. again</figcaption></figure>
+      <figure class="pol p1"><img src="assets/story/overthinking.jpg" alt="" loading="lazy"><figcaption>still replaying it</figcaption></figure>
+      <figure class="pol p2"><img src="assets/story/heartbreak.jpg" alt="" loading="lazy"><figcaption>reading old messages</figcaption></figure>
+      <figure class="pol p3"><img src="assets/story/low-days.jpg" alt="" loading="lazy"><figcaption>smiling for the photo</figcaption></figure>
+      <figure class="pol p4"><img src="assets/story/night.jpg" alt="" loading="lazy"><figcaption>awake, again</figcaption></figure>
       <svg class="spark s1" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2c1.6 9.4 4.3 12.3 16 18-11.7 5.7-14.4 8.6-16 18-1.6-9.4-4.3-12.3-16-18 11.7-5.7 14.4-8.6 16-18z"/></svg><svg class="spark s2" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2c1.6 9.4 4.3 12.3 16 18-11.7 5.7-14.4 8.6-16 18-1.6-9.4-4.3-12.3-16-18 11.7-5.7 14.4-8.6 16-18z"/></svg><svg class="spark s3" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2c1.6 9.4 4.3 12.3 16 18-11.7 5.7-14.4 8.6-16 18-1.6-9.4-4.3-12.3-16-18 11.7-5.7 14.4-8.6 16-18z"/></svg>
     </div>
   </div>
@@ -135,11 +146,12 @@
 
 <!-- 3 · THE FILM: a real person, from anxious to at peace (free Mixkit footage, assets/film/CREDITS.txt), scroll-driven,
      with gold line art: a tangle that grows, then straightens into a halo and sunrise. -->
+<!-- ===== SECTION: FILM · "From the midnight spiral to a quiet morning chai." ===== -->
 <section class="film7" id="film" aria-label="From anxious to at peace">
   <div class="wrap head rise">
-    <div class="eyebrow">How the change happens</div>
-    <h2 class="h2">From anxious <em>to at peace.</em></h2>
-    <p class="lead">Keep scrolling. This is the journey most of Ashima's clients describe.</p>
+    <div class="eyebrow">How it usually goes</div>
+    <h2 class="h2">From the midnight spiral to a quiet morning chai.</h2>
+    <p class="lead">Keep scrolling. You may recognise every step.</p>
   </div>
   <div class="film-track">
     <div class="film-pin">
@@ -154,7 +166,7 @@
             <path pathLength="1" d="M806 40v-26M806 306v-26M686 160h-26M952 160h-26M721 75l-18-18M909 263l-18-18M891 75l18-18M703 263l18-18"/>
           </g>
         </svg>
-        <div class="film-copy"><p class="film-t on"><small>Anxiety</small>It starts quietly. <em>A thought you can't put down.</em></p><p class="film-t"><small>Overwhelm</small>Then it gets louder. <em>Headaches. Sleepless nights.</em></p><p class="film-t"><small>Stuck</small>Until it feels like it's running <em>your whole life.</em></p><p class="film-t"><small>Clarity</small>Then you see the pattern, <em>in your chart, your numbers and your hands.</em></p><p class="film-t"><small>Calm</small>Simple rituals and upay <em>bring you back to calm.</em></p><p class="film-t"><small>Freedom</small>And one day you notice: <em>you're lighter. You're you again.</em></p></div>
+        <div class="film-copy"><p class="film-t on"><small>Anxiety</small>It starts small. <em>One worry you keep picking back up.</em></p><p class="film-t"><small>Overwhelm</small>Then it gets louder. <em>You snap at the people you love, then feel guilty all night.</em></p><p class="film-t"><small>Stuck</small>Soon it decides <em>who you call back and whether you go out at all.</em></p><p class="film-t"><small>Clarity</small>Then Ashima shows you the pattern, <em>in your kundli, your numbers and the lines of your palm.</em></p><p class="film-t"><small>Calm</small>A few minutes of upay in the morning and a daily mind practice, <em>and the noise starts to settle.</em></p><p class="film-t"><small>Lighter</small>One evening you're laughing on the phone with mom <em>and realise you haven't thought about it for hours.</em></p></div>
         <div class="film-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
@@ -162,12 +174,13 @@
 </section>
 
 <!-- 4 · REVIEWS (latest first). Google text copied word for word. -->
+<!-- ===== SECTION: REVIEWS · "Eighty people took the time to write it down." ===== -->
 <section class="sand sec" id="reviews">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Real experiences from real people</div>
-      <h2 class="h2">What clients <em>say.</em></h2>
-      <p class="lead">Real reviews from real clients, posted on Google where anyone can check them. Newest first.</p>
+      <div class="eyebrow">Google reviews</div>
+      <h2 class="h2">Eighty people took the time to write it down.</h2>
+      <p class="lead">Every one is posted on Google, where you can read it for yourself. Newest first.</p>
     </div>
     <div class="rv-panel">
       <div class="rv-top">
@@ -182,33 +195,34 @@
         <div class="rv-track" id="rv-track"></div>
         <button class="rv-arrow next" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
-      <div style="text-align:center"><a class="pill-link" href="https://maps.google.com/?cid=10121313852043803730" target="_blank" rel="noopener">Read all 80 reviews on Google →</a></div>
+      <div style="text-align:center"><a class="pill-link" href="https://maps.google.com/?cid=10121313852043803730" target="_blank" rel="noopener">Read all 80 reviews on Google</a></div>
     </div>
     <div class="ig-proof">
-      <p class="eyebrow">Real people · on Instagram</p>
-      <h3>More client stories, in their own words</h3>
+      <p class="eyebrow">On Instagram</p>
+      <h3>The messages clients send after their readings</h3>
       <div class="ig-proof-grid">
-        <a class="ig-proof-card" href="https://www.instagram.com/stories/highlights/17926232703318503/" target="_blank" rel="noopener"><span class="ig-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><b>Client reviews</b><small>Screenshots clients sent Ashima after their readings</small><em>Watch the highlight →</em></a>
-        <a class="ig-proof-card" href="https://www.instagram.com/stories/highlights/18093615073937799/" target="_blank" rel="noopener"><span class="ig-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><b>Client stories</b><small>Real people sharing what changed for them</small><em>Watch the highlight →</em></a>
-        <a class="ig-proof-card" href="https://www.instagram.com/stories/highlights/18056419148304037/" target="_blank" rel="noopener"><span class="ig-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><b>More reviews</b><small>Messages and voice notes from around the world</small><em>Watch the highlight →</em></a>
+        <a class="ig-proof-card" href="https://www.instagram.com/stories/highlights/17926232703318503/" target="_blank" rel="noopener"><span class="ig-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><b>Client reviews</b><small>Screenshots of what clients wrote to Ashima afterwards</small><em>Watch the highlight</em></a>
+        <a class="ig-proof-card" href="https://www.instagram.com/stories/highlights/18093615073937799/" target="_blank" rel="noopener"><span class="ig-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><b>Client stories</b><small>Clients telling it their own way: what shifted for them</small><em>Watch the highlight</em></a>
+        <a class="ig-proof-card" href="https://www.instagram.com/stories/highlights/18056419148304037/" target="_blank" rel="noopener"><span class="ig-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><b>More reviews</b><small>Messages and voice notes from around the world</small><em>Watch the highlight</em></a>
       </div>
-      <p class="ig-proof-note">Saved story highlights on <a href="https://www.instagram.com/ashima_empowers/" target="_blank" rel="noopener">@ashima_empowers</a>, 24,000+ followers.</p>
+      <p class="ig-proof-note">Saved as story highlights on <a href="https://www.instagram.com/ashima_empowers/" target="_blank" rel="noopener">@ashima_empowers</a>, followed by more than 24,000 people.</p>
     </div>
   </div>
 </section>
 
 <!-- 5 · REAL CLIENTS ON CAMERA (Instagram reels, re-encoded and hosted here; blurred faces stay blurred) -->
+<!-- ===== SECTION: ON CAMERA · "Some clients were happy to say it on camera." ===== -->
 <section class="light sec" id="on-camera">
   <div class="wrap">
     <div class="head rise">
-      <div class="eyebrow">Real clients · on camera</div>
-      <h2 class="h2">Hear it <em>from them.</em></h2>
-      <p class="lead">Clients sharing, in their own words, what changed after their sessions with Ashima. Tap to play with sound.</p>
+      <div class="eyebrow">Client videos</div>
+      <h2 class="h2">Some clients were happy to say it on camera.</h2>
+      <p class="lead">Turn the sound on. These are clients talking about their sessions with Ashima, in their own words.</p>
     </div>
     <div class="cv-grid rise">
       <button class="cv" type="button" data-video="assets/clients/DT5w2Smjxeg.mp4" aria-label="Play video: A heartfelt thank-you, 1:21"><img src="assets/clients/DT5w2Smjxeg.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">1:21</span><span class="play" aria-hidden="true"></span><span class="cap"><small>In person</small><b>A heartfelt thank-you</b></span></button><button class="cv" type="button" data-video="assets/clients/DaNu4Att0TT.mp4" aria-label="Play video: The search for the perfect astrologer, 1:21"><img src="assets/clients/DaNu4Att0TT.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">1:21</span><span class="play" aria-hidden="true"></span><span class="cap"><small>Client feedback · Manal</small><b>“The search for the perfect astrologer”</b></span></button><button class="cv" type="button" data-video="assets/clients/DaWguk6TyjP.mp4" aria-label="Play video: After the reading, on a video call, 1:10"><img src="assets/clients/DaWguk6TyjP.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">1:10</span><span class="play" aria-hidden="true"></span><span class="cap"><small>Client feedback</small><b>After the reading, on a video call</b></span></button><button class="cv" type="button" data-video="assets/clients/DdbcV8XTLlr.mp4" aria-label="Play video: It all came true, 0:36"><img src="assets/clients/DdbcV8XTLlr.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">0:36</span><span class="play" aria-hidden="true"></span><span class="cap"><small>Live reading</small><b>“It all came true”</b></span></button>
     </div>
-    <h3 class="tier-title" style="margin-top:70px"><span>Ashima reads strangers, live</span></h3>
+    <h3 class="tier-title" style="margin-top:70px"><span>Can she read someone she has just met? Watch.</span></h3>
     <div class="cv-grid three rise" style="margin-top:30px">
       <button class="cv" type="button" data-video="assets/clients/DaEfKK3zM-P.mp4" aria-label="Play video: Predicting a stranger’s life, 1:33"><img src="assets/clients/DaEfKK3zM-P.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">1:33</span><span class="play" aria-hidden="true"></span><span class="cap"><small>In public</small><b>Predicting a stranger’s life</b></span></button><button class="cv" type="button" data-video="assets/clients/DZS0A3lzUL0.mp4" aria-label="Play video: The photographer who was shocked, 0:58"><img src="assets/clients/DZS0A3lzUL0.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">0:58</span><span class="play" aria-hidden="true"></span><span class="cap"><small>Numerology</small><b>The photographer who was shocked</b></span></button><button class="cv" type="button" data-video="assets/clients/DZPscZTz5F6.mp4" aria-label="Play video: The numbers behind her success, 0:53"><img src="assets/clients/DZPscZTz5F6.jpg" alt="" loading="lazy" width="540" height="960"><span class="len">0:53</span><span class="play" aria-hidden="true"></span><span class="cap"><small>Miss Supernational Canada</small><b>The numbers behind her success</b></span></button>
     </div>
@@ -217,18 +231,19 @@
 </section>
 
 <!-- 6 · HOW ASHIMA HELPS: four practices, each with vintage clip art (public domain, assets/art7/CREDITS.txt) -->
+<!-- ===== SECTION: METHOD · "Most readings stop at why. Ashima keeps going." ===== -->
 <section class="light sec method7" id="method">
   <div class="wrap">
     <div class="head rise">
-      <div class="eyebrow">How Ashima helps</div>
-      <h2 class="h2">Four ways in. <em>One change.</em></h2>
-      <p class="lead">Your chart shows when. Your hands show who. Rituals show what to do. And your mind is where it finally changes.</p>
+      <div class="eyebrow">How Ashima works</div>
+      <h2 class="h2">Most readings stop at why. Ashima keeps going.</h2>
+      <p class="lead">Your kundli and numbers show the timing. Your palm shows the person you were born as. Small rituals give you something to hold on to on the hard days. Then mind reprogramming goes to the fear underneath, where the pattern actually lives.</p>
     </div>
     <div class="m7-grid">
       <article class="m7 rise"><div class="m7-art"><img class="spin-slow" src="assets/art7/moon-phases.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <div><small>When</small><h3>Astrology &amp; Numerology</h3><p>Your timing: why this season feels heavy, when it lifts, and when to act.</p></div></article>
+        <div><small>The timing</small><h3>Astrology &amp; Numerology</h3><p>Why this year has felt so heavy, which months ask for patience, and when to act on the job, the move or the marriage talk.</p></div></article>
       <article class="m7 rise"><div class="m7-art palm"><img src="assets/art7/palm.webp" alt="" width="640" height="984" loading="lazy"><span class="scan" aria-hidden="true"></span></div>
-        <div><small>Who</small><h3>Palm Reading</h3><p>The nature and strengths you were born with, read from the lines of your hands.</p></div></article>
+        <div><small>Your nature</small><h3>Palm Reading</h3><p>The temperament and strengths you were born with, read line by line from both hands. It's the reading clients mention most in their reviews.</p></div></article>
       <article class="m7 rise"><div class="m7-art"><svg class="diya" viewBox="0 0 200 200" aria-hidden="true">
             <defs><radialGradient id="fl" cx="50%" cy="70%" r="60%"><stop offset="0" stop-color="#fff6c8"/><stop offset=".45" stop-color="#f7c24a"/><stop offset="1" stop-color="#e2762a"/></radialGradient>
             <linearGradient id="bw" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d9a55a"/><stop offset="1" stop-color="#8a5a24"/></linearGradient></defs>
@@ -239,17 +254,21 @@
             <path d="M28 120c22 8 122 8 144 0" fill="none" stroke="#6b431a" stroke-width="3"/>
             <path d="M86 168h28l6 12H80z" fill="#8a5a24"/>
           </svg></div>
-        <div><small>What to do</small><h3>Rituals &amp; Upay</h3><p>Simple practices you can do at home. Never fear, never costly remedies.</p></div></article>
-      <article class="m7 rise"><div class="m7-art"><svg class="untangle" viewBox="0 0 240 160" aria-hidden="true">
-            <path class="t1" pathLength="1" d="M20 80c20-50 60 30 40 40s-40-60 0-60 50 70 70 30-30-60-10-50 60 60 40 70-50-30-20-50 60 20 80 20"/>
-            <path class="t2" pathLength="1" d="M20 80c40-30 80 30 120 0s60-20 80 0"/>
+        <div><small>What to do</small><h3>Rituals &amp; Upay</h3><p>Small practices for your home mandir or bedside table, a few minutes a day. You'll never be sold a gemstone or frightened into a costly puja.</p></div></article>
+      <article class="m7 rise"><div class="m7-art brain"><img src="assets/art7/brain.webp" alt="" width="640" height="539" loading="lazy">
+          <svg class="wires" viewBox="0 0 200 170" aria-hidden="true">
+            <path pathLength="1" d="M18 92c22-34 44 30 66-6s40-40 58-8 30 6 42-10"/>
+            <path pathLength="1" d="M34 122c20-18 40 22 62-4s34-28 52-6 22 8 34-4"/>
+            <path pathLength="1" d="M52 58c18-22 34 14 52-8s30-20 44-4 18 4 28-6"/>
+            <circle cx="184" cy="68" r="4"/><circle cx="182" cy="108" r="4"/><circle cx="176" cy="40" r="4"/>
           </svg></div>
-        <div><small>How it changes</small><h3>Mind Reprogramming</h3><p>Rewiring the fear and the old beliefs underneath, so the calm stays.</p></div></article>
+        <div><small>Where it changes</small><h3>Mind Reprogramming</h3><p>Ashima finds the old belief behind the worry, often one your mind learned as a child, and helps you rewire it so the calm has something solid to stand on.</p></div></article>
     </div>
   </div>
 </section>
 
 <!-- 7 · MEET ASHIMA (one photo; wording from the About page) -->
+<!-- ===== SECTION: ABOUT · "She studied maths first. That's why she shows you her working." ===== -->
 <section class="sand sec meet7" id="about">
   <div class="wrap meet7-grid">
     <div class="meet7-art rise" aria-hidden="true">
@@ -259,90 +278,92 @@
     </div>
     <div class="meet7-copy rise">
       <div class="eyebrow">Meet Ashima</div>
-      <h2 class="h2">Release the fear. Rewrite the pattern. <em>Return to yourself.</em></h2>
-      <p>Ashima Gautam is an astrologer, numerologist and palm reader, and a certified mind reprogramming trainer and hypnotherapist, in Surrey, BC and online worldwide.</p>
-      <p>She studied mathematics before she ever read a chart, so her readings are logical and practical, never vague. She reads your kundli, your numbers and your palms together, then gives you simple rituals and upay and the mind reprogramming tools to change the pattern.</p>
+      <h2 class="h2">She studied maths first. That's why she shows you her working.</h2>
+      <p>Ashima Gautam did her M.Sc in Mathematics and trained as a teacher before she ever read a chart. Numbers taught her to look for patterns and to trust what she could check. So she tells you what she sees in your kundli, your numbers and your palm, and how she got there.</p>
+      <p>Then she noticed something that changed how she works. Knowing why you repeat a fear doesn't stop you repeating it. So she trained in mind reprogramming and became a certified trainer, a hypnotherapist and a Reiki Master. Today she reads your chart, numbers and palm together, gives you simple upay, and works with you on the pattern itself, in Surrey, BC and online worldwide.</p>
       <blockquote class="promise">"I will never use fear to keep you coming back. I want you to leave every session clearer, calmer and more in charge of your own life."<cite>Ashima</cite></blockquote>
-      <ul class="cred7"><li>M.Sc Mathematics</li><li>Mind reprogramming trainer</li><li>Hypnotherapist</li><li>Reiki Master</li></ul>
-      <a class="text-link" href="about.html">Read Ashima's story →</a>
+      <ul class="cred7"><li>M.Sc Mathematics, B.Ed</li><li>Certified mind reprogramming trainer</li><li>Hypnotherapist</li><li>Reiki Master</li></ul>
+      <a class="text-link" href="about.html">Read Ashima's story</a>
     </div>
   </div>
 </section>
 
 <!-- 8 · THE MAIN OFFER: 1:1 coaching by application (the goal of the page) -->
+<!-- ===== SECTION: COACHING · "You already know why you feel this way. Coaching is where it starts to…" ===== -->
 <section class="mist sec coach7" id="coaching">
   <div class="wrap">
     <div class="coach7-card rise">
       <div class="coach7-art">
-        <img class="photo" src="assets/offers/coaching.jpg" alt="Ashima in a coaching session with a client" loading="lazy">
+        <img class="photo" src="assets/ashima-seated.jpg" alt="Ashima Gautam at her desk, smiling" loading="lazy">
         <img class="cut sun" src="assets/art7/sun-moon.webp" alt="" width="600" height="578" loading="lazy">
-        <span class="c7-badge">By application · limited places</span>
+        <span class="c7-badge">By application only</span>
       </div>
       <div class="coach7-body">
         <div class="eyebrow">1:1 Coaching with Ashima</div>
-        <h2 class="h2">Don't just understand the pattern. <em>Change it, with Ashima beside you.</em></h2>
-        <p class="lead">A reading shows you why. Coaching is where it changes. Ashima builds a plan around you, your chart's timing and what is really holding you back, then works with you one-to-one until the calm is yours.</p>
+        <h2 class="h2">You already know why you feel this way. <em>Coaching is where it starts to change.</em></h2>
+        <p class="lead">A reading gives you the why. Then you go home to the same house, the same phone calls, the same 3 a.m. This is where Ashima stays with you after that, one-to-one, with a plan built from your chart's timing and what is really holding you back.</p>
         <ul class="tick7">
-          <li><b>A plan made only for you,</b> built on your chart and your goals</li>
-          <li><b>Regular private sessions</b> with Ashima, by video or in person</li>
-          <li><b>Mind reprogramming</b> to rewire the fear and self-doubt underneath</li>
-          <li><b>Rituals and upay</b> to support you between sessions</li>
-          <li><b>Support as you go,</b> so you're never stuck on your own</li>
+          <li><b>A plan written for you,</b> from your kundli, your numbers and the life you actually want</li>
+          <li><b>Private sessions with Ashima,</b> on video from anywhere or at her office in Surrey</li>
+          <li><b>Mind reprogramming</b> for the fear and self-doubt that started long before this year</li>
+          <li><b>Simple rituals and upay</b> for the days between sessions, with nothing costly to buy</li>
+          <li><b>Someone to ask</b> when a hard day lands in the middle of the week</li>
         </ul>
         <ol class="c7-steps">
-          <li><b>Apply</b><span>3 minutes, private</span></li>
-          <li><b>We reply</b><span>within 24–48 hours</span></li>
-          <li><b>Your call</b><span>hear your plan</span></li>
+          <li><b>Apply</b><span>about 3 minutes, kept private</span></li>
+          <li><b>We reply</b><span>within 24 to 48 hours</span></li>
+          <li><b>Your call</b><span>hear your plan and what it costs, then decide</span></li>
         </ol>
         <div class="c7-cta">
-          <a class="btn-gold btn-arrow cta-pop" href="coaching.html#apply">Start my application <span class="circ">→</span></a>
-          <a class="text-link" href="coaching.html">What coaching includes</a>
+          <a class="btn-gold btn-arrow cta-pop" href="coaching.html#apply">Start my application</a>
+          <a class="text-link" href="coaching.html">See what coaching includes</a>
         </div>
-        <p class="fine">For anxiety, depression, overthinking, heartbreak, confidence and life direction. Not medical treatment.</p>
+        <p class="fine">Applying costs nothing, and you decide after the call. Coaching is guidance for anxiety, depression, overthinking, heartbreak, confidence and life direction, not medical treatment.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 9 · NOT READY FOR COACHING? One step at a time: VIP Circle, then one session (60 / 30 / 10), then the community -->
+<!-- ===== SECTION: SESSIONS · "Then start smaller. Every option here is still with Ashima herself." ===== -->
 <section class="sand sec ladder7" id="sessions">
   <div class="wrap">
     <div class="head rise">
-      <div class="eyebrow">Not ready for coaching yet?</div>
-      <h2 class="h2">Start where you are. <em>Every step moves you forward.</em></h2>
+      <div class="eyebrow">Not ready to apply yet?</div>
+      <h2 class="h2">Then start smaller. Every option here is still with Ashima herself.</h2>
     </div>
     <ol class="path7">
       <li class="step7 rise">
         <span class="dot" aria-hidden="true">1</span>
-        <p class="step7-q">Want Ashima in your corner, every month?</p>
+        <p class="step7-q">Would it help to know Ashima is there every month?</p>
         <a class="vip7" href="vip.html">
           <span class="vip7-img"><img src="assets/story/peace.jpg" alt="" loading="lazy"><img class="cut" src="assets/art7/moon.webp" alt="" loading="lazy"></span>
-          <span class="vip7-body"><small>Premium membership · $199 / month</small><strong>The VIP Circle</strong>
-            <span>Two private video calls with Ashima every month, her full course, new content, and the private Skool and WhatsApp communities.</span>
-            <u>See the VIP Circle →</u></span>
+          <span class="vip7-body"><small>Monthly membership · <span data-price="vip-monthly">$199</span> USD a month</small><strong>The VIP Circle</strong>
+            <span>Two private video calls with Ashima every month, her full course, new content as it comes, and the private Skool and WhatsApp groups. For when you want someone checking in on you.</span>
+            <u>See the VIP Circle</u></span>
         </a>
       </li>
       <li class="step7 rise">
         <span class="dot" aria-hidden="true">2</span>
-        <p class="step7-q">Prefer a single session? <span>Pick your time to see what you get.</span></p>
+        <p class="step7-q">Rather book one session first? <span>Tap a length to see what's included.</span></p>
         <div class="picker" data-picker>
           <div class="picker-tabs" role="tablist" aria-label="Session length">
-            <p>Choose your time</p>
-            <button class="ptab" role="tab" id="pt-60" aria-controls="pp-60" aria-selected="true" type="button"><span class="flag">Most booked</span><span class="min">60<small>min</small></span><span class="what"><b>The full picture</b><span>Patterns, timing, path · <em>$149</em></span></span></button>
-            <button class="ptab" role="tab" id="pt-30" aria-controls="pp-30" aria-selected="false" type="button"><span class="min">30<small>min</small></span><span class="what"><b>A few questions</b><span>Room for each one · <em>$99</em></span></span></button>
-            <button class="ptab" role="tab" id="pt-10" aria-controls="pp-10" aria-selected="false" type="button"><span class="min">10<small>min</small></span><span class="what"><b>One question</b><span>One clear answer · <em>$27</em></span></span></button>
+            <p>How much time do you need?</p>
+            <button class="ptab" role="tab" id="pt-60" aria-controls="pp-60" aria-selected="true" type="button"><span class="flag">Most booked</span><span class="min">60<small>min</small></span><span class="what"><b>The full picture</b><span>Pattern, timing and next steps · <em><span data-price="consult-60">$149</span></em></span></span></button>
+            <button class="ptab" role="tab" id="pt-30" aria-controls="pp-30" aria-selected="false" type="button"><span class="min">30<small>min</small></span><span class="what"><b>A few questions</b><span>Time to talk each one through · <em><span data-price="consult-30">$99</span></em></span></span></button>
+            <button class="ptab" role="tab" id="pt-10" aria-controls="pp-10" aria-selected="false" type="button"><span class="min">10<small>min</small></span><span class="what"><b>One question</b><span>A straight answer · <em><span data-price="question-10">$27</span></em></span></span></button>
           </div>
-          <div class="ppanel on" role="tabpanel" id="pp-60" aria-labelledby="pt-60"><div class="pimg"><img src="assets/offers/question.jpg" alt="" loading="lazy"></div><div class="pbody"><span class="tag">60 minutes · Private Consultation</span><h4>The full picture.</h4><p class="for">For a hard season, a pattern that keeps repeating, or real change.</p><ul><li>A detailed palm reading, kundli and numerology</li><li>Unlimited questions within the hour</li><li>Why the same story repeats, and when it shifts</li><li>Rituals, upay and mind reprogramming tools</li></ul><div class="row-end"><span class="price">$149<small> USD</small></span><a class="btn-gold btn-arrow" href="consultation-60.html">See details &amp; book <span class="circ">→</span></a></div></div></div>
-          <div class="ppanel" role="tabpanel" id="pp-30" aria-labelledby="pt-30"><div class="pimg"><img src="assets/story/morning.jpg" alt="" loading="lazy"></div><div class="pbody"><span class="tag">30 minutes · Private Consultation</span><h4>Room for every question.</h4><p class="for">For a few questions, or one situation with many sides.</p><ul><li>Ask as many questions as fit in 30 minutes</li><li>Kundli, numerology and palm read together</li><li>Rituals, upay and a mind reprogramming practice</li></ul><div class="row-end"><span class="price">$99<small> USD</small></span><a class="btn-gold btn-arrow" href="consultation-30.html">See details &amp; book <span class="circ">→</span></a></div></div></div>
-          <div class="ppanel" role="tabpanel" id="pp-10" aria-labelledby="pt-10"><div class="pimg"><img src="assets/story/calm.jpg" alt="" loading="lazy"></div><div class="pbody"><span class="tag">10 minutes · One-Question Consultation</span><h4>One question, one clear answer.</h4><p class="for">For the one question you can't stop thinking about.</p><ul><li>One clear answer to the question you keep overthinking</li><li>Read from your chart, numbers and palm</li><li>A simple upay to follow at home</li></ul><div class="row-end"><span class="price">$27<small> USD</small></span><a class="btn-gold btn-arrow" href="one-question.html">See details &amp; book <span class="circ">→</span></a></div></div></div>
+          <div class="ppanel on" role="tabpanel" id="pp-60" aria-labelledby="pt-60"><div class="pimg"><img src="assets/stock/notebook-tea.jpg" alt="" loading="lazy"></div><div class="pbody"><span class="tag">60 minutes · Private Consultation</span><h4>When it's been a hard year, not a hard week.</h4><p class="for">For a season that won't lift, a pattern you keep repeating, or a decision the whole family has an opinion on.</p><ul><li>Your kundli, numerology and both palms, read in detail</li><li>Ask as many questions as the hour allows</li><li>Why the same story keeps coming back, and when the timing shifts</li><li>Upay and a mind reprogramming practice you can start that night</li></ul><div class="row-end"><span class="price"><span data-price="consult-60">$149</span><small> USD</small></span><a class="btn-gold btn-arrow" href="consultation-60.html">See details and book</a></div></div></div>
+          <div class="ppanel" role="tabpanel" id="pp-30" aria-labelledby="pt-30"><div class="pimg"><img src="assets/story/morning.jpg" alt="" loading="lazy"></div><div class="pbody"><span class="tag">30 minutes · Private Consultation</span><h4>When a few things are on your mind.</h4><p class="for">For two or three questions, or one situation with many sides: him, his family, the visa, the timing.</p><ul><li>Ask as many questions as fit in 30 minutes</li><li>Your kundli, numbers and palm, read side by side</li><li>Simple upay and one mind reprogramming practice to take home</li></ul><div class="row-end"><span class="price"><span data-price="consult-30">$99</span><small> USD</small></span><a class="btn-gold btn-arrow" href="consultation-30.html">See details and book</a></div></div></div>
+          <div class="ppanel" role="tabpanel" id="pp-10" aria-labelledby="pt-10"><div class="pimg"><img src="assets/story/calm.jpg" alt="" loading="lazy"></div><div class="pbody"><span class="tag">10 minutes · One-Question Consultation</span><h4>One question, one clear answer.</h4><p class="for">Will it happen? Should I wait? Is this the right person? Bring the one that keeps you up.</p><ul><li>A clear answer to the one question you keep turning over</li><li>Read from your kundli, your numbers and your palm</li><li>A simple upay to follow at home</li></ul><div class="row-end"><span class="price"><span data-price="question-10">$27</span><small> USD</small></span><a class="btn-gold btn-arrow" href="one-question.html">See details and book</a></div></div></div>
         </div>
       </li>
       <li class="step7 rise">
         <span class="dot" aria-hidden="true">3</span>
-        <p class="step7-q">Just want to begin gently?</p>
+        <p class="step7-q">Want to start somewhere softer?</p>
         <div class="gentle7">
-          <a class="g7" href="empower.html"><img class="cut" src="assets/art7/lotus-bloom.webp" alt="" loading="lazy"><span><small>Live sessions · $21 / month</small><b>Empower Your Inner World</b><span>Live sessions with Ashima at 12 pm Canada time, every recording on Skool, and two bonus meditations.</span><u>Join the live sessions →</u></span></a>
-          <a class="g7 wa" data-link="wa-free" href="#" target="_blank" rel="noopener"><span class="wa-ic"><svg><use href="#wa-ico"/></svg></span><span><small>Free</small><b>Ashima's WhatsApp community</b><span>Daily guidance from Ashima, open to everyone.</span><u>Join free on WhatsApp →</u></span></a>
+          <a class="g7" href="empower.html"><img class="cut" src="assets/art7/lotus-bloom.webp" alt="" loading="lazy"><span><small>Live group sessions · <span data-price="inner-world">$21</span> USD a month</small><b>Empower Your Inner World</b><span>Join Ashima live at 12 pm Canada time. Missed one? Every recording waits for you on Skool, along with two bonus meditations.</span><u>Join the live sessions</u></span></a>
+          <a class="g7 wa" data-link="wa-free" href="#" target="_blank" rel="noopener"><span class="wa-ic"><svg><use href="#wa-ico"/></svg></span><span><small>Free</small><b>Ashima's WhatsApp community</b><span>Daily guidance from Ashima, right next to your family group chats. Open to everyone.</span><u>Join free on WhatsApp</u></span></a>
         </div>
       </li>
     </ol>
@@ -350,26 +371,28 @@
 </section>
 
 <!-- 10 · FAQ -->
+<!-- ===== SECTION: FAQ · "What people usually ask first" ===== -->
 <section class="light sec" id="faq">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">FAQs</div><h2 class="h2">Read before <em>you book.</em></h2></div>
+    <div class="head"><div class="eyebrow">Questions</div><h2 class="h2">What people usually ask first</h2></div>
     <div class="faq">
-      <details><summary>Where should I start?</summary><p>If you're ready for real change, <a href="coaching.html#apply">apply for 1:1 coaching</a>. For Ashima's support every month, join the <a href="vip.html">VIP Circle</a> ($199/month). For one session: the 1-Hour Private Consultation ($149) for the full picture, the 30-Minute ($99) for a few questions, or the 10-minute One-Question Consultation ($27). To begin gently, join Empower Your Inner World ($21/month) or the free WhatsApp community. <a href="sessions.html">Compare everything</a>.</p></details>
-      <details><summary>How can astrology help with anxiety or depression?</summary><p>Your chart, numbers and palm show the pattern and the timing. The change comes from the mind reprogramming work: finding the belief or fear underneath and rewiring it, supported by simple rituals and upay. This supports your wellbeing but is not medical or psychological treatment. If you have a clinical concern, please also speak with a licensed professional.</p></details>
-      <details><summary>What happens after I pay?</summary><p>You'll get an email and a short details form: your full name, date, time and place of birth, and clear photos of both palms and your fingertips. Then Ashima's team contacts you on WhatsApp to set your time.</p></details>
-      <details><summary>Online or in person?</summary><p>Both. Video sessions worldwide, or in person at 5550 152 St #201, Surrey, BC (Monday to Friday, 9 am to 6 pm Pacific).</p></details>
-      <details><summary>Do you sell gemstones or expensive remedies?</summary><p>No. Ashima gives simple rituals and upay you can do yourself, never fear and never costly remedies.</p></details>
-      <details><summary>Can I get a refund?</summary><p>All payments are non-refundable. You can reschedule a session with at least 24 hours' notice, and cancel a monthly membership (VIP Circle or Empower Your Inner World) anytime before the next billing date. See the <a href="refunds.html">refund policy</a>.</p></details>
+      <details><summary>Where should I start?</summary><p>If the same pattern has followed you for years, <a href="coaching.html#apply">apply for 1:1 coaching</a>. It takes about 3 minutes, and you hear your plan before you decide anything. If you'd like Ashima with you every month, join the <a href="vip.html">VIP Circle</a> (<span data-price="vip-monthly">$199</span>/month). For one session, the 1-Hour Private Consultation (<span data-price="consult-60">$149</span>) gives you the full picture, the 30-Minute (<span data-price="consult-30">$99</span>) covers a few questions, and the 10-minute One-Question Consultation (<span data-price="question-10">$27</span>) answers the one that keeps you up. To start small, join Empower Your Inner World (<span data-price="inner-world">$21</span>/month) or the free WhatsApp community. All prices are in USD. <a href="sessions.html">Compare everything</a>.</p></details>
+      <details><summary>How can astrology help with anxiety or depression?</summary><p>Your chart, numbers and palm show the pattern and its timing, and seeing it laid out can be a relief in itself. The change comes from the mind reprogramming work: finding the fear or belief underneath and rewiring it, with simple rituals and upay alongside. This supports your wellbeing. It isn't medical or psychological treatment, so if you see a doctor or therapist, please keep going, and if you have a clinical concern, speak with a licensed professional.</p></details>
+      <details><summary>What happens after I pay?</summary><p>You'll see a short details form straight after paying (also sent by email): your full name, your date, time and place of birth, and clear photos of both palms and your fingertips. Then Ashima's team messages you on WhatsApp to set a time that suits you.</p></details>
+      <details><summary>Online or in person?</summary><p>Both. On video from anywhere in the world, or in person at 5550 152 St #201, Surrey, BC, Monday to Friday, 9 am to 6 pm Pacific.</p></details>
+      <details><summary>Will I be told to buy gemstones or an expensive puja?</summary><p>No. Ashima gives simple rituals and upay you can do yourself at home. And she has made a promise: she will never use fear to keep you coming back.</p></details>
+      <details><summary>Can I get a refund?</summary><p>No. All payments are non-refundable, so take your time choosing. You can move a session once to a new time with at least 24 hours' notice, and cancel a monthly membership (VIP Circle or Empower Your Inner World) any time before your next billing date. Not sure which option fits? Message Ashima's team on WhatsApp before you pay. See the <a href="refunds.html">refund policy</a>.</p></details>
     </div>
   </div>
 </section>
 <!-- 11 · FINAL CALL -->
+<!-- ===== SECTION: "You've carried this long enough. Tell Ashima what's going on." ===== -->
 <section class="final7 sec">
   <div class="wrap">
     <img class="cut" src="assets/art7/sun-moon.webp" alt="" width="600" height="578" loading="lazy">
-    <h2 class="h2">If you've read this far, <em>part of you is ready.</em></h2>
-    <p class="lead">Take the first step today. Ashima's team replies to every application within 24–48 hours.</p>
-    <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="coaching.html#apply">Apply for 1:1 Coaching <span class="circ">→</span></a><a class="btn-ghost" href="#sessions">Or start smaller</a></div>
+    <h2 class="h2">You've carried this long enough. <em>Tell Ashima what's going on.</em></h2>
+    <p class="lead">The application takes about three minutes. Write it the way you'd tell a friend. Ashima's team reads every one and replies within 24 to 48 hours, and you decide after the call.</p>
+    <div class="btns"><a class="btn-gold btn-arrow cta-pop" href="coaching.html#apply">Apply for 1:1 coaching</a><a class="btn-ghost" href="#sessions">Or start smaller</a></div>
   </div>
 </section>
 </main>
@@ -379,26 +402,26 @@
   <div class="wrap">
     <div class="join">
       <div class="join-copy">
-        <div class="serif">Join a community<br>to find your</div>
-        <div class="big"><span class="gold">Inner Peace</span></div>
-        <p class="say">Get Ashima's guidance and the free 5-Minute Calm Mind Reset, straight to your inbox.</p>
+        <div class="serif">Five quiet minutes<br>for a loud mind</div>
+        <div class="big"><span class="gold">Calm Mind Reset</span></div>
+        <p class="say">Get Ashima's 5-Minute Calm Mind Reset by email, with short notes from her after it. Use it in bed, on the bus, or in the parked car before you walk in the door.</p>
         <form id="gift-form" class="join-form" novalidate>
           <input name="name" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
           <input name="last" placeholder="Last name" aria-label="Last name" autocomplete="family-name">
           <input name="phone" type="tel" placeholder="Mobile number" aria-label="Mobile number" autocomplete="tel">
           <input name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
-          <button class="btn-gold cta-pop" type="submit">Subscribe Now</button>
+          <button class="btn-gold cta-pop" type="submit">Send me the reset</button>
           <p class="msg form-msg" role="status" style="flex-basis:100%"></p>
         </form>
       </div>
       <div class="join-art"><div class="shape" aria-hidden="true"></div><picture><source srcset="assets/ashima-cutout-speaking.webp" type="image/webp"><img src="assets/ashima-cutout-speaking.png?v=6" alt="Ashima Gautam speaking on a podcast" width="1000" height="1095" decoding="async"></picture></div>
-      <a class="promo" href="vip.html"><img src="assets/offers/vip.jpg" alt=""><div><small>Premium membership</small><b>The VIP Circle</b><span>2 calls a month with Ashima + full course</span><i>$199/mo · Join →</i></div></a>
+      <a class="promo" href="vip.html"><img src="assets/story/peace.jpg" alt=""><div><small>Monthly membership</small><b>The VIP Circle</b><span>Two private calls a month with Ashima, plus her full course</span><i><span data-price="vip-monthly">$199</span> USD a month</i></div></a>
     </div>
 
     <div class="foot-links">
       <div>
         <a class="logo on-light" href="index.html"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
-        <p style="margin-top:16px;max-width:300px">Astrology, numerology, palm reading and mind reprogramming with Ashima Gautam.</p>
+        <p style="margin-top:16px;max-width:300px">Kundli, numerology, palm reading and mind reprogramming with Ashima Gautam, in Surrey, BC and online.</p>
       </div>
       <div><h4>Work with Ashima</h4><ul><li><a href="about.html">About Ashima</a></li><li><a href="sessions.html">All sessions</a></li><li><a href="one-question.html">One-Question Consultation</a></li><li><a href="consultation-30.html">30-Minute Consultation</a></li><li><a href="consultation-60.html">1-Hour Consultation</a></li><li><a href="coaching.html">Apply for Coaching</a></li><li><a href="vip.html">VIP Circle</a></li><li><a href="empower.html">Empower Your Inner World</a></li><li><a data-offer="manage" href="#" target="_blank" rel="noopener">Manage my membership</a></li></ul></div>
       <div><h4>Visit</h4><ul><li>5550 152 St #201<br>Surrey, BC V3S 5J9</li><li>Mon–Fri, 9 am – 6 pm</li><li>Online worldwide</li></ul></div>
@@ -412,7 +435,7 @@
 
 <div class="mbar"><a class="btn-gold" href="coaching.html#apply">Apply for Coaching</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question." href="#">WhatsApp</a></div>
 
-<script src="main.js?v=12"></script>
-<script src="home.js?v=13"></script>
+<script src="main.js?v=14"></script>
+<script src="home.js?v=14"></script>
 </body>
 </html>

@@ -14,18 +14,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css?v=22">
-  <link rel="stylesheet" href="pages.css?v=6">
+  <link rel="stylesheet" href="pages.css?v=7">
   <link rel="stylesheet" href="v7.css?v=2">
+  <link rel="stylesheet" href="v9.css?v=1">
   <script>document.documentElement.classList.add("js")</script>
+  <!-- Links, prices, contact details and Google Analytics: edit site-settings.js -->
+  <script src="site-settings.js?v=1"></script>
+  <script src="analytics.js?v=1"></script>
 </head>
 <body>
-<!-- Built by _build/make_pages.py. Edit that file, not this one. -->
+<!-- EDITING THIS PAGE: it is plain HTML. Change the words between the tags and save.
+     Each part of the page starts with a SECTION comment like the ones below.
+     Menu, footer and mobile bar are SHARED: see README.md. Links, prices, GA4: site-settings.js -->
 <a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
   <symbol id="wa-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></symbol>
 </svg>
 
+<!-- SHARED:menu START · same on every page, edit _shared/menu.html (see README.md) -->
 <div class="nav-shell"><div class="wrap nav-bar">
   <a class="logo" href="index.html" aria-label="Ashima Empowers home"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
   <nav class="nav-links" id="nav" aria-label="Main">
@@ -43,9 +50,11 @@
   </div>
   <button class="burger menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
 </div></div>
+<!-- SHARED:menu END -->
 
 <main id="main">
 
+<!-- ===== SECTION: "You can't catch Ashima all the time. Now you can catch every session." ===== -->
 <section class="page-hero dark">
   <div class="waves" aria-hidden="true">
     <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
@@ -59,9 +68,9 @@
     <div>
       <div class="eyebrow">Empower Your Inner World · live sessions with Ashima</div>
       <h1>You can't catch Ashima all the time. <em>Now you can catch every session.</em></h1>
-      <p class="lead">Join Ashima's ongoing live sessions for only $21 a month: guided meditation, mind reprogramming and gentle guidance, live at 12 pm Canada time. Can't make it? Every full session is recorded on Skool, so you can watch any time, at your convenience.</p>
-      <div class="price-chip"><b>$21</b> USD / month · cancel anytime</div>
-      <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="inner-world" href="#">Join for $21/month <span class="circ">→</span></a><a class="btn-ghost" href="#inside">See what's inside</a></div>
+      <p class="lead">Join Ashima's ongoing live sessions for only <span data-price="inner-world">$21</span> a month: guided meditation, mind reprogramming and gentle guidance, live at 12 pm Canada time. Can't make it? Every full session is recorded on Skool, so you can watch any time, at your convenience.</p>
+      <div class="price-chip"><b><span data-price="inner-world">$21</span></b> USD / month · cancel anytime</div>
+      <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="inner-world" href="#">Join for <span data-price="inner-world">$21</span>/month</a><a class="btn-ghost" href="#inside">See what's inside</a></div>
       <ul class="ticks"><li>Live at 12 pm Canada time</li><li>Every recording on Skool</li><li>Private WhatsApp community</li></ul>
     </div>
     <div class="p-portrait">
@@ -71,15 +80,17 @@
     </div>
   </div>
 </section>
+<!-- ===== SECTION: INSIDE · "Everything you get for $21 a month." ===== -->
 <section class="light sec" id="inside">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">What's inside</div><h2 class="h2">Everything you get <em>for $21 a month.</em></h2></div>
+    <div class="head"><div class="eyebrow">What's inside</div><h2 class="h2">Everything you get <em>for <span data-price="inner-world">$21</span> a month.</em></h2></div>
     <div class="cards"><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></svg></span><h3>Live sessions with Ashima</h3><p>Join her in real time at 12 pm Canada time (Pacific). Ask, meditate and learn together.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5c3-1.5 6-1.5 9 1 3-2.5 6-2.5 9-1v14c-3-1.5-6-1.5-9 1-3-2.5-6-2.5-9-1z"/><path d="M12 6v14"/></svg></span><h3>Every recording on Skool</h3><p>Missed it live? The full session is waiting for you. Watch whenever it suits you.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><h3>Private WhatsApp community</h3><p>Stay close to Ashima, get updates on what she's doing, and share with people on the same path.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><h3>Two bonus meditations</h3><p>Anxiety Relief and Gratefulness: two guided meditations from Ashima, yours from day one.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></span><h3>Mind reprogramming</h3><p>Simple practices to quiet overthinking and rewire the thoughts that keep you stuck.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8.5c-2 0-3.5 1.6-3.5 3.5S5 15.5 7 15.5c3.5 0 6.5-7 10-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-6.5-7-10-7z"/></svg></span><h3>Cancel anytime</h3><p>No long commitment. Stay as long as it helps you.</p></div></div>
   </div>
 </section>
+<!-- ===== SECTION: "Two guided meditations and a full session replay, ready on day one." ===== -->
 <section class="mist sec">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Bonus for members</div><h2 class="h2">Two guided meditations, <em>ready on day one.</em></h2></div>
+    <div class="head"><div class="eyebrow">Bonus for members</div><h2 class="h2">Two guided meditations and a full session replay, <em>ready on day one.</em></h2></div>
     <div class="bonus-grid">
       <figure><img src="assets/community/bonus-anxiety.jpg" alt="Anxiety Relief Quick Meditation with Ashima" loading="lazy"><figcaption><b>Anxiety Relief Meditation</b><span>10 min · a quick technique you can use anywhere</span></figcaption></figure>
       <figure><img src="assets/community/bonus-gratitude.jpg" alt="Gratefulness Meditation with Ashima" loading="lazy"><figcaption><b>Gratefulness Meditation</b><span>13 min · raise your vibration</span></figcaption></figure>
@@ -87,28 +98,31 @@
     </div>
   </div>
 </section>
+<!-- ===== SECTION: "Join in three steps." ===== -->
 <section class="dark sec">
   <div class="wrap">
     <div class="head"><div class="eyebrow">How it works</div><h2 class="h2">Join in <em>three steps.</em></h2></div>
-    <div class="rhythm four"><div><span class="n">01</span><h3>Join on Stripe</h3><p>Pay $21 USD a month securely. Cancel anytime.</p></div><div><span class="n">02</span><h3>Check your email</h3><p>Your Skool invite and the private WhatsApp community link arrive straight away.</p></div><div><span class="n">03</span><h3>Join live or watch later</h3><p>Come to the live session at 12 pm Canada time, or watch the recording when it suits you.</p></div></div>
+    <div class="rhythm four"><div><span class="n">01</span><h3>Join on Stripe</h3><p>Pay <span data-price="inner-world">$21</span> USD a month securely. Cancel anytime.</p></div><div><span class="n">02</span><h3>Check your email</h3><p>Your Skool invite and the private WhatsApp community link arrive straight away.</p></div><div><span class="n">03</span><h3>Join live or watch later</h3><p>Come to the live session at 12 pm Canada time, or watch the recording when it suits you.</p></div></div>
   </div>
 </section>
+<!-- ===== SECTION: JOIN ===== -->
 <section class="light sec" id="join">
   <div class="wrap">
     <div class="member">
-      <span class="crown">✦ Live sessions</span>
+      <span class="crown">Live sessions</span>
       <h3>Empower Your <em>Inner World</em></h3>
-      <div class="price">$21<small> USD / month</small></div>
+      <div class="price"><span data-price="inner-world">$21</span><small> USD / month</small></div>
       <span class="rule" aria-hidden="true"></span>
       <ul>
         <li>Live sessions with Ashima at 12 pm Canada time</li><li>Every recording on Skool</li><li>The private WhatsApp community</li><li>Two bonus meditations</li><li>Updates on what Ashima is doing</li>
       </ul>
-      <a class="btn-gold cta-pop" data-offer="inner-world" href="#">Join for $21/month →</a>
+      <a class="btn-gold cta-pop" data-offer="inner-world" href="#">Join for <span data-price="inner-world">$21</span>/month</a>
       <ul class="ticks"><li>Cancel anytime</li><li>Secure payment by Stripe</li><li>Non-refundable</li></ul>
     </div>
-    <p class="member-note">Want private time with Ashima? The <a href="vip.html">VIP Circle ($199/mo)</a> adds two 1:1 calls a month and her full course.<br>Not ready to join? <a data-link="wa-free" href="#" target="_blank" rel="noopener">Join the free WhatsApp community</a>.</p>
+    <p class="member-note">Want private time with Ashima? The <a href="vip.html">VIP Circle (<span data-price="vip-monthly">$199</span>/mo)</a> adds two 1:1 calls a month and her full course.<br>Not ready to join? <a data-link="wa-free" href="#" target="_blank" rel="noopener">Join the free WhatsApp community</a>.</p>
   </div>
 </section>
+<!-- ===== SECTION: FAQ · "Live sessions FAQ." ===== -->
 <section class="sand sec" id="faq">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Questions</div><h2 class="h2">Live sessions <em>FAQ.</em></h2></div>
@@ -121,15 +135,17 @@
     </div>
   </div>
 </section>
+<!-- ===== SECTION: "Join the live sessions for $21 a month." ===== -->
 <section class="dark sec final">
   <div class="wrap">
     <div class="eyebrow">Your inner world is waiting</div>
-    <h2 class="h2">Join the live sessions <em>for $21 a month.</em></h2>
-    <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="inner-world" href="#">Join now <span class="circ">→</span></a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question about Empower Your Inner World." href="#">Ask on WhatsApp</a></div>
+    <h2 class="h2">Join the live sessions <em>for <span data-price="inner-world">$21</span> a month.</em></h2>
+    <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="inner-world" href="#">Join now</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question about Empower Your Inner World." href="#">Ask on WhatsApp</a></div>
   </div>
 </section>
 </main>
 
+<!-- SHARED:footer START · same on every page, edit _shared/footer.html (see README.md) -->
 <footer class="foot light lite">
   <div class="wrap">
     <div class="foot-links">
@@ -144,12 +160,15 @@
     <p class="legal">© <span data-year></span> Ashima Empowers. Astrology, numerology, palmistry and mind reprogramming are offered for guidance and personal growth, not as medical, psychological, legal or financial advice. All payments are non-refundable. If you are in crisis, call 988 (Canada &amp; US) or your local emergency number. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a></p>
   </div>
 </footer>
+<!-- SHARED:footer END -->
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player"><button class="x" type="button" aria-label="Close">×</button><iframe title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen hidden></iframe><video controls playsinline hidden></video></div>
 
+<!-- SHARED:mobile-bar START · same on every page, edit _shared/mobile-bar.html (see README.md) -->
 <div class="mbar"><a class="btn-gold" href="sessions.html">Book a Session</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question." href="#">WhatsApp</a></div>
+<!-- SHARED:mobile-bar END -->
 
-<script src="main.js?v=12"></script>
-<script src="home.js?v=13"></script>
+<script src="main.js?v=14"></script>
+<script src="home.js?v=14"></script>
 </body>
 </html>

@@ -14,18 +14,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css?v=22">
-  <link rel="stylesheet" href="pages.css?v=6">
+  <link rel="stylesheet" href="pages.css?v=7">
   <link rel="stylesheet" href="v7.css?v=2">
+  <link rel="stylesheet" href="v9.css?v=1">
   <script>document.documentElement.classList.add("js")</script>
+  <!-- Links, prices, contact details and Google Analytics: edit site-settings.js -->
+  <script src="site-settings.js?v=1"></script>
+  <script src="analytics.js?v=1"></script>
 </head>
 <body>
-<!-- Built by _build/make_pages.py. Edit that file, not this one. -->
+<!-- EDITING THIS PAGE: it is plain HTML. Change the words between the tags and save.
+     Each part of the page starts with a SECTION comment like the ones below.
+     Menu, footer and mobile bar are SHARED: see README.md. Links, prices, GA4: site-settings.js -->
 <a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M60 34 C71 47 73 66 60 86 C47 66 49 47 60 34Z"/><path d="M60 86 C45 82 33 69 29 50 C44 54 55 66 60 86Z"/><path d="M60 86 C75 82 87 69 91 50 C76 54 65 66 60 86Z"/><path d="M60 86 C44 89 29 85 19 73 C35 70 50 75 60 86Z"/><path d="M60 86 C76 89 91 85 101 73 C85 70 70 75 60 86Z"/><path d="M36 96 Q60 103 84 96"/></g><path fill="currentColor" d="M60 13 L61.8 20.2 L69 22 L61.8 23.8 L60 31 L58.2 23.8 L51 22 L58.2 20.2Z"/></symbol>
   <symbol id="wa-ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></symbol>
 </svg>
 
+<!-- SHARED:menu START · same on every page, edit _shared/menu.html (see README.md) -->
 <div class="nav-shell"><div class="wrap nav-bar">
   <a class="logo" href="index.html" aria-label="Ashima Empowers home"><img src="assets/brand/ae-mark-sm.png" alt="" width="157" height="157"><span class="wm"><b>ASHIMA</b><i>EMPOWERS</i></span></a>
   <nav class="nav-links" id="nav" aria-label="Main">
@@ -43,9 +50,11 @@
   </div>
   <button class="burger menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
 </div></div>
+<!-- SHARED:menu END -->
 
 <main id="main">
 
+<!-- ===== SECTION: "One question. One clear answer." ===== -->
 <section class="page-hero dark">
   <div class="waves" aria-hidden="true">
     <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
@@ -60,17 +69,18 @@
       <div class="eyebrow">One-Question Consultation · 10 minutes</div>
       <h1>One question. <em>One clear answer.</em></h1>
       <p class="lead">That one question you've been overthinking for weeks, about love, marriage, career, money, health or timing. In 10 focused minutes Ashima reads it from your chart, your numbers and your palm, and gives you a clear answer and a simple upay to follow.</p>
-      <div class="price-chip"><b>$27</b> USD · 10 minutes</div>
-      <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="question-10" href="#">Book now · $27 <span class="circ">→</span></a><a class="btn-ghost" href="#inside">What's included</a></div>
+      <div class="price-chip"><b><span data-price="question-10">$27</span></b> USD · 10 minutes</div>
+      <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="question-10" href="#">Book now · <span data-price="question-10">$27</span></a><a class="btn-ghost" href="#inside">What's included</a></div>
       <ul class="ticks"><li>10 minutes, live</li><li>By video or in Surrey, BC</li><li>Secure payment by Stripe</li></ul>
     </div>
     <div class="p-portrait">
       <svg class="geo" viewBox="0 0 600 600" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><g class="spin"><circle cx="300" cy="300" r="252"/><circle cx="300" cy="300" r="262" stroke-width="1" stroke-dasharray="2 10"/><polygon points="300,48 352,110 248,110"/><polygon points="300,552 352,490 248,490"/><rect x="125" y="125" width="350" height="350"/><rect x="125" y="125" width="350" height="350" transform="rotate(45 300 300)"/></g><g class="spin-rev"><circle cx="300.0" cy="178.0" r="122"/><circle cx="405.7" cy="239.0" r="122"/><circle cx="405.7" cy="361.0" r="122"/><circle cx="300.0" cy="422.0" r="122"/><circle cx="194.3" cy="361.0" r="122"/><circle cx="194.3" cy="239.0" r="122"/></g><g class="pulse"><circle cx="300" cy="300" r="178" stroke-dasharray="7 7"/></g></svg>
       <div class="arch"><img src="assets/ashima-pink.jpg" alt="Ashima Gautam smiling, in pink" width="900" height="1200"></div>
-      <div class="p-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></svg></span><span><b>One-Question Consultation</b><small>10 minutes · $27 USD</small></span></div>
+      <div class="p-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></svg></span><span><b>One-Question Consultation</b><small>10 minutes · <span data-price="question-10">$27</span> USD</small></span></div>
     </div>
   </div>
 </section>
+<!-- ===== SECTION: "You're ready for real answers." ===== -->
 <section class="sand sec">
   <div class="wrap split2">
     <div class="arch"><img src="assets/story/calm.jpg" alt="" loading="lazy" width="900" height="1200"></div>
@@ -78,58 +88,65 @@
       <div class="eyebrow">This is for you if…</div>
       <h2 class="h2">You're ready for <em>real answers.</em></h2>
       <div class="pillars photo"><div class="pillar"><img class="ph" src="assets/story/overthinking.jpg" alt="" loading="lazy" width="192" height="192"><div><h3>You keep going round in circles</h3><p>The same question plays on a loop in your head. You just want to know.</p></div></div><div class="pillar"><img class="ph" src="assets/story/calm.jpg" alt="" loading="lazy" width="192" height="192"><div><h3>You want a straight, honest answer</h3><p>Not a long session, just clear direction from someone who will tell you how it is.</p></div></div><div class="pillar"><img class="ph" src="assets/ashima-garden.jpg" alt="" loading="lazy" width="192" height="192"><div><h3>You'd like to meet Ashima first</h3><p>A gentle first step before a longer reading, coaching or the VIP Circle.</p></div></div></div>
-      <a class="btn-gold btn-arrow cta-pop" data-offer="question-10" href="#">Book now · $27 <span class="circ">→</span></a>
+      <a class="btn-gold btn-arrow cta-pop" data-offer="question-10" href="#">Book now · <span data-price="question-10">$27</span></a>
     </div>
   </div>
 </section>
+<!-- ===== SECTION: INSIDE · "Everything in your 10 minutes." ===== -->
 <section class="light sec" id="inside">
   <div class="wrap">
     <div class="head"><div class="eyebrow">What's included</div><h2 class="h2">Everything in your <em>10 minutes.</em></h2></div>
     <div class="cards"><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><h3>One focused question</h3><p>Come prepared with the one question that matters most to you right now.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>Read three ways</h3><p>Your kundli, numerology and palm together, so the answer is never a guess.</p></div><div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><h3>A simple upay</h3><p>A small ritual or practice you can do at home. Never an expensive remedy.</p></div></div>
   </div>
 </section>
+<!-- ===== SECTION: "What changes for you." ===== -->
 <section class="mist sec">
   <div class="wrap outcome-wrap">
     <div>
       <div class="eyebrow">After your session</div>
       <h2 class="h2">What changes <em>for you.</em></h2>
-      <p class="lead" style="margin-left:0">The bigger the session, the bigger the shift. This is what clients tell Ashima they leave with.</p>
+      <p class="lead" style="margin-left:0">This is what clients tell Ashima they leave with.</p>
     </div>
     <ul class="outcomes"><li>Peace of mind on the one thing that has been weighing on you</li><li>A clear answer, with the timing behind it</li><li>Less overthinking, a calmer mind</li><li>A next step you can act on today</li></ul>
   </div>
 </section>
+<!-- ===== SECTION: "Four simple steps." ===== -->
 <section class="dark sec">
   <div class="wrap">
     <div class="head"><div class="eyebrow">How it works</div><h2 class="h2">Four simple <em>steps.</em></h2></div>
     <div class="rhythm four"><div><span class="n">01</span><h3>Pay securely</h3><p>Book online in a minute. Payment is by Stripe.</p></div><div><span class="n">02</span><h3>Share your details</h3><p>A short form: date, time and place of birth, plus photos of both palms and your fingertips.</p></div><div><span class="n">03</span><h3>Pick your time</h3><p>Ashima's team messages you on WhatsApp to set a time that suits you.</p></div><div><span class="n">04</span><h3>Meet Ashima</h3><p>Live by video from anywhere, or in person in Surrey. Leave with answers and a plan.</p></div></div>
   </div>
 </section>
+<!-- ===== SECTION: section ===== -->
 <section class="light sec">
   <div class="wrap">
-    <div class="upsell"><div><b>Got more than one question?</b><span>The 30-Minute Private Consultation gives you time for several.</span></div><a class="btn-ghost" href="consultation-30.html">See the 30-minute session ($99)</a></div>
+    <div class="upsell"><div><b>Got more than one question?</b><span>The 30-Minute Private Consultation gives you time for several.</span></div><a class="btn-ghost" href="consultation-30.html">See the 30-minute session (<span data-price="consult-30">$99</span>)</a></div>
   </div>
 </section>
+<!-- ===== SECTION: FAQ · "Your questions, answered." ===== -->
 <section class="sand sec" id="faq">
   <div class="wrap">
     <div class="head"><div class="eyebrow">Questions</div><h2 class="h2">Your questions, <em>answered.</em></h2></div>
     <div class="faq">
       <details><summary>How do I make the most of 10 minutes?</summary><p>Write your question down before the call and keep it to one topic. Ashima goes straight to the answer.</p></details>
-      <details><summary>What details do I need?</summary><p>Your full name, date, time and place of birth (as exact as you know, or "not sure"), and clear photos of both palms. You'll get a short form right after paying.</p></details>
+      <details><summary>What details do I need?</summary><p>Your full name, date, time and place of birth (as exact as you know, or "not sure"), and clear photos of both palms and your fingertips. You'll get a short form right after paying.</p></details>
       <details><summary>Online or in person?</summary><p>Both. By video from anywhere in the world, or in person at 5550 152 St #201, Surrey, BC.</p></details>
-      <details><summary>Can I get a refund?</summary><p>All payments are non-refundable. You can move your session to a new time with at least 24 hours' notice. See the <a href="refunds.html">refund policy</a>.</p></details>
-      <details><summary>Is this medical or psychological treatment?</summary><p>No. Readings and mind reprogramming are guidance for personal growth. They support your wellbeing but don't replace a doctor or licensed therapist. If you are in crisis, call or text 988 (Canada &amp; US) or your local emergency number.</p></details>
+      <details><summary>Can I get a refund?</summary><p>All payments are non-refundable. You can move your session once to a new time with at least 24 hours' notice. See the <a href="refunds.html">refund policy</a>.</p></details>
+      <details><summary>Is this medical or psychological treatment?</summary><p>No. Readings and mind reprogramming are guidance for personal growth. They can sit alongside your doctor or therapist, never in place of them. If you are in crisis, call or text 988 (Canada &amp; US) or your local emergency number.</p></details>
     </div>
   </div>
 </section>
+<!-- ===== SECTION: "Book your 10 minutes with Ashima." ===== -->
 <section class="dark sec final">
   <div class="wrap">
     <div class="eyebrow">Your answers are waiting</div>
     <h2 class="h2">Book your 10 minutes <em>with Ashima.</em></h2>
-    <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="question-10" href="#">Book now · $27 <span class="circ">→</span></a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question before I book." href="#">Ask on WhatsApp</a></div>
+    <div class="btns"><a class="btn-gold btn-arrow cta-pop" data-offer="question-10" href="#">Book now · <span data-price="question-10">$27</span></a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question before I book." href="#">Ask on WhatsApp</a></div>
   </div>
 </section>
 </main>
 
+<!-- SHARED:footer START · same on every page, edit _shared/footer.html (see README.md) -->
 <footer class="foot light lite">
   <div class="wrap">
     <div class="foot-links">
@@ -144,12 +161,15 @@
     <p class="legal">© <span data-year></span> Ashima Empowers. Astrology, numerology, palmistry and mind reprogramming are offered for guidance and personal growth, not as medical, psychological, legal or financial advice. All payments are non-refundable. If you are in crisis, call 988 (Canada &amp; US) or your local emergency number. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a></p>
   </div>
 </footer>
+<!-- SHARED:footer END -->
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player"><button class="x" type="button" aria-label="Close">×</button><iframe title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen hidden></iframe><video controls playsinline hidden></video></div>
 
+<!-- SHARED:mobile-bar START · same on every page, edit _shared/mobile-bar.html (see README.md) -->
 <div class="mbar"><a class="btn-gold" href="sessions.html">Book a Session</a><a class="btn-ghost" data-whatsapp="Hi Ashima, I have a question." href="#">WhatsApp</a></div>
+<!-- SHARED:mobile-bar END -->
 
-<script src="main.js?v=12"></script>
-<script src="home.js?v=13"></script>
+<script src="main.js?v=14"></script>
+<script src="home.js?v=14"></script>
 </body>
 </html>
