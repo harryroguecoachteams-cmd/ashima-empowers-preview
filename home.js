@@ -153,3 +153,42 @@ document.querySelectorAll("[data-picker]").forEach((pk) => {
   });
   pick(tabs.find((t) => t.getAttribute("aria-selected") === "true") || tabs[0]);
 });
+
+// The film: real footage, one clip per stage, driven by scroll. Gold line art goes from a tangle to a halo and sunrise.
+(() => {
+  const root = document.getElementById("film");
+  if (!root) return;
+  const track = root.querySelector(".film-track"), vids = [...root.querySelectorAll(".fv")], texts = [...root.querySelectorAll(".film-t")], dots = [...root.querySelectorAll(".film-dots i")];
+  const lines = root.querySelector(".film-lines");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const n = vids.length;
+  let cur = -1, visible = false;
+  const set = (i) => {
+    if (i === cur) return; cur = i;
+    vids.forEach((v, k) => {
+      const on = k === i; v.classList.toggle("on", on);
+      if (k === i + 1 && v.preload === "none") v.preload = "auto";
+      if (on && visible && !reduce) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } else if (!v.paused) v.pause();
+    });
+    texts.forEach((t, k) => t.classList.toggle("on", k === i));
+    dots.forEach((d, k) => d.classList.toggle("on", k <= i));
+  };
+  const onScroll = () => {
+    const r = track.getBoundingClientRect();
+    const span = r.height - innerHeight;
+    const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+    root.style.setProperty("--fp", p.toFixed(4));
+    if (lines) {
+      lines.style.setProperty("--tangle", Math.min(1, p / 0.45).toFixed(3));          // draws in over the first three stages
+      lines.style.setProperty("--calm", Math.min(1, Math.max(0, (p - 0.5) / 0.2)).toFixed(3)); // then fades as the halo draws
+      lines.style.setProperty("--rays", Math.min(1, Math.max(0, (p - 0.7) / 0.2)).toFixed(3));
+    }
+    set(Math.min(n - 1, Math.floor(p * n)));
+  };
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; const v = vids[cur]; if (!v) return; if (visible && !reduce) v.play().catch(() => {}); else v.pause(); }).observe(track);
+  }
+  onScroll();
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+})();
