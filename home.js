@@ -71,16 +71,23 @@ const REVIEWS = [
   document.querySelector(".rv-arrow.next").addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
 })();
 
-// Instagram reels and TV segments open in a lightbox and play through each platform's own embed.
+// Video lightbox: Instagram reels and YouTube play through their own embeds; client videos (data-video) are hosted on the site.
 (() => {
   const box = document.getElementById("lightbox");
   if (!box) return;
-  const frame = box.querySelector("iframe");
-  const close = () => { box.classList.remove("open"); frame.src = "about:blank"; };
-  const open = (src, wide) => { frame.src = src; box.classList.toggle("wide", wide); box.classList.add("open"); box.querySelector(".x").focus(); };
-  document.querySelectorAll("[data-reel]").forEach((btn) => btn.addEventListener("click", () => open(`https://www.instagram.com/reel/${btn.dataset.reel}/embed/`, false)));
-  // TV segments play through YouTube's privacy-enhanced embed.
-  document.querySelectorAll("[data-yt]").forEach((btn) => btn.addEventListener("click", () => open(`https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0`, true)));
+  const frame = box.querySelector("iframe"), vid = box.querySelector("video");
+  let last = null;
+  const close = () => {
+    box.classList.remove("open"); frame.src = "about:blank"; frame.hidden = true;
+    if (vid) { vid.pause(); vid.removeAttribute("src"); vid.load(); vid.hidden = true; }
+    if (last && last.focus) last.focus();
+  };
+  const show = () => { box.classList.add("open"); box.querySelector(".x").focus(); };
+  const openFrame = (src, wide) => { last = document.activeElement; frame.hidden = false; if (vid) vid.hidden = true; frame.src = src; box.classList.toggle("wide", wide); show(); };
+  const openVideo = (src) => { last = document.activeElement; frame.hidden = true; vid.hidden = false; vid.src = src; box.classList.remove("wide"); show(); vid.play().catch(() => {}); };
+  document.querySelectorAll("[data-reel]").forEach((btn) => btn.addEventListener("click", () => openFrame(`https://www.instagram.com/reel/${btn.dataset.reel}/embed/`, false)));
+  document.querySelectorAll("[data-yt]").forEach((btn) => btn.addEventListener("click", () => openFrame(`https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0`, true)));
+  if (vid) document.querySelectorAll('button[data-video$=".mp4"]').forEach((btn) => btn.addEventListener("click", () => openVideo(btn.dataset.video)));
   box.addEventListener("click", (e) => { if (e.target === box || e.target.classList.contains("x")) close(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && box.classList.contains("open")) close(); });
 })();
@@ -95,11 +102,54 @@ const REVIEWS = [
   window.addEventListener("scroll", update, { passive: true });
 })();
 
-// Journey diagram: the circles drift together and the figures fade in once it scrolls into view.
+// Sections fade up as they come into view.
 (() => {
-  const jr = document.getElementById("journey");
-  if (!jr) return;
-  if (!("IntersectionObserver" in window)) { jr.classList.add("in"); return; }
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { jr.classList.add("in"); io.disconnect(); } }), { threshold: 0.25 });
-  io.observe(jr);
+  const els = document.querySelectorAll(".rise");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) { els.forEach((e) => e.classList.add("in")); return; }
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  els.forEach((e) => io.observe(e));
 })();
+
+// The change story: the photo on the left follows the step you're reading (desktop). On phones each step has its own photo.
+(() => {
+  const root = document.getElementById("s7");
+  if (!root) return;
+  const steps = [...root.querySelectorAll(".s7-step")], imgs = [...root.querySelectorAll(".s7-frame img")], caps = [...root.querySelectorAll(".s7-cap span")];
+  const bar = root.querySelector(".s7-bar i");
+  let cur = 0;
+  const set = (i) => {
+    if (i === cur) return; cur = i;
+    steps.forEach((x, k) => x.classList.toggle("on", k === i));
+    imgs.forEach((x, k) => x.classList.toggle("on", k === i));
+    caps.forEach((x, k) => x.classList.toggle("on", k === i));
+  };
+  const onScroll = () => {
+    const mid = innerHeight * 0.5;
+    let best = 0;
+    steps.forEach((st, k) => { if (st.getBoundingClientRect().top < mid) best = k; });
+    set(best);
+    if (bar) { const r = root.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (mid - r.top) / r.height)); bar.style.height = (p * 100).toFixed(1) + "%"; }
+  };
+  imgs.forEach((im) => { im.loading = "eager"; });
+  onScroll();
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+})();
+
+// Session-length picker: tap 10 / 30 / 60 minutes to see what you get. Arrow keys move between lengths.
+document.querySelectorAll("[data-picker]").forEach((pk) => {
+  const tabs = [...pk.querySelectorAll(".ptab")];
+  const pick = (t, focus) => {
+    tabs.forEach((x) => { const on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute("aria-controls")).classList.toggle("on", on); });
+    if (focus) t.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => pick(t));
+    t.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); pick(tabs[(i + 1) % tabs.length], true); }
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); pick(tabs[(i - 1 + tabs.length) % tabs.length], true); }
+    });
+  });
+  pick(tabs.find((t) => t.getAttribute("aria-selected") === "true") || tabs[0]);
+});
