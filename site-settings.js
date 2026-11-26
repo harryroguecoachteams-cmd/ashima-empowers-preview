@@ -20,7 +20,7 @@ window.SITE = {
   ga4: "",
 
   // --- Contact ------------------------------------------------------------
-  whatsapp: "16044454743",                 // Ashima's WhatsApp number: digits only, with country code
+  whatsapp: "17787732459",                 // Ashima's main phone and WhatsApp number (confirmed 19 Nov): digits only, with country code
   email: "support@ashimaempowers.com",       // shown in the footer and the policy pages
 
   // --- Prices shown on the website ----------------------------------------
