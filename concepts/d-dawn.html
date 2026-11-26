@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept D · 3 a.m. to Chai · Ashima Empowers</title>
+<link rel="icon" href="../assets/brand/ae-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* CONCEPT D · 3 A.M. TO CHAI
+   The page is one night turning into morning. Each section is a time of day; its background
+   continues where the last one ended: indigo night > violet > dawn rose > sunrise peach > chai morning. */
+:root{
+  --night:#1F1B45; --night2:#2A2456; --violet:#3D3168; --plum:#6B4A7E; --rose:#B9738A; --peach:#EBA98A;
+  --apricot:#F7D6B0; --chai:#FFF1DE; --morning:#FFF8EE; --ink:#2A1D2E; --muted:#6A5560; --moon:#EDE8FF; --sun:#E8862E;
+  --disp:"Newsreader", Georgia, serif; --body:"Manrope", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font:400 18px/1.62 var(--body);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.1}
+h2{font-size:clamp(34px,4.4vw,58px);letter-spacing:-.01em}
+h2 em,h1 em{font-style:italic}
+.time{font:500 14px/1 var(--mono);letter-spacing:.06em;display:flex;width:fit-content;align-items:center;gap:10px;margin-bottom:22px;opacity:.85}
+.time::before{content:"";width:34px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;font:700 16px/1 var(--body);text-decoration:none;border-radius:999px;transition:background .2s,color .2s,border-color .2s;border:1.5px solid transparent}
+.btn-sun{background:var(--sun);color:#fff}
+.btn-sun:hover{background:#C96C19}
+.btn-moon{border-color:rgba(237,232,255,.55);color:var(--moon)}
+.btn-moon:hover{background:var(--moon);color:var(--night)}
+.btn-ink{border-color:var(--ink);color:var(--ink)}
+.btn-ink:hover{background:var(--ink);color:var(--chai)}
+
+.cbar{background:#120F2B;color:#cfc8ef;font:600 13px/1 var(--body);text-align:center;padding:9px 12px}
+.cbar a{color:#F6C27A;margin-left:10px}
+
+/* nav floats over the night */
+.nav{position:absolute;left:0;right:0;z-index:20}
+.nav .wrap{display:flex;align-items:center;gap:26px;height:76px;color:var(--moon)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:38px}
+.brand b{font:400 24px/1 var(--disp)}
+.nav ul{display:flex;gap:24px;list-style:none;margin-left:auto;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none;opacity:.85}.nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.nav .btn{min-height:44px;padding:0 20px;font-size:14px}
+@media (max-width:980px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+
+/* the clock that follows you */
+.clock{position:fixed;left:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;font:500 15px/1 var(--mono);background:rgba(255,255,255,.14);color:var(--moon);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);transition:background .4s,color .4s}
+.clock.day{background:rgba(255,248,238,.86);color:var(--ink);border-color:rgba(42,29,46,.12)}
+.clock i{width:18px;height:18px;border-radius:50%;box-shadow:inset -5px -2px 0 0 currentColor;transition:box-shadow .4s,background .4s}
+.clock.day i{background:var(--sun);box-shadow:0 0 0 4px rgba(232,134,46,.25)}
+
+section{position:relative;padding:120px 0}
+/* 3:07 am */
+.s-hero{background:linear-gradient(var(--night),var(--night2));color:var(--moon);padding:150px 0 120px;overflow:hidden}
+.s-hero::before{content:"";position:absolute;inset:0;opacity:.7;pointer-events:none;
+  background-image:radial-gradient(1.2px 1.2px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 28% 62%,#fff 50%,transparent 51%),radial-gradient(1.4px 1.4px at 46% 12%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),radial-gradient(1.3px 1.3px at 78% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 88% 70%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 36% 86%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 8% 76%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 94% 46%,#fff 50%,transparent 51%),radial-gradient(1.1px 1.1px at 55% 72%,#fff 50%,transparent 51%)}
+.big{font:300 clamp(120px,22vw,300px)/.8 var(--disp);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.2px rgba(237,232,255,.42);position:absolute;right:2vw;top:118px;pointer-events:none;user-select:none}
+.big small{font:400 .16em var(--mono);-webkit-text-stroke:0;color:rgba(237,232,255,.5);letter-spacing:.08em;margin-left:.3em}
+.s-hero .inner{position:relative;max-width:760px}
+.pill{display:inline-block;font:600 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(237,232,255,.4);border-radius:999px;padding:10px 16px}
+.s-hero .sub{margin:18px 0 16px;font-size:19px;color:#C9C1EA}
+.s-hero h1{font-size:clamp(36px,4.3vw,60px);line-height:1.06;font-weight:300}
+.s-hero h1 em{color:#F6C27A}
+.s-hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.s-hero .proof{margin-top:24px;font-size:15px;color:#C9C1EA;display:flex;flex-wrap:wrap;gap:6px 22px}
+
+/* 3:40 am: notifications */
+.s-pains{background:linear-gradient(var(--night2),var(--violet));color:var(--moon)}
+.s-pains .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.s-pains p.lead{margin-top:20px;color:#CFC7EE;font-size:19px;max-width:48ch}
+.lock{display:grid;gap:12px}
+.notif{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:20px;padding:14px 18px;display:grid;grid-template-columns:38px 1fr;gap:12px;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.notif.in{opacity:1;transform:none}
+.notif .ic{width:38px;height:38px;border-radius:10px;background:rgba(237,232,255,.18);display:grid;place-items:center;font:500 16px var(--mono)}
+.notif .hd{display:flex;justify-content:space-between;font:500 12px var(--mono);letter-spacing:.04em;color:#B9B0DD;text-transform:uppercase}
+.notif b{display:block;font-weight:600;margin-top:2px}
+.notif span.t{display:block;font-size:15px;color:#CFC7EE}
+
+/* 4:30 am: the turn */
+.s-turn{background:linear-gradient(var(--violet),var(--plum));color:var(--moon);text-align:center;padding:150px 0}
+.s-turn h2{max-width:22ch;margin:0 auto;font-weight:300}
+.s-turn h2 em{color:#F6C27A}
+
+/* 5:15 am: first light, the method */
+.s-method{background:linear-gradient(var(--plum),var(--rose));color:#fff}
+.s-method .head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:60px}
+.s-method .head p{color:#F6E6EE;font-size:19px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.4)}
+.four div{padding:28px 24px 0 0}
+.four div+div{padding-left:24px;border-left:1px solid rgba(255,255,255,.25)}
+.four .k{font:500 13px var(--mono);letter-spacing:.05em;color:#FCE3D3}
+.four h3{font-size:26px;margin:10px 0 10px}
+.four p{font-size:16px;color:#F8E9EF}
+.horizon{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(900px,90vw);height:120px;border-radius:900px 900px 0 0;background:radial-gradient(ellipse at 50% 100%,rgba(255,214,160,.75),rgba(255,214,160,0) 70%);pointer-events:none}
+
+/* 6:00 am sunrise: reviews */
+.s-reviews{background:linear-gradient(var(--rose),var(--peach));color:var(--ink)}
+.s-reviews .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:44px}
+.s-reviews .score{font:400 20px var(--body)}
+.s-reviews .score b{font:400 64px/1 var(--disp);margin-right:8px}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rv figure{background:rgba(255,248,238,.9);border-radius:24px;padding:30px}
+.rv p{font:400 21px/1.42 var(--disp)}
+.rv cite{display:block;margin-top:16px;font:500 13px var(--mono);font-style:normal;color:var(--muted);letter-spacing:.04em}
+.vids{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
+.vid{position:relative;border:0;padding:0;border-radius:20px;overflow:hidden;aspect-ratio:9/13;cursor:pointer;background:var(--ink);color:#fff;font:inherit;text-align:left}
+.vid img,.vid video{width:100%;height:100%;object-fit:cover}
+.vid .cap{position:absolute;inset:auto 0 0 0;padding:40px 14px 14px;background:linear-gradient(transparent,rgba(31,27,69,.85));font:500 12px var(--mono)}
+.vid .cap b{display:block;font:400 18px/1.2 var(--disp);margin-top:2px}
+.vid .play{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:rgba(255,248,238,.92);display:grid;place-items:center}
+.vid .play::after{content:"";border-left:12px solid var(--ink);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
+.vid.on .cap,.vid.on .play{display:none}
+.s-reviews .more{margin-top:30px}
+
+/* 6:45 am: Ashima, in the morning light */
+.s-about{background:linear-gradient(var(--peach),var(--apricot));color:var(--ink);overflow:hidden}
+.s-about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.s-about .ph{position:relative}
+.s-about .ph img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.s-about .ph::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,#FFE0A8,rgba(255,224,168,0) 70%);top:-60px;right:-50px;z-index:0}
+.s-about .ph img{position:relative;z-index:1}
+.s-about p{margin-top:18px;color:#4A3A44}
+.s-about blockquote{margin-top:24px;font:300 italic 27px/1.35 var(--disp)}
+.creds{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;font:500 13px var(--mono);color:var(--muted);list-style:none}
+
+/* 7:20 am: chai, the options */
+.s-offers{background:linear-gradient(var(--apricot),var(--chai));color:var(--ink)}
+.s-offers .head{max-width:760px;margin-bottom:46px}
+.s-offers .head p{margin-top:16px;color:var(--muted);font-size:19px}
+.coachcard{background:var(--ink);color:var(--chai);border-radius:30px;padding:46px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.coachcard h3{font-size:clamp(28px,3vw,40px);font-weight:300}
+.coachcard h3 em{color:#F6C27A}
+.coachcard ul{list-style:none;margin-top:20px;display:grid;gap:8px;color:#E8DCCF;font-size:16px}
+.coachcard ul li::before{content:"\2022  ";color:var(--sun)}
+.coachcard .side{display:grid;gap:14px}
+.coachcard .side p{font:500 13px var(--mono);color:#CDBFB0;letter-spacing:.03em}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.opt{background:var(--morning);border-radius:26px;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(42,29,46,.08)}
+.opt .k{font:500 12px var(--mono);letter-spacing:.06em;color:var(--sun);text-transform:uppercase}
+.opt h3{font-size:26px;margin:10px 0 8px}
+.opt p{font-size:16px;color:var(--muted)}
+.opt .price{font:400 36px/1 var(--disp);margin:18px 0 20px}
+.opt .price small{font:400 14px var(--body);color:var(--muted)}
+.opt .btn{margin-top:auto}
+.len{display:flex;gap:6px;margin:12px 0 4px}
+.len button{flex:1;border:1px solid rgba(42,29,46,.25);background:transparent;border-radius:999px;padding:8px 4px;font:500 14px var(--mono);cursor:pointer;color:var(--ink)}
+.len button[aria-selected=true]{background:var(--ink);color:var(--chai);border-color:var(--ink)}
+.lp[hidden]{display:none}
+.free{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between;padding:22px 28px;border-radius:22px;border:1px dashed rgba(42,29,46,.3)}
+.free p{color:var(--muted);font-size:16px}
+.free b{color:var(--ink)}
+
+/* 7:42 am */
+.s-final{background:linear-gradient(var(--chai),var(--morning));color:var(--ink);text-align:center;padding:140px 0}
+.s-final h2{max-width:20ch;margin:0 auto;font-weight:300}
+.s-final .time{margin-inline:auto}
+.s-final p{max-width:54ch;margin:22px auto 32px;color:var(--muted)}
+.cup{width:64px;height:64px;margin:0 auto 22px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round}
+.cup .steam{animation:steam 3.2s ease-in-out infinite;opacity:.6}
+@keyframes steam{0%,100%{transform:translateY(0);opacity:.15}50%{transform:translateY(-4px);opacity:.7}}
+footer{background:var(--morning);border-top:1px solid rgba(42,29,46,.1);padding:34px 0 90px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+
+@media (max-width:980px){
+  .s-pains .wrap,.s-method .head,.s-about .wrap,.coachcard{grid-template-columns:1fr;gap:36px}
+  .four{grid-template-columns:1fr 1fr}.four div,.four div+div{padding:24px 16px 20px 0;border-left:0}
+  .rv,.opts{grid-template-columns:1fr}.vids{grid-template-columns:1fr 1fr}
+  .s-about .ph{max-width:420px}
+}
+@media (max-width:600px){section{padding:84px 0}.s-hero{padding:120px 0 90px}.big{top:112px;opacity:.3;font-size:110px}.brand b{font-size:19px;white-space:nowrap}.nav .btn{white-space:nowrap;font-size:13px}.btn{width:100%}.nav .btn{width:auto;min-height:40px;padding:0 14px}.coachcard{padding:30px 24px}.four{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.notif{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="cbar">Design concept D · 3 a.m. to Chai <a href="e-deck.html">See E</a><a href="f-chat.html">See F</a><a href="index.html">All concepts</a></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="../index.html"><img src="../assets/brand/ae-mark-sm.png" alt=""><b>Ashima Empowers</b></a>
+  <ul><li><a href="../about.html">About</a></li><li><a href="../sessions.html">Sessions</a></li><li><a href="../coaching.html">Coaching</a></li><li><a href="../vip.html">VIP Circle</a></li></ul>
+  <a class="btn btn-sun" href="../coaching.html#apply">Apply for Coaching</a>
+</div></header>
+
+<div class="clock" id="clock" aria-hidden="true"><i></i><span id="clockt">3:07 AM</span></div>
+
+<main id="main">
+<section class="s-hero" data-min="187">
+  <div class="big" aria-hidden="true">3:07<small>AM</small></div>
+  <div class="wrap"><div class="inner">
+    <p class="time">3:07 am · awake, again</p>
+    <span class="pill">For those who have tried every remedy:</span>
+    <p class="sub">and still carry the same anxiety, the same heaviness, the same story.</p>
+    <h1>Discover how to calm anxiety, lift the weight of depression and finally understand your life's timing with <em>Astrology, Numerology, Palmistry + Mind Reprogramming</em></h1>
+    <div class="ctas"><a class="btn btn-sun" href="../coaching.html#apply">Apply for 1:1 coaching</a><a class="btn btn-moon" href="#morning">Skip to morning</a></div>
+    <p class="proof"><span>★ 5.0 from 80 Google reviews</span><span>24.6K on Instagram</span><span>Online worldwide · Surrey, BC</span></p>
+  </div></div>
+</section>
+
+<section class="s-pains" data-min="220">
+  <div class="wrap">
+    <div>
+      <p class="time">3:40 am · the phone is still in your hand</p>
+      <h2>You smile through every family function. <em>Nobody sees the night that comes after.</em></h2>
+      <p class="lead">When mom asks on WhatsApp how you are, you type "all good" and send a heart. Then the heaviness is still sitting on your chest.</p>
+    </div>
+    <div class="lock" id="lock">
+      <div class="notif"><span class="ic">♡</span><span><span class="hd"><span>Your mind</span><span>now</span></span><b>"My mind starts talking the moment I lie down."</b><span class="t">The same conversation, replayed, with a better answer every time.</span></span></div>
+      <div class="notif"><span class="ic">◷</span><span><span class="hd"><span>Last seen</span><span>2 min ago</span></span><b>"He's gone, and I still check when he was last online."</b><span class="t">A loss your heart hasn't caught up with.</span></span></div>
+      <div class="notif"><span class="ic">!</span><span><span class="hd"><span>Your body</span><span>earlier</span></span><b>"My chest goes tight in the grocery line."</b><span class="t">In the car, at work, halfway through dinner.</span></span></div>
+      <div class="notif"><span class="ic">✶</span><span><span class="hd"><span>Remedies</span><span>this year</span></span><b>"I've done the pujas, the stones, the fasts."</b><span class="t">A few calm weeks, then the same story again.</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s-turn" data-min="270">
+  <div class="wrap">
+    <p class="time">4:30 am · the quietest hour</p>
+    <h2>Nothing is wrong with you. <em>You've been living a pattern,</em> and a pattern is something you can learn to change.</h2>
+  </div>
+</section>
+
+<section class="s-method" data-min="315">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="time">5:15 am · first light</p><h2>Most readings stop at why. Ashima keeps going.</h2></div>
+      <p>Your kundli and numbers show the timing. Your palm shows the person you were born as. Small rituals give you something to hold on to. Then mind reprogramming goes to the fear underneath.</p>
+    </div>
+    <div class="four">
+      <div><span class="k">the timing</span><h3>Astrology &amp; Numerology</h3><p>Why this year has felt so heavy, which months ask for patience, and when to act.</p></div>
+      <div><span class="k">your nature</span><h3>Palm Reading</h3><p>The temperament and strengths you were born with, read line by line from both hands.</p></div>
+      <div><span class="k">what to do</span><h3>Rituals &amp; Upay</h3><p>A few minutes a day at your home mandir. Never a gemstone, never a costly puja.</p></div>
+      <div><span class="k">where it changes</span><h3>Mind Reprogramming</h3><p>The old belief behind the worry, found and rewired, so the calm has something to stand on.</p></div>
+    </div>
+  </div>
+  <div class="horizon" aria-hidden="true"></div>
+</section>
+
+<section class="s-reviews" id="reviews" data-min="360">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="time">6:00 am · sunrise</p><h2>Eighty people took the time to write it down.</h2></div>
+      <p class="score"><b>5.0</b>★★★★★ on Google</p>
+    </div>
+    <div class="rv">
+      <figure><p>"Half of my problems were gone after just sitting with her in the first two minutes."</p><cite>KAMAL B. · NOV 2026</cite></figure>
+      <figure><p>"Clear, honest, and straight-up answers, without any sugarcoating."</p><cite>GURKIRAT S. · NOV 2026</cite></figure>
+      <figure><p>"She is practical, kind and empowering. Apart from astrology she is also a very good life coach."</p><cite>DHANANJOY B. · NOV 2026</cite></figure>
+    </div>
+    <div class="vids">
+      <button class="vid" data-src="../assets/clients/DT5w2Smjxeg.mp4"><img src="../assets/clients/DT5w2Smjxeg.jpg" alt=""><span class="play"></span><span class="cap">1:21 · IN PERSON<b>A heartfelt thank-you</b></span></button>
+      <button class="vid" data-src="../assets/clients/DaNu4Att0TT.mp4"><img src="../assets/clients/DaNu4Att0TT.jpg" alt=""><span class="play"></span><span class="cap">1:21 · MANAL<b>The perfect astrologer</b></span></button>
+      <button class="vid" data-src="../assets/clients/DaWguk6TyjP.mp4"><img src="../assets/clients/DaWguk6TyjP.jpg" alt=""><span class="play"></span><span class="cap">1:10 · VIDEO CALL<b>After the reading</b></span></button>
+      <button class="vid" data-src="../assets/clients/DdbcV8XTLlr.mp4"><img src="../assets/clients/DdbcV8XTLlr.jpg" alt=""><span class="play"></span><span class="cap">0:36 · LIVE READING<b>"It all came true"</b></span></button>
+    </div>
+    <p class="more"><a class="btn btn-ink" href="https://maps.google.com/?cid=10121313852043803730">Read all 80 on Google</a></p>
+  </div>
+</section>
+
+<section class="s-about" id="morning" data-min="405">
+  <div class="wrap">
+    <div class="ph"><img src="../assets/ashima-lilacs.jpg" alt="Ashima Gautam outside among lilacs, in morning sun"></div>
+    <div>
+      <p class="time">6:45 am · meet Ashima</p>
+      <h2>She studied maths first. <em>That's why she shows you her working.</em></h2>
+      <p>Ashima Gautam did her M.Sc in Mathematics and trained as a teacher before she ever read a chart. So she tells you what she sees in your kundli, your numbers and your palm, and how she got there.</p>
+      <p>Knowing why you repeat a fear doesn't stop you repeating it. So she trained in mind reprogramming, and now works with you on the pattern itself, in Surrey, BC and online worldwide.</p>
+      <blockquote>"I will never use fear to keep you coming back."</blockquote>
+      <ul class="creds"><li>M.SC MATHEMATICS, B.ED</li><li>MIND REPROGRAMMING TRAINER</li><li>HYPNOTHERAPIST</li><li>REIKI MASTER</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="s-offers" id="sessions" data-min="440">
+  <div class="wrap">
+    <div class="head"><p class="time">7:20 am · the chai is ready</p><h2>Where to start, when you're ready.</h2><p>Every option is with Ashima herself. All prices in USD.</p></div>
+    <div class="coachcard">
+      <div>
+        <span class="time" style="color:#F6C27A;margin-bottom:14px">by application only</span>
+        <h3>You already know why you feel this way. <em>Coaching is where it starts to change.</em></h3>
+        <ul><li>A plan written from your kundli, your numbers and the life you want</li><li>Private sessions on video, or at her office in Surrey</li><li>Mind reprogramming, plus simple upay for the days between</li><li>Someone to ask when a hard day lands mid-week</li></ul>
+      </div>
+      <div class="side"><a class="btn btn-sun" href="../coaching.html#apply">Start my application</a><p>ABOUT 3 MINUTES · REPLY IN 24–48 H · YOU DECIDE AFTER THE CALL</p></div>
+    </div>
+    <div class="opts">
+      <div class="opt"><span class="k">every month</span><h3>The VIP Circle</h3><p>Two private video calls a month, her full course, and the private groups.</p><p class="price">$199 <small>/ month</small></p><a class="btn btn-ink" href="../vip.html">See the VIP Circle</a></div>
+      <div class="opt" data-picker><span class="k">one session</span><h3>How much time?</h3>
+        <div class="len" role="tablist"><button role="tab" aria-selected="true" data-t="60">60 min</button><button role="tab" aria-selected="false" data-t="30">30 min</button><button role="tab" aria-selected="false" data-t="10">10 min</button></div>
+        <div class="lp" data-p="60"><p>The full picture: kundli, numbers and both palms, and when the timing shifts.</p><p class="price">$149</p><a class="btn btn-sun" href="../consultation-60.html">Book 60 minutes</a></div>
+        <div class="lp" data-p="30" hidden><p>Two or three questions, talked through, with upay to take home.</p><p class="price">$99</p><a class="btn btn-sun" href="../consultation-30.html">Book 30 minutes</a></div>
+        <div class="lp" data-p="10" hidden><p>One question, one clear answer, and a simple upay.</p><p class="price">$27</p><a class="btn btn-sun" href="../one-question.html">Book 10 minutes</a></div>
+      </div>
+      <div class="opt"><span class="k">live, in a group</span><h3>Empower Your Inner World</h3><p>Live with Ashima at 12 pm Canada time. Recordings wait on Skool.</p><p class="price">$21 <small>/ month</small></p><a class="btn btn-ink" href="../empower.html">Join the live sessions</a></div>
+    </div>
+    <div class="free"><p><b>Not ready for any of it?</b> Join Ashima's free WhatsApp community for daily guidance.</p><a class="btn btn-ink" href="https://chat.whatsapp.com/G9WLwUiDfK6DKEwlAcjtLo">Join free</a></div>
+  </div>
+</section>
+
+<section class="s-final" data-min="462">
+  <div class="wrap">
+    <svg class="cup" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 28h34v8c0 10-7 18-17 18s-17-8-17-18v-8z"/><path d="M46 32h4a6 6 0 0 1 0 12h-5"/><path d="M8 58h44"/><path class="steam" d="M22 22c-3-4 3-6 0-10M30 22c-3-4 3-6 0-10M38 22c-3-4 3-6 0-10"/></svg>
+    <p class="time" style="justify-content:center">7:42 am · lighter</p>
+    <h2>You've carried this long enough. <em>Tell Ashima what's going on.</em></h2>
+    <p>The application takes about three minutes. Write it the way you'd tell a friend. Ashima's team replies within 24 to 48 hours, and you decide after the call.</p>
+    <a class="btn btn-sun" href="../coaching.html#apply">Apply for 1:1 coaching</a>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>Ashima Empowers · 5550 152 St #201, Surrey, BC · Online worldwide</span><span>Guidance and personal growth, not medical advice. All payments are non-refundable.</span></div></footer>
+
+<script>
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('section[data-min]')),clock=document.getElementById('clock'),t=document.getElementById('clockt');
+  function fmt(m){m=Math.round(m);var h=Math.floor(m/60),mm=m%60;return h+':'+(mm<10?'0':'')+mm+' AM'}
+  function tick(){
+    var y=window.scrollY+window.innerHeight*0.45,m=187;
+    for(var i=0;i<secs.length;i++){var s=secs[i],top=s.offsetTop,h=s.offsetHeight,a=+s.dataset.min,b=secs[i+1]?+secs[i+1].dataset.min:a;
+      if(y>=top){m=a+Math.min(1,(y-top)/h)*(b-a)}}
+    t.textContent=fmt(m);clock.classList.toggle('day',m>=350);
+  }
+  window.addEventListener('scroll',tick,{passive:true});tick();
+  var ns=document.querySelectorAll('.notif');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ns.forEach(function(n,i){setTimeout(function(){n.classList.add('in')},i*380)});io.disconnect()}})},{threshold:.3});io.observe(document.getElementById('lock'))}else ns.forEach(function(n){n.classList.add('in')});
+  document.querySelectorAll('.vid').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var v=document.createElement('video');v.src=b.dataset.src;v.controls=true;v.autoplay=true;v.playsInline=true;b.querySelector('img').replaceWith(v);b.classList.add('on');});});
+  document.querySelectorAll('[data-picker]').forEach(function(c){c.querySelectorAll('[role=tab]').forEach(function(x){x.addEventListener('click',function(){c.querySelectorAll('[role=tab]').forEach(function(y){y.setAttribute('aria-selected',y===x)});c.querySelectorAll('.lp').forEach(function(p){p.hidden=p.dataset.p!==x.dataset.t});});});});
+})();
+</script>
+</body>
+</html>
