@@ -21,7 +21,7 @@ window.SITE = {
 
   // --- Contact ------------------------------------------------------------
   whatsapp: "16044454743",                 // Ashima's WhatsApp number: digits only, with country code
-  email: "hello@ashimaempowers.com",
+  email: "support@ashimaempowers.com",       // shown in the footer and the policy pages
 
   // --- Prices shown on the website ----------------------------------------
   // These update every price on every page. If you change a price, ALSO make a
@@ -38,11 +38,11 @@ window.SITE = {
   // Stripe Payment Links (live, USD). After paying, Stripe sends buyers to details.html.
   // If a link is left empty, that button opens WhatsApp with a ready-made message instead.
   links: {
-    "question-10": "https://buy.stripe.com/fZueVegE1cj4dQi4VZgEg0k",   // $27  One-Question Consultation
-    "consult-30": "https://buy.stripe.com/6oUcN673r82O8vY1JNgEg0q",    // $99  30-Minute Private Consultation
-    "consult-60": "https://buy.stripe.com/14A9AU5Znerc3bE3RVgEg0r",    // $149 1-Hour Private Consultation
-    "vip-monthly": "https://buy.stripe.com/6oUdRa9bz96Sh2u747gEg0s",   // $199/month VIP Circle
-    "inner-world": "https://buy.stripe.com/bJecN6evT2Iuh2ugEHgEg0t",   // $21/month Empower Your Inner World
+    "question-10": "https://buy.stripe.com/fZueVegE1cj4dQi4VZgEg0k",   // One-Question Consultation
+    "consult-30": "https://buy.stripe.com/6oUcN673r82O8vY1JNgEg0q",    // 30-Minute Private Consultation
+    "consult-60": "https://buy.stripe.com/14A9AU5Znerc3bE3RVgEg0r",    // 1-Hour Private Consultation
+    "vip-monthly": "https://buy.stripe.com/6oUdRa9bz96Sh2u747gEg0s",   // VIP Circle
+    "inner-world": "https://buy.stripe.com/bJecN6evT2Iuh2ugEHgEg0t",   // Empower Your Inner World
     "manage": "https://billing.stripe.com/p/login/eVqfZigE13MycMecorgEg00", // members cancel or update their card here
     "community": "https://www.skool.com/empower-your-inner-world-7218/about", // Skool (paid members only, never call it free)
     // The FREE WhatsApp community. The private members' group link must NEVER go in this file:

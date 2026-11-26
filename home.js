@@ -27,6 +27,8 @@
 })();
 
 // Google reviews, copied word for word from Ashima's Google Business Profile on 22 Nov 2026.
+/* EDIT THE GOOGLE REVIEWS HERE: one per line as ["Name", "Month Year", "Review text"], newest first,
+   copied word for word from Google. If the total changes, also update "80" and "Eighty" in index.html. */
 const REVIEWS = [
   ["Roop K.", "November 2026", "I got my reading with Ashima mam today!!! She is a true gem 💎 such a wonderful lady with lots of amazing knowledge… She explained each and every single thing very clearly and all of her predictions were so true, so accurate, which I could relate with. She makes you comfortable and she will clear all your doubts, all your worries and give you proper true guidance ❤️ She helps with anxiety, if anyone is having any mental health issue she will guide you properly. I don't believe in astrology because in today's time people misguide you just for dollars, BUT when I got my reading with her my misconception got cleared, because she isn't like the other astrologers. SHE IS A TRUE DIAMOND 💎"],
   ["Sujata B.", "November 2026", "Didi was very kind, understanding and to the point. She took care of me like her own sister. I booked her for personal guidance and I will contact her after my results. Thank you!!"],

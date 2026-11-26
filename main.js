@@ -20,6 +20,13 @@ function logLead(type, data) {
   return fetch(CONFIG.leadsLog, { method: "POST", headers: { "Content-Type": "text/plain;charset=UTF-8" }, body, keepalive: true }).catch(() => {});
 }
 
+// The support email comes from site-settings.js.
+document.querySelectorAll("[data-email]").forEach((el) => {
+  if (!CONFIG.email) return;
+  el.href = "mailto:" + CONFIG.email;
+  if (el.textContent.includes("@")) el.textContent = CONFIG.email;
+});
+
 const wa = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
 
 // Wire every [data-offer] button to its link, or to WhatsApp as a fallback.
@@ -316,6 +323,7 @@ if (detailsForm) {
       for (const inp of detailsForm.querySelectorAll("input[type=file]")) {
         for (const f of [...inp.files].slice(0, inp.multiple ? 4 : 1)) fd.append(inp.name, await shrink(f));
       }
+      // The details Worker stores this and also writes a row to the leads log (server side).
       const res = await fetch(CONFIG.detailsEndpoint, { method: "POST", body: fd });
       const out = await res.json().catch(() => ({}));
       if (!res.ok || !out.ok) throw new Error(out.error || res.status);

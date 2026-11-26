@@ -132,3 +132,25 @@ h1, h2, h3, .h2 { text-wrap: balance; }
 .member .price small { color: #5c5668; -webkit-text-fill-color: #5c5668; }
 .member ul:not(.ticks) li::before { color: #74541a; background: rgba(164, 122, 44, .16); }
 .member .ticks li { color: #4c4658; }
+
+/* ---------- 26 Nov re-check: every hover and focus is plum, never gold/orange */
+.promo i span { display: inline; color: inherit; font-size: inherit; margin: 0; }
+.cta-soft:hover { color: #3a3150; text-decoration-color: #3a3150; }
+.foot-links a:hover, .foot .logo:hover { color: #3a3150; text-decoration: underline; text-underline-offset: 4px; }
+.rv-arrow:hover { background: #3a3150; color: #fff; }
+.ig-proof-card:hover, .cv:hover, .feat-card:hover { transform: none; box-shadow: 0 0 0 1px rgba(58,49,80,.45), 0 20px 40px -28px rgba(45,42,58,.45); }
+.cv:hover img { transform: none; }
+:focus-visible { outline: 2px solid #3a3150; outline-offset: 3px; }
+.choice input:focus-visible + label, .scale input:focus-visible + span { outline-color: #3a3150; }
+.member-note a, .promise cite, .cv-note a { color: #74541a; }
+.story-photo .cap, .page-hero .lead, .you7 .lead { color: #4c4658; }
+.stars { color: #86621f; }
+@media (min-width: 981px) and (max-width: 1000px) { .join-art { width: 44%; } }
+
+/* ---------- cross-browser test fixes (Chrome, Edge, Firefox, Safari engine) */
+[hidden] { display: none !important; }                       /* the video pop-up showed a blank white box */
+.logo img { filter: none; }                                    /* Safari painted a square in the corner */
+.nav-bar { -webkit-backdrop-filter: blur(14px); }
+.mbar { -webkit-backdrop-filter: blur(10px); }
+.pop { -webkit-backdrop-filter: blur(4px); }
+@media (max-width: 900px) { .p-portrait { padding-top: 70px; } .p-portrait .geo { width: min(118%, 500px); } }
