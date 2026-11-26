@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept B · Her Working · Ashima Empowers</title>
+<link rel="icon" href="../assets/brand/ae-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* CONCEPT B · HER WORKING (a maths exercise book)
+   paper #F5F6F0 · ink #1B2340 · fountain blue #2648A8 · margin red #D9534F · highlighter #FFE45C */
+:root{
+  --paper:#F5F6F0; --grid:rgba(38,72,168,.075); --ink:#1B2340; --blue:#2648A8; --blue-d:#1A3580;
+  --red:#D9534F; --hi:#FFE45C; --muted:#545B74; --rule:rgba(27,35,64,.16);
+  --disp:"Young Serif", Georgia, serif; --body:"Instrument Sans", system-ui, sans-serif; --hand:"Kalam", "Comic Sans MS", cursive;
+  --margin:210px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{color:var(--ink);font:400 18px/1.6 var(--body);-webkit-font-smoothing:antialiased;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.12;color:var(--ink)}
+h2{font-size:clamp(30px,3.6vw,46px)}
+h3{font-size:24px}
+.hi{background:linear-gradient(100deg,transparent 2%,rgba(255,228,92,.85) 4%,rgba(255,228,92,.7) 96%,transparent 98%);padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hand{font-family:var(--hand);color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;font:600 16px/1 var(--body);text-decoration:none;border-radius:8px;border:2px solid var(--blue);transition:background .2s,color .2s}
+.btn-solid{background:var(--blue);color:#fff}
+.btn-solid:hover{background:var(--blue-d);border-color:var(--blue-d)}
+.btn-line{color:var(--blue);background:var(--paper)}
+.btn-line:hover{background:var(--blue);color:#fff}
+
+.cbar{background:var(--ink);color:#e7eaf5;font:600 13px/1 var(--body);text-align:center;padding:9px 12px}
+.cbar a{color:var(--hi);margin-left:10px}
+
+/* the book: one continuous page with a red margin line */
+.book{width:min(1200px,100% - 32px);margin:0 auto;position:relative}
+.book::before{content:"";position:absolute;top:0;bottom:0;left:calc(var(--margin) + 18px);width:2px;background:var(--red);opacity:.75}
+.row{display:grid;grid-template-columns:var(--margin) 1fr;column-gap:52px;padding:84px 0}
+.note{font-family:var(--hand);color:var(--red);font-size:20px;line-height:1.3;text-align:right;padding-top:6px}
+.note b{display:block;font-weight:700;color:var(--blue);font-size:22px}
+.note .sm{display:block;margin-top:10px;font-size:17px;color:var(--blue)}
+.lead{font-size:20px;color:var(--muted);max-width:62ch;margin-top:18px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,246,240,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav .in{width:min(1200px,100% - 32px);margin:0 auto;display:flex;align-items:center;gap:28px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:38px}
+.brand b{font:400 22px/1 var(--disp)}
+.brand span{font:400 17px/1 var(--hand);color:var(--red);margin-left:2px}
+.nav ul{display:flex;gap:26px;list-style:none;margin-left:auto;font-weight:500;font-size:16px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--blue);text-decoration:underline;text-decoration-style:wavy;text-underline-offset:6px}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:980px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+
+/* hero */
+.hero{padding-top:64px}
+.hero .main{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:start}
+.pill{display:inline-block;font:600 13px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);border:1.5px solid var(--blue);border-radius:6px;padding:9px 14px;background:var(--paper)}
+.hero .sub{margin:16px 0 12px;font-size:19px;color:var(--muted)}
+.hero h1{font-size:clamp(32px,3.4vw,48px);line-height:1.14}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero .proof{margin-top:22px;font-size:15px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px}
+.hero .proof b{color:var(--ink)}
+.snap{position:relative;margin-top:30px}
+.snap img{border:10px solid #fff;box-shadow:0 10px 30px rgba(27,35,64,.16);transform:rotate(1.6deg);aspect-ratio:3/4;object-fit:cover;width:100%}
+.snap svg{position:absolute;left:-54px;bottom:46px;width:120px;height:90px;fill:none;stroke:var(--red);stroke-width:2.5;stroke-linecap:round}
+.snap p{position:absolute;left:-200px;bottom:-14px;width:180px;text-align:right;font:400 19px/1.25 var(--hand);color:var(--red);transform:rotate(-3deg)}
+@media (max-width:1100px){.snap svg,.snap p{display:none}}
+
+/* calculator: the signature */
+.calc{background:#fff;border:1.5px solid var(--rule);border-radius:14px;padding:34px 36px;box-shadow:0 1px 0 var(--rule)}
+.calc h2{margin-bottom:6px}
+.calc form{display:flex;flex-wrap:wrap;align-items:end;gap:14px;margin:24px 0 8px}
+.calc label{font:600 14px var(--body);color:var(--muted);display:grid;gap:6px}
+.calc input{font:400 24px var(--hand);color:var(--blue);border:0;border-bottom:2px solid var(--blue);background:transparent;padding:4px 2px;width:84px;text-align:center}
+.calc input.y{width:112px}
+.calc input:focus{outline:none;background:rgba(255,228,92,.35)}
+.calc .btn{min-height:46px}
+.work{margin-top:22px;font:400 26px/1.65 var(--hand);color:var(--blue);min-height:220px}
+.work .ln{opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s}
+.work .ln.on{opacity:1;transform:none}
+.work .dim{color:var(--muted);font-size:20px}
+.work .ans{display:inline-block;color:var(--red);border:2.5px solid var(--red);border-radius:50%;padding:0 16px;margin-left:6px;transform:rotate(-4deg)}
+.work .mean{font:400 19px/1.55 var(--body);color:var(--ink);max-width:60ch;margin-top:8px}
+.calc .after{margin-top:20px;padding-top:20px;border-top:1.5px dashed var(--rule);display:flex;flex-wrap:wrap;align-items:center;gap:16px;justify-content:space-between}
+.calc .after p{max-width:52ch;color:var(--muted);font-size:16px}
+.err{color:var(--red);font:400 18px var(--hand);min-height:24px}
+
+/* you */
+.ticks{list-style:none;margin-top:30px;display:grid;gap:4px}
+.ticks label{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);cursor:pointer}
+.ticks input{appearance:none;-webkit-appearance:none;width:26px;height:26px;border:2px solid var(--ink);border-radius:4px;margin-top:3px;position:relative;cursor:pointer;background:var(--paper)}
+.ticks input:checked::after{content:"\2713";position:absolute;left:1px;top:-14px;font:700 34px/1 var(--hand);color:var(--red)}
+.ticks b{display:block;font-weight:600;font-size:19px}
+.ticks span{color:var(--muted)}
+.tally{margin-top:26px;font:400 24px/1.35 var(--hand);color:var(--red);min-height:34px}
+.turn{margin-top:12px;font:400 26px/1.35 var(--disp)}
+.two{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start}
+.two figure img{aspect-ratio:4/5;object-fit:cover;width:100%;border:10px solid #fff;box-shadow:0 10px 30px rgba(27,35,64,.14);transform:rotate(-1.4deg)}
+.two figcaption{font:400 19px var(--hand);color:var(--blue);margin-top:14px;text-align:center}
+
+/* reviews */
+.score{display:flex;align-items:center;gap:16px;margin-top:20px}
+.score .ring{font:400 40px/1 var(--hand);color:var(--red);border:3px solid var(--red);border-radius:50%;width:92px;height:92px;display:grid;place-items:center;transform:rotate(-6deg)}
+.score p{color:var(--muted)}
+.quotes{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.q{padding:24px 0;border-top:1.5px dashed var(--rule)}
+.q p{font:400 21px/1.5 var(--disp)}
+.q cite{display:block;margin-top:10px;font:400 19px var(--hand);color:var(--blue);font-style:normal}
+.q .st{color:var(--red);letter-spacing:2px;font-size:15px}
+
+/* videos */
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.vid{border:0;background:none;padding:0;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.vid .fr{position:relative;background:#fff;padding:8px 8px 0;box-shadow:0 8px 22px rgba(27,35,64,.14)}
+.vid:nth-child(odd) .fr{transform:rotate(-1.2deg)}.vid:nth-child(even) .fr{transform:rotate(1deg)}
+.vid img,.vid video{aspect-ratio:9/14;object-fit:cover;width:100%}
+.vid .play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.vid .play::after{content:"";border-left:16px solid var(--blue);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.vid .cap{display:block;font:400 19px/1.25 var(--hand);color:var(--ink);padding:10px 4px 14px}
+.vid .cap small{display:block;color:var(--muted);font:500 13px var(--body);margin-top:2px}
+.vid.on .play{display:none}
+
+/* method: the equation */
+.eq{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:30px 0 40px;font:400 clamp(24px,2.6vw,34px)/1.3 var(--disp)}
+.eq .op{font-family:var(--hand);color:var(--red);font-size:1.25em}
+.eq .res{background:linear-gradient(transparent 55%,rgba(255,228,92,.9) 55%)}
+.terms{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.term{border-top:2px solid var(--ink);padding-top:16px}
+.term .hand{font-size:19px;color:var(--red)}
+.term h3{margin:4px 0 8px;font-size:22px}
+.term p{color:var(--muted);font-size:16px}
+
+/* about */
+.creds{list-style:none;margin-top:22px;display:grid;gap:6px;font:400 21px var(--hand);color:var(--blue)}
+.creds li::before{content:"\2713  ";color:var(--red)}
+.about p{margin-top:16px;color:var(--muted)}
+.about blockquote{margin-top:26px;border-left:4px solid var(--hi);padding:4px 0 4px 20px;font:400 24px/1.4 var(--disp)}
+.about blockquote cite{display:block;margin-top:8px;font:400 19px var(--hand);color:var(--red);font-style:normal}
+
+/* coaching */
+.coach .gets{list-style:none;margin-top:24px;display:grid;gap:12px}
+.coach .gets li{padding-left:34px;position:relative}
+.coach .gets li::before{content:"\2192";position:absolute;left:0;top:-2px;font:700 22px var(--hand);color:var(--red)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:34px 0 26px;font:400 22px var(--hand);color:var(--blue)}
+.flow span{border:2px solid var(--blue);border-radius:30px;padding:4px 16px;background:var(--paper)}
+.flow i{font-style:normal;color:var(--red)}
+.small{font-size:14px;color:var(--muted);margin-top:14px;max-width:60ch}
+
+/* sessions: a ledger */
+.ledger{width:100%;border-collapse:collapse;margin-top:30px;background:rgba(255,255,255,.75)}
+.ledger th{font:600 13px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:2px solid var(--ink)}
+.ledger td{padding:18px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.ledger td:first-child{font:400 21px/1.2 var(--disp);width:24%}
+.ledger td:first-child small{display:block;font:400 17px var(--hand);color:var(--red);margin-top:4px}
+.ledger td.p{font:400 24px var(--hand);color:var(--blue);white-space:nowrap}
+.ledger td.p small{font:500 13px var(--body);color:var(--muted)}
+.ledger td:last-child{text-align:right;white-space:nowrap}
+.ledger .btn{min-height:42px;padding:0 16px;font-size:15px}
+.ledger tr.star td{background:rgba(255,228,92,.28)}
+@media (max-width:860px){.ledger thead{display:none}.ledger,.ledger tbody,.ledger tr,.ledger td{display:block;width:100%!important}.ledger tr{border-bottom:2px solid var(--rule);padding:12px 0}.ledger td{border:0;padding:6px 12px;text-align:left!important}}
+
+/* faq */
+.qa{margin-top:26px}
+.qa details{border-top:1.5px dashed var(--rule);padding:18px 0}
+.qa summary{cursor:pointer;list-style:none;font:400 22px/1.3 var(--disp);display:grid;grid-template-columns:38px 1fr}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"Q.";font:700 22px var(--hand);color:var(--red)}
+.qa p{margin:10px 0 0 38px;color:var(--muted)}
+
+.final h2{font-size:clamp(34px,4.4vw,58px)}
+.final .btn{margin-top:28px}
+footer{border-top:1px solid var(--rule);padding:36px 0;font-size:14px;color:var(--muted);background:var(--paper)}
+footer .in{width:min(1200px,100% - 32px);margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+
+@media (max-width:1100px){.terms{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){
+  :root{--margin:0px}
+  .book::before{left:6px}
+  .row{grid-template-columns:1fr;padding:60px 0 60px 26px;row-gap:14px}
+  .note{text-align:left;padding-top:0}
+  .note .sm{display:inline;margin:0 0 0 8px}
+  .hero .main,.two{grid-template-columns:1fr}
+  .snap{max-width:360px}
+  .quotes{grid-template-columns:1fr}
+  .calc{padding:24px 20px}
+}
+@media (max-width:560px){.terms,.vgrid{grid-template-columns:1fr 1fr}.btn{width:100%}.work{font-size:22px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:600px){.nav .btn{width:auto;min-height:40px;padding:0 14px;font-size:14px}.brand img{width:34px;height:34px}}
+@media (max-width:600px){.brand span{display:none}}
+</style>
+</head>
+<body>
+<div class="cbar">Design concept B of 3 · Her Working <a href="a-marigold.html">See A</a><a href="c-mehndi.html">See C</a><a href="index.html">All concepts</a></div>
+
+<header class="nav"><div class="in">
+  <a class="brand" href="../index.html"><img src="../assets/brand/ae-mark-sm.png" alt=""><b>Ashima</b><span>empowers</span></a>
+  <ul><li><a href="../about.html">About</a></li><li><a href="../sessions.html">Sessions</a></li><li><a href="../coaching.html">Coaching</a></li><li><a href="../vip.html">VIP Circle</a></li><li><a href="#reviews">Reviews</a></li></ul>
+  <a class="btn btn-solid" href="../coaching.html#apply">Apply for Coaching</a>
+</div></header>
+
+<main id="main" class="book">
+
+<!-- HERO -->
+<section class="row hero">
+  <p class="note"><b>Ashima Gautam</b>M.Sc Mathematics.<span class="sm">So she shows you her working.</span></p>
+  <div class="main">
+    <div>
+      <span class="pill">For those who have tried every remedy:</span>
+      <p class="sub">and still carry the same anxiety, the same heaviness, the same story.</p>
+      <h1>Discover how to calm anxiety, lift the weight of depression and finally understand your life's timing with <span class="hi">Astrology, Numerology, Palmistry + Mind Reprogramming</span></h1>
+      <div class="ctas"><a class="btn btn-solid" href="../coaching.html#apply">Apply for 1:1 coaching</a><a class="btn btn-line" href="#workit">Work out your number</a></div>
+      <p class="proof"><span><b>5.0 ★</b> from 80 Google reviews</span><span><b>24.6K</b> on Instagram</span><span>Online worldwide · Surrey, BC</span></p>
+    </div>
+    <div class="snap">
+      <img src="../assets/ashima-desk.jpg" alt="Ashima Gautam at her desk">
+      <svg viewBox="0 0 120 90" aria-hidden="true"><path d="M6 80c20-6 52-22 86-58"/><path d="M78 18l16 2-4 15"/></svg>
+      <p>that's me, at my desk in Surrey</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE: the worked number -->
+<section class="row" id="workit">
+  <p class="note"><b>Try it</b>Numerology is arithmetic.<span class="sm">Here's the working.</span></p>
+  <div class="calc">
+    <h2>Your birth date, worked out the way Ashima does it.</h2>
+    <p style="color:var(--muted)">Type your date of birth. Each step appears, so you can check it yourself.</p>
+    <form id="calc" novalidate>
+      <label>Day<input id="d" inputmode="numeric" maxlength="2" placeholder="14" aria-label="Day of birth"></label>
+      <label>Month<input id="m" inputmode="numeric" maxlength="2" placeholder="08" aria-label="Month of birth"></label>
+      <label>Year<input id="y" class="y" inputmode="numeric" maxlength="4" placeholder="1989" aria-label="Year of birth"></label>
+      <button class="btn btn-solid" type="submit">Show the working</button>
+    </form>
+    <p class="err" id="err" aria-live="polite"></p>
+    <div class="work" id="work" aria-live="polite"></div>
+    <div class="after">
+      <p>That's one number. In a session Ashima reads it alongside your kundli and both palms, and tells you what it means for this year.</p>
+      <a class="btn btn-line" href="../sessions.html">See the sessions</a>
+    </div>
+  </div>
+</section>
+
+<!-- YOU -->
+<section class="row" id="you">
+  <p class="note"><b>Be honest</b>Tick the ones<span class="sm">that are true for you.</span></p>
+  <div class="two">
+    <div>
+      <h2>You smile through every family function. <span class="hi">Nobody sees the night that comes after.</span></h2>
+      <p class="lead">When mom asks on WhatsApp how you are, you type "all good" and send a heart. Then you put the phone down, and the heaviness is still sitting on your chest.</p>
+      <ul class="ticks" id="ticks">
+        <li><label><input type="checkbox"><span><b>"My chest goes tight in the grocery line, and I can't tell you why."</b>It comes in the car, at work, halfway through dinner.</span></label></li>
+        <li><label><input type="checkbox"><span><b>"My mind starts talking the moment I lie down."</b>The same conversation, replayed at 3 a.m.</span></label></li>
+        <li><label><input type="checkbox"><span><b>"He's gone, and I still check when he was last online."</b>A loss your heart hasn't caught up with.</span></label></li>
+        <li><label><input type="checkbox"><span><b>"I don't recognise myself any more."</b>Low days that quietly became low months.</span></label></li>
+        <li><label><input type="checkbox"><span><b>"I've done the pujas, the stones, the fasts. Nothing stays."</b>A few calm weeks, then the same story again.</span></label></li>
+      </ul>
+      <p class="tally" id="tally"></p>
+      <p class="turn">Nothing is wrong with you. You've been living a pattern, and a pattern is something you can learn to change.</p>
+    </div>
+    <figure><img src="../assets/story/overthinking.jpg" alt="A woman lost in thought"><figcaption>still replaying it…</figcaption></figure>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="row" id="reviews">
+  <p class="note"><b>Marked by clients</b>80 reviews on Google</p>
+  <div>
+    <h2>Eighty people took the time to write it down.</h2>
+    <div class="score"><span class="ring">5.0</span><p>Every one is on Google, where you can read it for yourself.<br><a href="https://maps.google.com/?cid=10121313852043803730">Read all 80 reviews</a></p></div>
+    <div class="quotes">
+      <figure class="q"><span class="st">★★★★★</span><p>"She answered every question that came to my mind with clear, honest, and straight-up answers, without any sugarcoating."</p><cite>Gurkirat S., November 2026</cite></figure>
+      <figure class="q"><span class="st">★★★★★</span><p>"Half of my problems were gone after just sitting with her in the first two minutes. You gave me not only a consultation but also life coaching."</p><cite>Kamal B., November 2026</cite></figure>
+      <figure class="q"><span class="st">★★★★★</span><p>"I don't believe in astrology because people misguide you just for dollars, BUT when I got my reading with her my misconception got cleared."</p><cite>Roop K., November 2026</cite></figure>
+      <figure class="q"><span class="st">★★★★★</span><p>"Whatever she said came true for me. You will be able to see what is up with your life and have a sense of direction."</p><cite>Suvojit D., November 2026</cite></figure>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="row">
+  <p class="note"><b>On camera</b>sound on ♪</p>
+  <div>
+    <h2>Some clients were happy to say it on camera.</h2>
+    <div class="vgrid">
+      <button class="vid" data-src="../assets/clients/DT5w2Smjxeg.mp4"><span class="fr"><img src="../assets/clients/DT5w2Smjxeg.jpg" alt=""><span class="play"></span></span><span class="cap">A heartfelt thank-you<small>1:21 · in person</small></span></button>
+      <button class="vid" data-src="../assets/clients/DaNu4Att0TT.mp4"><span class="fr"><img src="../assets/clients/DaNu4Att0TT.jpg" alt=""><span class="play"></span></span><span class="cap">"The perfect astrologer"<small>1:21 · Manal</small></span></button>
+      <button class="vid" data-src="../assets/clients/DaWguk6TyjP.mp4"><span class="fr"><img src="../assets/clients/DaWguk6TyjP.jpg" alt=""><span class="play"></span></span><span class="cap">After the reading<small>1:10 · video call</small></span></button>
+      <button class="vid" data-src="../assets/clients/DdbcV8XTLlr.mp4"><span class="fr"><img src="../assets/clients/DdbcV8XTLlr.jpg" alt=""><span class="play"></span></span><span class="cap">"It all came true"<small>0:36 · live reading</small></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="row">
+  <p class="note"><b>The method</b>all four together,<span class="sm">never just one.</span></p>
+  <div>
+    <h2>Most readings stop at why. Ashima keeps going.</h2>
+    <p class="eq" aria-label="Timing plus nature plus practice plus rewiring equals a pattern that changes"><span>Timing</span><span class="op">+</span><span>Nature</span><span class="op">+</span><span>Practice</span><span class="op">+</span><span>Rewiring</span><span class="op">=</span><span class="res">a pattern that actually changes</span></p>
+    <div class="terms">
+      <div class="term"><span class="hand">timing</span><h3>Astrology &amp; Numerology</h3><p>Why this year has felt so heavy, which months ask for patience, and when to act on the job, the move or the marriage talk.</p></div>
+      <div class="term"><span class="hand">nature</span><h3>Palm Reading</h3><p>The temperament and strengths you were born with, read line by line from both hands.</p></div>
+      <div class="term"><span class="hand">practice</span><h3>Rituals &amp; Upay</h3><p>A few minutes a day at your home mandir or bedside. Never a gemstone, never a costly puja.</p></div>
+      <div class="term"><span class="hand">rewiring</span><h3>Mind Reprogramming</h3><p>The old belief behind the worry, found and rewired, so the calm has something solid to stand on.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="row about">
+  <div class="note"><b>Qualifications</b><ul class="creds" style="text-align:left;display:inline-grid"><li>M.Sc Maths, B.Ed</li><li>Mind reprogramming trainer</li><li>Hypnotherapist</li><li>Reiki Master</li></ul></div>
+  <div class="two">
+    <div>
+      <h2>She studied maths first. That's why she shows you her working.</h2>
+      <p>Ashima Gautam did her M.Sc in Mathematics and trained as a teacher before she ever read a chart. Numbers taught her to look for patterns and to trust what she could check. So she tells you what she sees in your kundli, your numbers and your palm, and how she got there.</p>
+      <p>Knowing why you repeat a fear doesn't stop you repeating it. So she trained in mind reprogramming, and now works with you on the pattern itself.</p>
+      <blockquote>"I will never use fear to keep you coming back. I want you to leave every session clearer, calmer and more in charge of your own life."<cite>Ashima</cite></blockquote>
+    </div>
+    <figure><img src="../assets/ashima-lilacs.jpg" alt="Ashima Gautam among lilacs"><figcaption>Surrey, BC · in spring</figcaption></figure>
+  </div>
+</section>
+
+<!-- COACHING -->
+<section class="row coach">
+  <p class="note"><b>By application</b>about 3 minutes</p>
+  <div>
+    <h2>You already know why you feel this way. <span class="hi">Coaching is where it starts to change.</span></h2>
+    <p class="lead">A reading gives you the why. Then you go home to the same house, the same phone calls, the same 3 a.m. This is where Ashima stays with you, one-to-one.</p>
+    <ul class="gets">
+      <li><b>A plan written for you,</b> from your kundli, your numbers and the life you actually want</li>
+      <li><b>Private sessions with Ashima,</b> on video or at her office in Surrey</li>
+      <li><b>Mind reprogramming</b> for fear and self-doubt that started long before this year</li>
+      <li><b>Simple rituals and upay</b> for the days between sessions</li>
+      <li><b>Someone to ask</b> when a hard day lands mid-week</li>
+    </ul>
+    <p class="flow"><span>apply</span><i>→</i><span>we reply in 24–48 h</span><i>→</i><span>your call, then you decide</span></p>
+    <a class="btn btn-solid" href="../coaching.html#apply">Start my application</a>
+    <p class="small">Applying costs nothing. Coaching is guidance for anxiety, overthinking, heartbreak and life direction, not medical treatment.</p>
+  </div>
+</section>
+
+<!-- SESSIONS -->
+<section class="row" id="sessions">
+  <p class="note"><b>Every option</b>side by side.<span class="sm">All with Ashima herself.</span></p>
+  <div>
+    <h2>Not ready to apply? Then start smaller.</h2>
+    <table class="ledger">
+      <thead><tr><th>Option</th><th>What you get</th><th>Price (USD)</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>VIP Circle<small>Ashima every month</small></td><td>Two private video calls a month, her full course, private Skool and WhatsApp groups</td><td class="p">$199 <small>/ month</small></td><td><a class="btn btn-line" href="../vip.html">See it</a></td></tr>
+        <tr class="star"><td>1-hour session<small>most booked</small></td><td>Kundli, numbers and both palms in detail. Why the story keeps coming back, and when the timing shifts</td><td class="p">$149</td><td><a class="btn btn-solid" href="../consultation-60.html">Book</a></td></tr>
+        <tr><td>30-minute session<small>a few questions</small></td><td>Two or three questions, talked through. Upay and one mind practice to take home</td><td class="p">$99</td><td><a class="btn btn-line" href="../consultation-30.html">Book</a></td></tr>
+        <tr><td>One-Question<small>10 minutes</small></td><td>A clear answer to the one question that keeps you up, plus a simple upay</td><td class="p">$27</td><td><a class="btn btn-line" href="../one-question.html">Book</a></td></tr>
+        <tr><td>Empower Your Inner World<small>live, in a group</small></td><td>Live sessions at 12 pm Canada time. Recordings and two bonus meditations on Skool</td><td class="p">$21 <small>/ month</small></td><td><a class="btn btn-line" href="../empower.html">Join</a></td></tr>
+        <tr><td>WhatsApp community<small>free</small></td><td>Daily guidance from Ashima, next to your family group chats</td><td class="p">Free</td><td><a class="btn btn-line" href="https://chat.whatsapp.com/G9WLwUiDfK6DKEwlAcjtLo">Join</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="row">
+  <p class="note"><b>Questions</b>asked most often</p>
+  <div>
+    <h2>What people usually ask first</h2>
+    <div class="qa">
+      <details open><summary>How can astrology help with anxiety or depression?</summary><p>Your chart, numbers and palm show the pattern and its timing. The change comes from the mind reprogramming work, with simple rituals and upay alongside. It isn't medical or psychological treatment, so if you see a doctor or therapist, please keep going.</p></details>
+      <details><summary>What happens after I pay?</summary><p>A short details form appears straight away: your name, date, time and place of birth, and photos of both palms. Then Ashima's team messages you on WhatsApp to set a time.</p></details>
+      <details><summary>Will I be told to buy gemstones or an expensive puja?</summary><p>No. Simple rituals and upay you can do yourself at home. She will never use fear to keep you coming back.</p></details>
+      <details><summary>Can I get a refund?</summary><p>No. All payments are non-refundable, so take your time choosing. You can move a session once with at least 24 hours' notice.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="row final">
+  <p class="note"><b>Your turn</b>✎ 3 minutes</p>
+  <div>
+    <h2>You've carried this long enough. <span class="hi">Tell Ashima what's going on.</span></h2>
+    <p class="lead">Write it the way you'd tell a friend. Ashima's team reads every application and replies within 24 to 48 hours, and you decide after the call.</p>
+    <a class="btn btn-solid" href="../coaching.html#apply">Apply for 1:1 coaching</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="in"><span>Ashima Empowers · 5550 152 St #201, Surrey, BC · Online worldwide</span><span>Guidance and personal growth, not medical advice. All payments are non-refundable.</span></div></footer>
+
+<script>
+(function(){
+  var MEAN={1:"In numerology, 1 is the self-starter. You're used to carrying things alone, even when you'd rather not.",
+  2:"In numerology, 2 is the peacemaker. You feel everyone's mood before your own.",
+  3:"In numerology, 3 is the expressive one. You can make a room laugh while you're worried inside.",
+  4:"In numerology, 4 is the builder. You need life to feel solid and planned, and uncertainty hits hard.",
+  5:"In numerology, 5 wants freedom. When life feels stuck, restlessness shows up first.",
+  6:"In numerology, 6 is the carer. You look after everyone, and usually yourself last.",
+  7:"In numerology, 7 is the seeker. A deep thinker whose mind doesn't switch off easily.",
+  8:"In numerology, 8 is the achiever. You carry responsibility, and the pressure that comes with it.",
+  9:"In numerology, 9 is the old soul. Big compassion, and letting go doesn't come easily.",
+  11:"11 is a master number: the intuitive. You feel things strongly, sometimes too strongly.",
+  22:"22 is a master number: the master builder. Big plans, and big expectations on yourself.",
+  33:"33 is a master number: the teacher and healer. You give a great deal of yourself."};
+  function digits(n){return String(n).split('').map(Number)}
+  function reduce(n,keep){var steps=[];while(n>9&&!(keep&&(n==11||n==22||n==33))){var d=digits(n);var s=d.reduce(function(a,b){return a+b},0);steps.push(d.join('+')+' = '+s);n=s}return {n:n,steps:steps}}
+  var work=document.getElementById('work'),err=document.getElementById('err');
+  function show(d,m,y,animate){
+    var rd=reduce(d,false),rm=reduce(m,false),ry=reduce(y,false);
+    var total=rd.n+rm.n+ry.n,rt=reduce(total,true);
+    var p=function(n){return n<10?'0'+n:n};
+    var lines=['<span class="dim">date of birth</span>&nbsp; '+p(d)+' · '+p(m)+' · '+y,
+      'day '+(rd.steps.length?rd.steps.join(' → '):d)+' &nbsp;·&nbsp; month '+(rm.steps.length?rm.steps.join(' → '):m)+' &nbsp;·&nbsp; year '+ry.steps.join(' → '),
+      rd.n+' + '+rm.n+' + '+ry.n+' = '+total+(rt.steps.length?' → '+rt.steps.join(' → '):''),
+      'life path number <span class="ans">'+rt.n+'</span>',
+      '<p class="mean">'+MEAN[rt.n]+'</p>'];
+    work.innerHTML=lines.map(function(l){return '<div class="ln">'+l+'</div>'}).join('');
+    var ls=work.querySelectorAll('.ln');
+    ls.forEach(function(el,i){ if(!animate){el.classList.add('on');return} setTimeout(function(){el.classList.add('on')},250+i*550)});
+  }
+  show(14,8,1989,false);
+  document.getElementById('calc').addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=+document.getElementById('d').value,m=+document.getElementById('m').value,y=+document.getElementById('y').value;
+    var ok=d>=1&&d<=31&&m>=1&&m<=12&&y>=1900&&y<=2026&&new Date(y,m-1,d).getDate()===d;
+    if(!ok){err.textContent='Check the date: day 1–31, month 1–12, year like 1989.';return}
+    err.textContent='';show(d,m,y,!matchMedia('(prefers-reduced-motion: reduce)').matches);
+  });
+  var tally=document.getElementById('tally');
+  document.querySelectorAll('#ticks input').forEach(function(c){c.addEventListener('change',function(){
+    var n=document.querySelectorAll('#ticks input:checked').length;
+    tally.textContent=n?('You ticked '+n+'. That isn’t a flaw. It’s a pattern, and patterns can be read.'):'';
+  })});
+  document.querySelectorAll('.vid').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var v=document.createElement('video');v.src=b.dataset.src;v.controls=true;v.autoplay=true;v.playsInline=true;b.querySelector('img').replaceWith(v);b.classList.add('on');});});
+})();
+</script>
+</body>
+</html>

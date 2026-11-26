@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept C · Mehndi Palm · Ashima Empowers</title>
+<link rel="icon" href="../assets/brand/ae-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* CONCEPT C · MEHNDI PALM
+   blush #F6E7DE · henna #8E3B17 · leaf #3E5B3A · rose dust #E9C6B4 · ink #2B1E19 · cream #FFFAF5 */
+:root{
+  --blush:#F6E7DE; --henna:#8E3B17; --henna-d:#6B2A0D; --leaf:#3E5B3A; --leaf-d:#2F4A2C; --rose:#E9C6B4;
+  --ink:#2B1E19; --cream:#FFFAF5; --muted:#6D5850; --line:rgba(43,30,25,.14);
+  --disp:"Gloock", Georgia, serif; --body:"Karla", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--blush);color:var(--ink);font:400 18px/1.62 var(--body);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.1;color:var(--ink)}
+h2{font-size:clamp(32px,4vw,52px)}
+h3{font-size:25px}
+.eyebrow{font:700 13px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--henna);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:6px;background:radial-gradient(circle,var(--henna) 2.2px,transparent 2.6px) 0 50%/9.3px 6px repeat-x}
+.lead{font-size:20px;color:var(--muted);max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;font:700 16px/1 var(--body);text-decoration:none;border-radius:14px;border:2px solid var(--henna);transition:background .2s,color .2s}
+.btn-solid{background:var(--henna);color:var(--cream)}
+.btn-solid:hover{background:var(--leaf);border-color:var(--leaf)}
+.btn-line{color:var(--henna)}
+.btn-line:hover{background:var(--henna);color:var(--cream)}
+
+.cbar{background:var(--ink);color:#f3e2d8;font:600 13px/1 var(--body);text-align:center;padding:9px 12px}
+.cbar a{color:var(--rose);margin-left:10px}
+
+.nav{position:sticky;top:0;z-index:20;background:rgba(246,231,222,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand img{width:40px;height:40px}
+.brand b{font:400 23px/1 var(--disp)}
+.brand i{display:block;font:700 10px/1 var(--body);letter-spacing:.32em;color:var(--henna);font-style:normal;margin-top:4px}
+.nav ul{display:flex;gap:26px;list-style:none;margin-left:auto;font-weight:500;font-size:16px}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--henna);text-decoration:underline;text-underline-offset:6px}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media (max-width:980px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+
+/* HERO with the palm */
+.hero{padding:54px 0 84px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.pill{display:inline-block;font:700 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--henna);background:var(--cream);border-radius:999px;padding:10px 16px}
+.hero .sub{margin:16px 0 14px;font-size:19px;color:var(--muted)}
+.hero h1{font-size:clamp(34px,3.6vw,50px);line-height:1.1}
+.hero h1 span{color:var(--henna)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero .proof{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--muted)}
+.hero .proof b{color:var(--ink)}
+
+.palmcard{background:var(--cream);border-radius:28px;padding:28px 28px 26px;position:relative;box-shadow:0 30px 60px -30px rgba(107,42,13,.35)}
+.palmcard .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.palmcard .top b{font:400 22px var(--disp)}
+.palmcard .top span{font-size:14px;color:var(--muted)}
+.palmwrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;margin-top:10px}
+.palm{width:100%;max-height:430px}
+.palm .hand{fill:#FBEFE6;stroke:var(--henna);stroke-width:2.6;stroke-linejoin:round}
+.palm .tip{fill:var(--henna)}
+.palm .orn{fill:none;stroke:var(--henna);stroke-width:1.6;stroke-linecap:round}
+.palm .dot{fill:var(--henna)}
+.palm .pl{fill:none;stroke:var(--henna-d);stroke-width:3.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s ease-out forwards;transition:opacity .3s,stroke-width .3s,stroke .3s}
+.palm .pl[data-l=head]{animation-delay:.3s}.palm .pl[data-l=life]{animation-delay:.6s}.palm .pl[data-l=fate]{animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.palm.focus .pl{opacity:.28}
+.palm.focus .pl.on{opacity:1;stroke:var(--leaf);stroke-width:5.5}
+.lines{list-style:none;display:grid;gap:8px}
+.lines button{width:100%;text-align:left;border:1.5px solid var(--line);background:transparent;border-radius:14px;padding:12px 14px;font:700 16px var(--body);color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:10px}
+.lines button::before{content:"";width:22px;height:3px;border-radius:3px;background:var(--henna-d)}
+.lines button[aria-pressed=true]{background:var(--leaf);border-color:var(--leaf);color:var(--cream)}
+.lines button[aria-pressed=true]::before{background:var(--cream)}
+.reading{margin-top:16px;min-height:96px;font-size:16px;line-height:1.55;color:var(--muted);border-top:1.5px dashed var(--line);padding-top:14px}
+.reading b{display:block;font:400 19px var(--disp);color:var(--ink);margin-bottom:2px}
+.portrait{position:absolute;left:-36px;bottom:-40px;display:flex;align-items:center;gap:12px;background:var(--cream);border-radius:999px;padding:6px 18px 6px 6px;box-shadow:0 12px 30px rgba(107,42,13,.2);font-size:14px;line-height:1.3;max-width:300px}
+.portrait img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+@media (max-width:980px){.hero .wrap{grid-template-columns:1fr}.portrait{position:static;margin-top:16px;box-shadow:none;border:1.5px solid var(--line)}}
+@media (max-width:520px){.palmwrap{grid-template-columns:1fr}.palm{max-height:340px}}
+
+/* dot border strip */
+.strip{border-block:1px solid var(--line);background:var(--cream)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;padding:20px 0;font-size:16px;color:var(--muted)}
+.strip a{text-decoration:none}
+.strip b{font:400 26px/1 var(--disp);color:var(--henna);margin-right:6px}
+
+section{padding:100px 0}
+/* you */
+.you .head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:46px}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pc{background:var(--cream);border-radius:22px;padding:28px}
+.pc q{display:block;font:400 22px/1.3 var(--disp);quotes:"\201C" "\201D"}
+.pc p{margin-top:12px;color:var(--muted);font-size:16px}
+.pc.photo{padding:0;overflow:hidden;grid-row:span 2}
+.pc.photo img{width:100%;height:100%;object-fit:cover}
+.turnline{margin-top:40px;text-align:center;font:400 clamp(24px,2.6vw,32px)/1.3 var(--disp);max-width:30ch;margin-inline:auto}
+.turnline span{color:var(--henna)}
+@media (max-width:980px){.you .head{grid-template-columns:1fr;gap:14px}.pcards{grid-template-columns:1fr 1fr}.pc.photo{grid-row:auto;aspect-ratio:4/5}}
+@media (max-width:560px){.pcards{grid-template-columns:1fr}}
+
+/* reviews */
+.reviews{background:var(--leaf);color:#F1E6DC}
+.reviews .eyebrow{color:var(--rose)}.reviews .eyebrow::before{background:radial-gradient(circle,var(--rose) 2.2px,transparent 2.6px) 0 50%/9.3px 6px repeat-x}
+.reviews h2{color:var(--cream);max-width:20ch}
+.feat{margin:44px 0;max-width:980px}
+.feat p{font:400 clamp(26px,3vw,38px)/1.3 var(--disp);color:var(--cream)}
+.feat cite{display:block;margin-top:16px;font-style:normal;color:var(--rose);font-weight:700}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid rgba(241,230,220,.25);padding-top:32px}
+.three p{font-size:16px}
+.three cite{display:block;margin-top:10px;font-style:normal;font-weight:700;color:var(--rose);font-size:15px}
+.reviews .row{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;margin-top:36px}
+.reviews .score b{font:400 40px var(--disp);color:var(--cream);margin-right:8px}
+.reviews .btn-line{border-color:var(--rose);color:var(--cream)}
+.reviews .btn-line:hover{background:var(--cream);color:var(--leaf)}
+@media (max-width:900px){.three{grid-template-columns:1fr}}
+
+/* videos */
+.vids .head{max-width:740px;margin-bottom:38px}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vid{position:relative;border:0;padding:0;background:var(--ink);border-radius:24px;overflow:hidden;aspect-ratio:9/14;cursor:pointer;font:inherit;color:#fff;text-align:left}
+.vid img,.vid video{width:100%;height:100%;object-fit:cover}
+.vid .cap{position:absolute;inset:auto 10px 10px 10px;background:var(--cream);color:var(--ink);border-radius:16px;padding:12px 14px;font-size:13px;color:var(--muted)}
+.vid .cap b{display:block;font:400 17px/1.2 var(--disp);color:var(--ink);margin-top:2px}
+.vid .play{position:absolute;top:12px;left:12px;width:44px;height:44px;border-radius:50%;background:var(--henna);display:grid;place-items:center}
+.vid .play::after{content:"";border-left:13px solid var(--cream);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
+.vid.on .cap,.vid.on .play{display:none}
+@media (max-width:900px){.vgrid{grid-template-columns:1fr 1fr}}
+
+/* method */
+.method .head{max-width:820px;margin-bottom:46px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.m{background:var(--cream);border-radius:24px;padding:34px;display:grid;grid-template-columns:76px 1fr;gap:22px;align-items:start}
+.m svg{width:76px;height:76px;fill:none;stroke:var(--henna);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.m .k{font:700 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--leaf)}
+.m h3{margin:8px 0 8px}
+.m p{color:var(--muted);font-size:17px}
+@media (max-width:900px){.mgrid{grid-template-columns:1fr}.m{grid-template-columns:1fr}}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about .ph{border-radius:200px 200px 28px 28px;overflow:hidden}
+.about .ph img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.about p{margin-top:18px;color:var(--muted)}
+.creds{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:26px 0}
+.creds li{background:var(--cream);border-radius:999px;padding:7px 15px;font-weight:600;font-size:15px}
+.about blockquote{font:400 24px/1.35 var(--disp);border-left:3px solid var(--henna);padding-left:20px;margin-top:8px}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr;gap:36px}.about .ph{max-width:440px}}
+
+/* coaching */
+.coach{background:var(--henna);color:#F7E6DA}
+.coach .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+.coach h2{color:var(--cream)}
+.coach .eyebrow{color:var(--rose)}.coach .eyebrow::before{background:radial-gradient(circle,var(--rose) 2.2px,transparent 2.6px) 0 50%/9.3px 6px repeat-x}
+.coach .lead{color:#F1D6C6;margin-top:20px}
+.gets{list-style:none;margin-top:26px;display:grid;gap:12px}
+.gets li{padding-left:28px;position:relative}
+.gets li::before{content:"";position:absolute;left:4px;top:10px;width:9px;height:9px;border-radius:50% 0;background:var(--rose);transform:rotate(45deg)}
+.apply{background:var(--cream);color:var(--ink);border-radius:26px;padding:34px}
+.apply h3{margin-bottom:18px}
+.apply ol{list-style:none;counter-reset:s;display:grid;gap:16px;margin-bottom:26px}
+.apply li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;color:var(--muted);font-size:16px}
+.apply li::before{content:counter(s);width:40px;height:40px;border-radius:50%;border:2px solid var(--henna);color:var(--henna);display:grid;place-items:center;font:400 18px var(--disp)}
+.apply li b{display:block;color:var(--ink)}
+.apply .btn{width:100%}
+.apply small{display:block;margin-top:14px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.coach .wrap{grid-template-columns:1fr}}
+
+/* sessions: a vine of options */
+.sessions .head{max-width:760px;margin-bottom:40px}
+.vine{position:relative;display:grid;gap:22px;padding-left:46px}
+.vine::before{content:"";position:absolute;left:14px;top:20px;bottom:20px;width:6px;background:radial-gradient(circle,var(--henna) 2.3px,transparent 2.7px) 50% 0/6px 12px repeat-y}
+.opt{position:relative;background:var(--cream);border-radius:24px;padding:28px 30px;display:grid;grid-template-columns:1fr auto;gap:12px 28px;align-items:center}
+.opt::before{content:"";position:absolute;left:-41px;top:32px;width:18px;height:18px;border-radius:50% 0;background:var(--henna);transform:rotate(45deg)}
+.opt .tag{font:700 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--leaf)}
+.opt h3{margin:8px 0 6px}
+.opt p{color:var(--muted);font-size:16px;max-width:62ch}
+.opt .price{font:400 30px/1 var(--disp);color:var(--henna);text-align:right}
+.opt .price small{display:block;font:400 14px var(--body);color:var(--muted);margin-top:4px}
+.opt .btn{grid-column:2;justify-self:end}
+.opt.sess{grid-template-columns:1fr}
+.tabs{display:flex;gap:8px;margin:14px 0 16px;max-width:420px}
+.tabs button{flex:1;border:1.5px solid var(--henna);background:transparent;border-radius:12px;padding:10px 6px;font:700 15px var(--body);color:var(--henna);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--henna);color:var(--cream)}
+.panel{display:grid;grid-template-columns:1fr auto;gap:10px 28px;align-items:end}
+.panel[hidden]{display:none}
+.panel ul{margin:6px 0 0 18px;color:var(--muted);font-size:16px}
+.panel .side{text-align:right;display:grid;gap:12px;justify-items:end}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pair .opt{grid-template-columns:1fr}
+.pair .opt .btn{grid-column:1;justify-self:start}
+.pair .opt .price{text-align:left}
+@media (max-width:760px){.opt,.panel,.pair{grid-template-columns:1fr}.opt .btn{grid-column:1;justify-self:start}.opt .price,.panel .side{text-align:left;justify-items:start}}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+details{background:var(--cream);border-radius:18px;padding:20px 24px;margin-bottom:12px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font:400 21px/1.3 var(--disp)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 26px/1 var(--body);color:var(--henna)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--muted)}
+@media (max-width:900px){.faq .wrap{grid-template-columns:1fr;gap:20px}}
+
+.final{text-align:center}
+.final h2{max-width:20ch;margin:0 auto}
+.final h2 span{color:var(--henna)}
+.final p{max-width:56ch;margin:22px auto 30px;color:var(--muted)}
+footer{background:var(--ink);color:#d9c6bb;padding:40px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between}
+footer b{font:400 22px var(--disp);color:var(--rose)}
+@media (max-width:600px){section{padding:70px 0}.btn{width:100%}.hero .ctas{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.palm .pl{stroke-dashoffset:0}}
+@media (max-width:600px){.nav .btn{width:auto;min-height:40px;padding:0 14px;font-size:14px}.brand img{width:34px;height:34px}}
+</style>
+</head>
+<body>
+<div class="cbar">Design concept C of 3 · Mehndi Palm <a href="a-marigold.html">See A</a><a href="b-working.html">See B</a><a href="index.html">All concepts</a></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="../index.html"><img src="../assets/brand/ae-mark-sm.png" alt=""><span><b>Ashima</b><i>EMPOWERS</i></span></a>
+  <ul><li><a href="../about.html">About</a></li><li><a href="../sessions.html">Sessions</a></li><li><a href="../coaching.html">Coaching</a></li><li><a href="../vip.html">VIP Circle</a></li><li><a href="#reviews">Reviews</a></li></ul>
+  <a class="btn btn-solid" href="../coaching.html#apply">Apply for Coaching</a>
+</div></header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill">For those who have tried every remedy:</span>
+      <p class="sub">and still carry the same anxiety, the same heaviness, the same story.</p>
+      <h1>Discover how to calm anxiety, lift the weight of depression and finally understand your life's timing with <span>Astrology, Numerology, Palmistry + Mind Reprogramming</span></h1>
+      <div class="ctas"><a class="btn btn-solid" href="../coaching.html#apply">Apply for 1:1 coaching</a><a class="btn btn-line" href="../sessions.html">Book a single session</a></div>
+      <p class="proof"><span><b>5.0 ★</b> from 80 Google reviews</span><span>Online worldwide</span><span>In person in Surrey, BC</span></p>
+    </div>
+
+    <div class="palmcard">
+      <div class="top"><b>What your palm is saying</b><span>Tap a line</span></div>
+      <div class="palmwrap">
+        <svg class="palm" id="palm" viewBox="22 70 328 460" role="img" aria-label="A hand drawn in mehndi style, with the heart, head, life and fate lines"><g transform="rotate(-36 133 400)"><rect class="hand" x="110" y="262" width="46" height="150" rx="23"/><path class="tip" d="M110 295 L110 285 A23 23 0 0 1 156 285 L156 295 Z"/></g><g transform="rotate(-9 153 265)"><rect class="hand" x="130" y="120" width="46" height="160" rx="23.0"/><path class="tip" d="M130 153.0 L130 143.0 A23.0 23.0 0 0 1 176 143.0 L176 153.0 Z"/><path class="orn" d="M141 187.0h24M141 195.0h24"/></g><g transform="rotate(-2 208 265)"><rect class="hand" x="184" y="92" width="48" height="188" rx="24.0"/><path class="tip" d="M184 126.0 L184 116.0 A24.0 24.0 0 0 1 232 116.0 L232 126.0 Z"/><path class="orn" d="M195 160.0h26M195 168.0h26"/></g><g transform="rotate(6 261 265)"><rect class="hand" x="238" y="108" width="46" height="172" rx="23.0"/><path class="tip" d="M238 141.0 L238 131.0 A23.0 23.0 0 0 1 284 131.0 L284 141.0 Z"/><path class="orn" d="M249 175.0h24M249 183.0h24"/></g><g transform="rotate(14 310 270)"><rect class="hand" x="290" y="162" width="40" height="128" rx="20.0"/><path class="tip" d="M290 192.0 L290 182.0 A20.0 20.0 0 0 1 330 182.0 L330 192.0 Z"/><path class="orn" d="M301 226.0h18M301 234.0h18"/></g><path class="hand" d="M126 270 C126 262 132 258 140 258 L318 262 C326 262 330 268 330 276 L330 330 C332 380 318 430 290 470 C276 490 262 505 258 520 L150 520 C148 480 136 452 126 424 C120 404 126 384 126 360 Z"/><g class="orn"><circle cx="96" cy="344" r="6"/><circle cx="96" cy="344" r="13"/></g><g><circle class="dot" cx="166" cy="505" r="2.6"/><circle class="dot" cx="178" cy="507" r="2.6"/><circle class="dot" cx="190" cy="508" r="2.6"/><circle class="dot" cx="202" cy="509" r="2.6"/><circle class="dot" cx="214" cy="509" r="2.6"/><circle class="dot" cx="226" cy="508" r="2.6"/><circle class="dot" cx="238" cy="507" r="2.6"/><circle class="dot" cx="250" cy="505" r="2.6"/></g><path class="pl" data-l="heart" pathLength="1" d="M326 294 C296 278 250 272 202 278 C193 279 187 274 184 268"/><path class="pl" data-l="head" pathLength="1" d="M130 332 C182 338 250 348 316 374"/><path class="pl" data-l="life" pathLength="1" d="M134 338 C152 388 158 442 172 500"/><path class="pl" data-l="fate" pathLength="1" d="M214 500 C212 440 210 362 208 286"/></svg>
+        <div>
+          <ul class="lines">
+            <li><button aria-pressed="false" data-l="heart">Heart line</button></li>
+            <li><button aria-pressed="false" data-l="head">Head line</button></li>
+            <li><button aria-pressed="false" data-l="life">Life line</button></li>
+            <li><button aria-pressed="false" data-l="fate">Fate line</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="reading" id="reading" aria-live="polite"><b>Both hands, line by line.</b>The hand you were born with, and the one you've made. Tap a line to see what Ashima reads in it.</p>
+      <div class="portrait"><img src="../assets/ashima-pink.jpg" alt=""><span><b>Ashima Gautam</b><br>Palm reading is what her clients mention most.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">
+  <a href="https://www.instagram.com/ashima_empowers/"><b>24.6K</b>on Instagram</a>
+  <a href="https://www.tiktok.com/@ashima_empowers"><b>9.5K</b>on TikTok</a>
+  <a href="https://www.facebook.com/ashima.gautam.16766/"><b>8K</b>on Facebook</a>
+  <a href="#reviews"><b>5.0 ★</b>80 Google reviews</a>
+</div></div>
+
+<section class="you" id="you">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">You don't have to say it out loud</p><h2>You smile through every family function. Nobody sees the night that comes after.</h2></div>
+      <p class="lead">You light the diya in the pooja room every evening. When mom asks on WhatsApp how you are, you type "all good" and send a heart. Then the heaviness is still sitting on your chest.</p>
+    </div>
+    <div class="pcards">
+      <div class="pc"><q>My chest goes tight in the grocery line, and I can't tell you why.</q><p>It comes in the car, at work, halfway through dinner.</p></div>
+      <div class="pc photo"><img src="../assets/story/heartbreak.jpg" alt="A woman reading old messages on her phone"></div>
+      <div class="pc"><q>My mind starts talking the moment I lie down.</q><p>The same conversation, replayed at 3 a.m., with a better answer every time.</p></div>
+      <div class="pc"><q>He's gone, and I still check when he was last online.</q><p>A breakup or a loss your heart hasn't caught up with.</p></div>
+      <div class="pc"><q>I've done the pujas, the stones, the fasts. Nothing stays.</q><p>A few calm weeks, then the same story again.</p></div>
+    </div>
+    <p class="turnline">Nothing is wrong with you. <span>You've been living a pattern,</span> and a pattern is something you can learn to change.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <p class="eyebrow">Google reviews</p>
+    <h2>Eighty people took the time to write it down.</h2>
+    <figure class="feat"><p>"I felt really comfortable with her. Half of my problems were gone after just sitting with her in the first two minutes."</p><cite>Kamal B. · November 2026</cite></figure>
+    <div class="three">
+      <figure><p>"She answered every question with clear, honest, and straight-up answers, without any sugarcoating."</p><cite>Gurkirat S.</cite></figure>
+      <figure><p>"She is practical, kind and empowering. Apart from astrology she is also a very good life coach."</p><cite>Dhananjoy B.</cite></figure>
+      <figure><p>"Whatever she said came true for me. You will have a sense of direction."</p><cite>Suvojit D.</cite></figure>
+    </div>
+    <div class="row"><p class="score"><b>5.0</b>★★★★★ from 80 reviews</p><a class="btn btn-line" href="https://maps.google.com/?cid=10121313852043803730">Read all 80 on Google</a></div>
+  </div>
+</section>
+
+<section class="vids">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Client videos</p><h2>Some clients were happy to say it on camera.</h2></div>
+    <div class="vgrid">
+      <button class="vid" data-src="../assets/clients/DT5w2Smjxeg.mp4"><img src="../assets/clients/DT5w2Smjxeg.jpg" alt=""><span class="play"></span><span class="cap">1:21 · In person<b>A heartfelt thank-you</b></span></button>
+      <button class="vid" data-src="../assets/clients/DaNu4Att0TT.mp4"><img src="../assets/clients/DaNu4Att0TT.jpg" alt=""><span class="play"></span><span class="cap">1:21 · Manal<b>The perfect astrologer</b></span></button>
+      <button class="vid" data-src="../assets/clients/DaWguk6TyjP.mp4"><img src="../assets/clients/DaWguk6TyjP.jpg" alt=""><span class="play"></span><span class="cap">1:10 · Video call<b>After the reading</b></span></button>
+      <button class="vid" data-src="../assets/clients/DdbcV8XTLlr.mp4"><img src="../assets/clients/DdbcV8XTLlr.jpg" alt=""><span class="play"></span><span class="cap">0:36 · Live reading<b>"It all came true"</b></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="method">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">How Ashima works</p><h2>Most readings stop at why. Ashima keeps going.</h2></div>
+    <div class="mgrid">
+      <div class="m"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="14"/><path d="M38 6c4 8 4 12 0 18-4-6-4-10 0-18zM38 52c4 6 4 10 0 18-4-8-4-12 0-18zM6 38c8-4 12-4 18 0-6 4-10 4-18 0zM52 38c6-4 10-4 18 0-8 4-12 4-18 0z"/><circle cx="38" cy="38" r="4"/></svg><div><span class="k">The timing</span><h3>Astrology &amp; Numerology</h3><p>Why this year has felt so heavy, which months ask for patience, and when to act on the job, the move or the marriage talk.</p></div></div>
+      <div class="m"><svg viewBox="0 0 76 76"><path d="M26 70V36c0-4 6-4 6 0V16c0-4 6-4 6 0v-4c0-4 6-4 6 0v6c0-4 6-4 6 0v32c0 10-7 20-17 20"/><path d="M30 50c6-3 12-3 18 2M32 42c4 1 9 1 14-1"/></svg><div><span class="k">Your nature</span><h3>Palm Reading</h3><p>The temperament and strengths you were born with, read line by line from both hands. It's the reading clients mention most in their reviews.</p></div></div>
+      <div class="m"><svg viewBox="0 0 76 76"><path d="M12 48c8 12 44 12 52 0H12z"/><path d="M38 42c-6-6-4-14 0-22 4 8 6 16 0 22z"/><path d="M38 58v10M26 68h24"/></svg><div><span class="k">What to do</span><h3>Rituals &amp; Upay</h3><p>Small practices for your home mandir or bedside table, a few minutes a day. You'll never be sold a gemstone or frightened into a costly puja.</p></div></div>
+      <div class="m"><svg viewBox="0 0 76 76"><path d="M38 66C20 60 10 44 14 28 18 14 34 8 46 12c12 4 18 16 14 28-3 10-14 14-22 10-7-4-8-12-3-16 4-3 10-1 10 4"/></svg><div><span class="k">Where it changes</span><h3>Mind Reprogramming</h3><p>Ashima finds the old belief behind the worry, often one your mind learned as a child, and helps you rewire it so the calm has something solid to stand on.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="ph"><img src="../assets/ashima-garden.jpg" alt="Ashima Gautam in her garden in Surrey, BC"></div>
+    <div>
+      <p class="eyebrow">Meet Ashima</p>
+      <h2>She studied maths first. That's why she shows you her working.</h2>
+      <p>Ashima Gautam did her M.Sc in Mathematics and trained as a teacher before she ever read a chart. Numbers taught her to look for patterns and to trust what she could check. So she tells you what she sees in your kundli, your numbers and your palm, and how she got there.</p>
+      <p>Knowing why you repeat a fear doesn't stop you repeating it. So she trained in mind reprogramming, hypnotherapy and Reiki, and now works with you on the pattern itself.</p>
+      <ul class="creds"><li>M.Sc Mathematics, B.Ed</li><li>Mind reprogramming trainer</li><li>Hypnotherapist</li><li>Reiki Master</li></ul>
+      <blockquote>"I will never use fear to keep you coming back."</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="coach">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">By application only</p>
+      <h2>You already know why you feel this way. Coaching is where it starts to change.</h2>
+      <p class="lead">A reading gives you the why. Then you go home to the same house, the same phone calls, the same 3 a.m. This is where Ashima stays with you, one-to-one, with a plan built from your chart's timing.</p>
+      <ul class="gets">
+        <li><b>A plan written for you,</b> from your kundli, your numbers and the life you actually want</li>
+        <li><b>Private sessions with Ashima,</b> on video or at her office in Surrey</li>
+        <li><b>Mind reprogramming</b> for fear and self-doubt that started long before this year</li>
+        <li><b>Simple rituals and upay</b> for the days between sessions</li>
+        <li><b>Someone to ask</b> when a hard day lands mid-week</li>
+      </ul>
+    </div>
+    <div class="apply">
+      <h3>How applying works</h3>
+      <ol><li><span><b>Apply</b>About 3 minutes, kept private</span></li><li><span><b>We reply</b>Within 24 to 48 hours</span></li><li><span><b>Your call</b>Hear your plan and what it costs, then decide</span></li></ol>
+      <a class="btn btn-solid" href="../coaching.html#apply">Start my application</a>
+      <small>Applying costs nothing. Coaching is guidance, not medical treatment.</small>
+    </div>
+  </div>
+</section>
+
+<section class="sessions" id="sessions">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Not ready to apply yet?</p><h2>Then start smaller. Every option is still with Ashima herself.</h2></div>
+    <div class="vine">
+      <div class="opt"><div><span class="tag">Monthly membership</span><h3>The VIP Circle</h3><p>Two private video calls with Ashima every month, her full course, and the private Skool and WhatsApp groups. For when you want someone checking in on you.</p></div><p class="price">$199<small>USD a month</small></p><a class="btn btn-line" href="../vip.html">See the VIP Circle</a></div>
+      <div class="opt sess" data-picker>
+        <div><span class="tag">One private session</span><h3>How much time do you need?</h3></div>
+        <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="60">60 min</button><button role="tab" aria-selected="false" data-t="30">30 min</button><button role="tab" aria-selected="false" data-t="10">10 min</button></div>
+        <div class="panel" data-p="60"><div><b>When it's been a hard year, not a hard week.</b><ul><li>Your kundli, numerology and both palms, read in detail</li><li>Why the same story keeps coming back, and when the timing shifts</li><li>Upay and a mind practice you can start that night</li></ul></div><div class="side"><p class="price">$149<small>USD</small></p><a class="btn btn-solid" href="../consultation-60.html">See details and book</a></div></div>
+        <div class="panel" data-p="30" hidden><div><b>When a few things are on your mind.</b><ul><li>Ask as many questions as fit in 30 minutes</li><li>Your kundli, numbers and palm, read side by side</li><li>Simple upay and one mind practice to take home</li></ul></div><div class="side"><p class="price">$99<small>USD</small></p><a class="btn btn-solid" href="../consultation-30.html">See details and book</a></div></div>
+        <div class="panel" data-p="10" hidden><div><b>One question, one clear answer.</b><ul><li>A clear answer to the one question you keep turning over</li><li>Read from your kundli, your numbers and your palm</li><li>A simple upay to follow at home</li></ul></div><div class="side"><p class="price">$27<small>USD</small></p><a class="btn btn-solid" href="../one-question.html">See details and book</a></div></div>
+      </div>
+      <div class="pair">
+        <div class="opt"><div><span class="tag">Live group sessions</span><h3>Empower Your Inner World</h3><p>Live with Ashima at 12 pm Canada time. Every recording waits for you on Skool.</p></div><p class="price">$21<small>USD a month</small></p><a class="btn btn-line" href="../empower.html">Join the live sessions</a></div>
+        <div class="opt"><div><span class="tag">Free</span><h3>Ashima's WhatsApp community</h3><p>Daily guidance from Ashima, right next to your family group chats.</p></div><p class="price">Free<small>open to everyone</small></p><a class="btn btn-line" href="https://chat.whatsapp.com/G9WLwUiDfK6DKEwlAcjtLo">Join free on WhatsApp</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div><p class="eyebrow">Questions</p><h2>What people usually ask first</h2></div>
+    <div>
+      <details open><summary>How can astrology help with anxiety or depression?</summary><p>Your chart, numbers and palm show the pattern and its timing. The change comes from the mind reprogramming work, with simple rituals and upay alongside. It isn't medical or psychological treatment, so if you see a doctor or therapist, please keep going.</p></details>
+      <details><summary>What happens after I pay?</summary><p>A short details form appears straight away: your name, date, time and place of birth, and clear photos of both palms. Then Ashima's team messages you on WhatsApp to set a time.</p></details>
+      <details><summary>Will I be told to buy gemstones or an expensive puja?</summary><p>No. Simple rituals and upay you can do yourself at home.</p></details>
+      <details><summary>Online or in person?</summary><p>Both. On video from anywhere, or at 5550 152 St #201, Surrey, BC, Monday to Friday, 9 am to 6 pm Pacific.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>You've carried this long enough. <span>Tell Ashima what's going on.</span></h2>
+    <p>The application takes about three minutes. Write it the way you'd tell a friend. Ashima's team replies within 24 to 48 hours, and you decide after the call.</p>
+    <a class="btn btn-solid" href="../coaching.html#apply">Apply for 1:1 coaching</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><b>Ashima Empowers</b><span>5550 152 St #201, Surrey, BC · Online worldwide</span><span>Guidance and personal growth, not medical advice. All payments are non-refundable.</span></div></footer>
+
+<script>
+(function(){
+  var R={heart:["Heart line","How you love, and how you hurt. Ashima reads it for relationships, heartbreak and the people you keep choosing."],
+  head:["Head line","How you think. Where the overthinking comes from, and how you decide when you're under pressure."],
+  life:["Life line","Your energy and the big turns in your life, read together with the timing in your kundli."],
+  fate:["Fate line","Work, direction and the path you're on, and where it may change."]};
+  var palm=document.getElementById('palm'),out=document.getElementById('reading');
+  document.querySelectorAll('.lines button').forEach(function(b){b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    document.querySelectorAll('.lines button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+    palm.querySelectorAll('.pl').forEach(function(p){p.classList.toggle('on',on&&p.dataset.l===b.dataset.l)});
+    palm.classList.toggle('focus',on);
+    if(on){b.setAttribute('aria-pressed','true');out.innerHTML='<b>'+R[b.dataset.l][0]+'</b>'+R[b.dataset.l][1]}
+    else out.innerHTML='<b>Both hands, line by line.</b>The hand you were born with, and the one you’ve made. Tap a line to see what Ashima reads in it.';
+  })});
+  document.querySelectorAll('.vid').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var v=document.createElement('video');v.src=b.dataset.src;v.controls=true;v.autoplay=true;v.playsInline=true;b.querySelector('img').replaceWith(v);b.classList.add('on');});});
+  document.querySelectorAll('[data-picker]').forEach(function(c){c.querySelectorAll('[role=tab]').forEach(function(t){t.addEventListener('click',function(){c.querySelectorAll('[role=tab]').forEach(function(x){x.setAttribute('aria-selected',x===t)});c.querySelectorAll('.panel').forEach(function(p){p.hidden=p.dataset.p!==t.dataset.t});});});});
+})();
+</script>
+</body>
+</html>
